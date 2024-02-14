@@ -80,7 +80,7 @@
 			attach_assembly(A, user)
 			return
 	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_LCK))
 			if(toggle_secure())
 				to_chat(user, SPAN_NOTICE("\The [src] is ready!"))
 			else

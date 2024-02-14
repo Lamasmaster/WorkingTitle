@@ -4,7 +4,7 @@
 		return 0
 
 	if(istype(src, /turf/simulated/floor/plating/under) && (istype(I, /obj/item/stack/material/cyborg/steel) || istype(I, /obj/item/stack/material/steel)))
-		if(do_after(user, (30 * user.stats.getMult(STAT_MEC, STAT_LEVEL_EXPERT, src))))
+		if(do_after(user, (30 * user.stats.getMult(STAT_INT, STAT_LEVEL_EXPERT, src))))
 			if(I:use(1))
 				ChangeTurf(/turf/simulated/floor/plating)
 
@@ -38,7 +38,7 @@
 				take_damage(I.force*I.structure_damage_factor, I.damtype)
 			else
 				visible_message(SPAN_DANGER("[user] ineffectually hits [src] with [I]"))
-			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN) 
+			user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 			return TRUE
 
 	for(var/atom/movable/A in src)
@@ -115,7 +115,7 @@
 		switch(tool_type)
 			if(QUALITY_SEALING)
 				user.visible_message("[user] starts sealing up cracks in [src] with the [I]", "You start sealing up cracks in [src] with the [I]")
-				if (I.use_tool(user, src, 50 + ((maxHealth - health)*2), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_MEC))
+				if (I.use_tool(user, src, 50 + ((maxHealth - health)*2), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_INT))
 					to_chat(user, SPAN_NOTICE("The [src] looks pretty solid now!"))
 					health = maxHealth
 					broken = FALSE
@@ -124,17 +124,17 @@
 				return
 			if(QUALITY_PRYING)
 				if(is_damaged())
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You remove the broken [flooring.descriptor]."))
 						make_plating()
 					return
 				else if(flooring.flags & TURF_IS_FRAGILE)
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 						to_chat(user, SPAN_DANGER("You forcefully pry off the [flooring.descriptor], destroying them in the process."))
 						make_plating()
 					return
 				else if(flooring.flags & TURF_REMOVE_CROWBAR)
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You lever off the [flooring.descriptor]."))
 						make_plating(1)
 					return
@@ -142,28 +142,28 @@
 
 			if(QUALITY_SCREW_DRIVING)
 				if((!(is_damaged()) && !is_plating()) || flooring.flags & TURF_REMOVE_SCREWDRIVER)
-					if(I.use_tool(user, src, flooring.removal_time*1.5, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time*1.5, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You unscrew and remove the [flooring.descriptor]."))
 						make_plating(1)
 				return
 
 			if(QUALITY_BOLT_TURNING)
 				if(flooring.flags & TURF_REMOVE_WRENCH)
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You unwrench and remove the [flooring.descriptor]."))
 						make_plating(1)
 				return
 
 			if(QUALITY_SHOVELING)
 				if(flooring.flags & TURF_REMOVE_SHOVEL)
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You shovel off the [flooring.descriptor]."))
 						make_plating(1)
 				return
 
 			if(QUALITY_WELDING)
 				if(is_damaged())
-					if(I.use_tool(user, src, maxHealth - health, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, maxHealth - health, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You fix some dents on the broken plating."))
 						playsound(src, 'sound/items/Welder.ogg', 80, 1)
 						icon_state = "plating"
@@ -175,7 +175,7 @@
 
 				if(flooring.flags & TURF_REMOVE_WELDER)
 					to_chat(user, SPAN_NOTICE("You start cutting through the [flooring.descriptor]."))
-					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, flooring.removal_time, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You cut through and remove the [flooring.descriptor]."))
 						make_plating(1)
 

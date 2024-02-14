@@ -7,7 +7,7 @@
 	var/target_organ_type = /obj/item/organ/external
 
 	var/difficulty = FAILCHANCE_NORMAL
-	var/required_stat = STAT_BIO
+	var/required_stat = STAT_INT
 	var/duration = 60
 
 	// Can the step cause infection?
@@ -273,7 +273,7 @@ proc/do_surgery(mob/living/carbon/M, mob/living/user, obj/item/tool, var/surgery
 			diagnosed = TRUE
 			return TRUE
 
-		if(user.stats?.getStat(BP_IS_ROBOTIC(src) ? STAT_MEC : STAT_BIO) >= STAT_LEVEL_EXPERT)
+		if(user.stats?.getStat(STAT_INT) >= STAT_LEVEL_EXPERT)
 			to_chat(user, SPAN_NOTICE("One brief look at [get_surgery_name()] is enough for you to see all the issues immediately."))
 			diagnosed = TRUE
 			return TRUE

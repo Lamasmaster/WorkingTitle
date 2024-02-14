@@ -25,7 +25,7 @@
 
 	var/buff_power = 10
 
-	var/list/stats_buff = list(STAT_BIO, STAT_COG, STAT_MEC)
+	var/list/stats_buff = list(STAT_INT, STAT_LCK, STAT_INT)
 	var/list/acquired_buffs = list()
 
 /obj/item/device/von_krabin/New()
@@ -79,7 +79,7 @@
 				return FALSE
 			user.remove_from_mob(I)
 			qdel(I)
-			acquired_buffs = list(STAT_ROB, STAT_TGH, STAT_VIG)
+			acquired_buffs = list(STAT_STR, STAT_END, STAT_AGI)
 			for(var/stat in acquired_buffs)
 				stats_buff.Add(stat)
 		/* for when we add felinids (if ever) SPCR-2022

@@ -28,7 +28,7 @@
 
 /obj/item/tool/multitool/hacktool/attackby(obj/item/I, mob/user)
 	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_COG))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_LCK))
 			in_hack_mode = !in_hack_mode
 			to_chat(user, SPAN_NOTICE("You [in_hack_mode? "enable" : "disable"] the hack mode."))
 	else
@@ -61,7 +61,7 @@
 	to_chat(user, SPAN_NOTICE("You begin hacking \the [target]..."))
 	is_hacking = 1
 	// without any cog, hacking takes 30 seconds. every point of cog lowers the time needed to hack by 0,5 seconds, up to a maximum reduction of 20 seconds.
-	var/hack_result = do_after(user, min(60 SECONDS, 30 SECONDS - min(20 SECONDS, user.stats.getStat(STAT_COG) / 2 SECONDS)) , progress = 0)
+	var/hack_result = do_after(user, min(60 SECONDS, 30 SECONDS - min(20 SECONDS, user.stats.getStat(STAT_LCK) / 2 SECONDS)) , progress = 0)
 	is_hacking = 0
 
 	if(hack_result && in_hack_mode)

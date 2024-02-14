@@ -15,12 +15,13 @@
 			Gives you knowledge of the German language."
 
 	stat_modifiers = list(
-		STAT_ROB = 6,
-		STAT_TGH = -5,
-		STAT_BIO = 0,
-		STAT_MEC = 6,
-		STAT_VIG = 6,
-		STAT_COG = -8
+		STAT_STR = 6,
+		STAT_PER = 6,
+		STAT_END = -5,
+		STAT_CHR = 6,
+		STAT_INT = 6,
+		STAT_AGI = 6,
+		STAT_LCK = -8
 	)
 
 /datum/category_item/setup_option/background/origin/oberth/apply(mob/living/carbon/human/character)
@@ -38,12 +39,13 @@
 			Gives you knowledge of the Serbian language."
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_BIO = 0,
-		STAT_MEC = -10,
-		STAT_VIG = 5,
-		STAT_COG = -10
+		STAT_STR = 10,
+		STAT_PER = 5,
+		STAT_END = 10,
+		STAT_CHR = 5,
+		STAT_INT = -10,
+		STAT_AGI = 5,
+		STAT_LCK = -10
 	)
 
 /datum/category_item/setup_option/background/origin/predstraza/apply(mob/living/carbon/human/character)
@@ -57,12 +59,12 @@
 			While ostensibly under the direct control of Hanza, its local military is extremely disloyal and known to support the Founders - a revanchist international group that seeks the return of planetary government's national control over space."
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = -5,
-		STAT_BIO = 10,
-		STAT_MEC = 5,
-		STAT_VIG = -5,
-		STAT_COG = -5
+		STAT_STR = 5,
+		STAT_END = -5,
+		STAT_INT = 10,
+		STAT_INT = 5,
+		STAT_AGI = -5,
+		STAT_LCK = -5
 	)
 
 
@@ -75,12 +77,12 @@
 			Gives you knowledge of the Latin language."
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_BIO = 5,
-		STAT_MEC = -10,
-		STAT_VIG = -10,
-		STAT_COG = 10
+		STAT_STR = 5,
+		STAT_END = 5,
+		STAT_INT = 5,
+		STAT_INT = -10,
+		STAT_AGI = -10,
+		STAT_LCK = 10
 	)
 
 /datum/category_item/setup_option/background/origin/new_rome/apply(mob/living/carbon/human/character)
@@ -97,12 +99,12 @@
 			Gives you knowledge of the Neohongo language."
 
 	stat_modifiers = list(
-		STAT_ROB = -6,
-		STAT_TGH = -7,
-		STAT_BIO = -7,
-		STAT_MEC = 10,
-		STAT_VIG = 10,
-		STAT_COG = 5
+		STAT_STR = -6,
+		STAT_END = -7,
+		STAT_INT = -7,
+		STAT_INT = 10,
+		STAT_AGI = 10,
+		STAT_LCK = 5
 	)
 
 /datum/category_item/setup_option/background/origin/shimatengoku/apply(mob/living/carbon/human/character)
@@ -119,12 +121,12 @@
 			They are also members of Asters Guild, and this whole station is considered major Guild territory."
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_BIO = -10,
-		STAT_MEC = 5,
-		STAT_VIG = 10,
-		STAT_COG = -10
+		STAT_STR = 5,
+		STAT_END = 5,
+		STAT_INT = -10,
+		STAT_INT = 5,
+		STAT_AGI = 10,
+		STAT_LCK = -10
 	)
 
 
@@ -137,12 +139,12 @@
 			The local population are prone to revolt after decades of mistreatment and generally want to be left alone, making them ripe for recruitment by the Founders."
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 10,
-		STAT_BIO = -7,
-		STAT_MEC = -7,
-		STAT_VIG = 10,
-		STAT_COG = -6
+		STAT_STR = 5,
+		STAT_END = 10,
+		STAT_INT = -7,
+		STAT_INT = -7,
+		STAT_AGI = 10,
+		STAT_LCK = -6
 	)
 
 
@@ -156,12 +158,12 @@
 			Needless to say, every planet it visits experiences a large tourism boom, growth in consumerism, and every bar and whorehouse running out of vacancy in under a day."
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 5,
-		STAT_BIO = -15,
-		STAT_MEC = 0,
-		STAT_VIG = 15,
-		STAT_COG = -10
+		STAT_STR = 10,
+		STAT_END = 5,
+		STAT_INT = -15,
+		STAT_INT = 0,
+		STAT_AGI = 15,
+		STAT_LCK = -10
 	)
 
 
@@ -178,12 +180,12 @@
 			This system is also known for Moebius HQ - a large station orbiting the End Point black hole."
 
 	stat_modifiers = list(
-		STAT_ROB = -9,
-		STAT_TGH = -8,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_VIG = -8,
-		STAT_COG = 10
+		STAT_STR = -9,
+		STAT_END = -8,
+		STAT_INT = 10,
+		STAT_INT = 10,
+		STAT_AGI = -8,
+		STAT_LCK = 10
 	)
 
 
@@ -198,12 +200,12 @@
 			And - in most cases - die a horrible death in the end."
 
 	stat_modifiers = list(
-		STAT_ROB = 2,
-		STAT_TGH = 2,
-		STAT_BIO = -10,
-		STAT_MEC = 2,
-		STAT_VIG = 10,
-		STAT_COG = 2
+		STAT_STR = 2,
+		STAT_END = 2,
+		STAT_INT = -10,
+		STAT_INT = 2,
+		STAT_AGI = 10,
+		STAT_LCK = 2
 	)
 
 
@@ -215,12 +217,12 @@
             All in the name of saving what's left."
 
     stat_modifiers = list(
-        STAT_ROB = -5,
-        STAT_TGH = 5,
-        STAT_BIO = 10,
-        STAT_MEC = -10,
-        STAT_VIG = 10,
-        STAT_COG = -5
+        STAT_STR = -5,
+        STAT_END = 5,
+        STAT_INT = 10,
+        STAT_INT = -10,
+        STAT_AGI = 10,
+        STAT_LCK = -5
     )
 
 /datum/category_item/setup_option/background/origin/streltsy
@@ -229,12 +231,12 @@
 			While both of these preconceptions are correct in their own right, a less known fact is that most Streltsy who've survived the corporate war are still suffering the consequences of their participation due to the decimation of their numbers during the war, leading to a miserable quality of life and forcing them to start recruitment from wartorn worlds to desperately replenish their numbers from before the war. \
 			Despite this, the survivors and their newer members are unparalleled in the arts of war, but lacking in the art of general technomancy."
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 10,
-		STAT_BIO = -10,
-		STAT_MEC = -5,
-		STAT_VIG = 10,
-		STAT_COG = -10
+		STAT_STR = 5,
+		STAT_END = 10,
+		STAT_INT = -10,
+		STAT_INT = -5,
+		STAT_AGI = 10,
+		STAT_LCK = -10
 	)
 
 	restricted_jobs = list(/datum/job/captain, /datum/job/hop, /datum/job/chaplain, /datum/job/merchant, /datum/job/cmo, /datum/job/rd, /datum/job/ihc)
@@ -245,12 +247,12 @@
 	desc = "A network of hidden ships, gun emplacements and listening bases placed in a large asteroid belt late in the Corporate War by the Syndicate for the purpose of being an early warning station for attacks on Hansa Sector core worlds. After the end of the corporate war Ironhammer transformed it into a large system of training camps and bases for specialists and new recruits. Due to an almost complete lack of terraforming, hostile environment and outdated syndicate construction, the Tripwire Belt is suited for teaching new recruits on how to survive in deep space conditions, but this also means morale is often low."
 
 	stat_modifiers = list(
-		STAT_ROB = -5,
-		STAT_TGH = 10,
-		STAT_BIO = -5,
-		STAT_MEC = 5,
-		STAT_VIG = 10,
-		STAT_COG = -10
+		STAT_STR = -5,
+		STAT_END = 10,
+		STAT_INT = -5,
+		STAT_INT = 5,
+		STAT_AGI = 10,
+		STAT_LCK = -10
 	)
 
 /datum/category_item/setup_option/background/origin/kestrel
@@ -260,10 +262,10 @@
 	The cluster is owned and operated by Tartarus Industrial Union, a division of the idealistic Hansa megacorp in charge of heavy industries. The workers of Kestrel Hive, real rough folk, partake in several very dangerous recreational activities, from hopping from asteroid to asteroid with just your EVA suit and a spare tank of oxygen, to rocket-fuel and pure ethanol booze, with bits of radioactive byproducts mixed in. Strongest alcohol you’ll ever find, and you need a strong drink if you want to keep your wits during the twelve-hour shifts."
 
 	stat_modifiers = list(
-		STAT_ROB = 6,
-		STAT_TGH = 5,
-		STAT_BIO = -3,
-		STAT_MEC = 9,
-		STAT_VIG = -6,
-		STAT_COG = -6
+		STAT_STR = 6,
+		STAT_END = 5,
+		STAT_INT = -3,
+		STAT_INT = 9,
+		STAT_AGI = -6,
+		STAT_LCK = -6
 	)

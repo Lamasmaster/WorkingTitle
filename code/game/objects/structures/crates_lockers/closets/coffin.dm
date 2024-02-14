@@ -121,7 +121,7 @@
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(!opened)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					user.visible_message(
 							SPAN_NOTICE("[user] pried open the [src] with \the [I]."), \
 							SPAN_NOTICE("You pried open the [src]."), \
@@ -129,7 +129,7 @@
 					)
 					open()
 			else
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					user.visible_message(
 							SPAN_NOTICE("[user] tore apart the [src] with \the [I]."), \
 							SPAN_NOTICE("You pried apart the planks of the [src]."), \
@@ -141,7 +141,7 @@
 
 		if(QUALITY_SAWING)
 			if(opened)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					user.visible_message(
 							SPAN_NOTICE("[user] carved the [src] apart with \the [I]."), \
 							SPAN_NOTICE("You carved off the planks of the [src]."), \
@@ -152,7 +152,7 @@
 				return
 		if(QUALITY_HAMMERING)
 			if(opened)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					user.visible_message(
 							SPAN_NOTICE("[user] diligently hammered the [src] cover in place with \the [I]."), \
 							SPAN_NOTICE("You hammered the [src] cover on."), \

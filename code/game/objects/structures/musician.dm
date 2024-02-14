@@ -412,7 +412,7 @@
 	return
 
 /obj/structure/device/piano/attackby(var/obj/item/tool/tool, mob/user)
-	if (tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+	if (tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 		anchored = !anchored
 		user.visible_message( \
 			"[user] [anchored ? "tightens" : "loosens"] \the [src]'s casters.", \

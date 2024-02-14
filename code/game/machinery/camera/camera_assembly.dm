@@ -41,7 +41,7 @@
 
 		if(QUALITY_BOLT_TURNING)
 			if(state == 0 || state == 1)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					anchored = !anchored
 					state = !state
 					update_icon()
@@ -52,12 +52,12 @@
 
 		if(QUALITY_WELDING)
 			if(state == 1)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You weld the assembly securely into place."))
 					state = 2
 					return
 			if(state == 2)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unweld the assembly from its place."))
 					state = 1
 					return
@@ -65,7 +65,7 @@
 
 		if(QUALITY_WIRE_CUTTING)
 			if(state == 3)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					new/obj/item/stack/cable_coil(get_turf(src), 2)
 					to_chat(user, SPAN_NOTICE("You remove the wires from the circuits."))
 					state = 2
@@ -74,7 +74,7 @@
 
 		if(QUALITY_SCREW_DRIVING)
 			if(state == 3)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					var/input = sanitize(input(usr, "Which networks would you like to connect this camera to? Separate networks with a comma. No Spaces!\nFor example: CEV Eris,Security,Secret", "Set Network", camera_network ? camera_network : NETWORK_CEV_ERIS))
 					if(!input)
 						to_chat(usr, "No input found please hang up and try your call again.")
@@ -113,7 +113,7 @@
 
 		if(QUALITY_PRYING)
 			if(upgrades.len)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					var/obj/U = locate(/obj) in upgrades
 					if(U)
 						to_chat(user, SPAN_NOTICE("You unattach an upgrade from the assembly."))

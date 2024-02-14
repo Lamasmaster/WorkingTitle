@@ -79,7 +79,7 @@
 	return accumulatedNSA
 
 /datum/metabolism_effects/proc/handle_nsa()
-	nsa_threshold = nsa_threshold_base + (parent.stats.getStat(STAT_COG) / 3)
+	nsa_threshold = nsa_threshold_base + (parent.stats.getStat(STAT_LCK) / 3)
 	var/nsa_target = get_nsa_target()
 	if(nsa_target != nsa_current)
 		nsa_current = nsa_target > nsa_current \
@@ -149,7 +149,7 @@
 		var/add_addiction_flag = R.volume >= R.addiction_threshold
 
 		if(!add_addiction_flag && R.addiction_chance)
-			var/percent = ((R.addiction_chance + parent.metabolism_effects.get_nsa()/3) - (R.addiction_chance/2 * parent.stats.getMult(STAT_TGH))) * addiction_chance_multiplier
+			var/percent = ((R.addiction_chance + parent.metabolism_effects.get_nsa()/3) - (R.addiction_chance/2 * parent.stats.getMult(STAT_END))) * addiction_chance_multiplier
 			percent = CLAMP(percent, 1, 100)
 			add_addiction_flag = prob(percent)
 

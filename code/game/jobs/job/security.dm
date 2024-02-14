@@ -24,9 +24,9 @@
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 30,
-		STAT_VIG = 40,
+		STAT_STR = 40,
+		STAT_END = 30,
+		STAT_AGI = 40,
 	)
 
 	perks = list(PERK_SURVIVOR,
@@ -83,9 +83,9 @@
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 25,
-		STAT_VIG = 25,
+		STAT_STR = 25,
+		STAT_END = 25,
+		STAT_AGI = 25,
 	)
 
 	perks = list(PERK_SURVIVOR,
@@ -136,10 +136,10 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 25,
+		STAT_INT = 15,
+		STAT_STR = 15,
+		STAT_END = 15,
+		STAT_AGI = 25,
 	)
 
 	perks = list(PERK_SURVIVOR,
@@ -192,9 +192,9 @@
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 25,
-		STAT_TGH = 5,
-		STAT_VIG = 15,
+		STAT_INT = 25,
+		STAT_END = 5,
+		STAT_AGI = 15,
 	)
 
 	perks = list(PERK_SURVIVOR,
@@ -247,9 +247,9 @@
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 20,
-		STAT_VIG = 25,
+		STAT_STR = 25,
+		STAT_END = 20,
+		STAT_AGI = 25,
 	)
 
 	perks = list(PERK_SURVIVOR,

@@ -884,7 +884,7 @@ var/global/list/default_medbay_channels = list(
 				return
 
 			for(var/stat in D.oddity_stats)
-				if(stat == STAT_MEC)
+				if(stat == STAT_INT)
 					var/increase = D.oddity_stats[stat] * 3
 					random_hear += increase
 					if(random_hear > 100)

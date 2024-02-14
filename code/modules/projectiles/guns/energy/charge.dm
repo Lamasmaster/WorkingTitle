@@ -2,7 +2,7 @@
 	Energy weapon charge attack
 	 - User holds down their attack button to charge their weapon
 	 - Weapon begins charging, starting at 0% and ending at 100%
-	 - Charge rate is determined both by the weapons standard charge rate, and the users vigilance rating. (gun.charge_rate+user.stats.getStat(STAT_VIG)*0.01
+	 - Charge rate is determined both by the weapons standard charge rate, and the users vigilance rating. (gun.charge_rate+user.stats.getStat(STAT_AGI)*0.01
 	 - User eleases mouse button, weapon fires
 **/
 
@@ -118,7 +118,7 @@
 	overcharge_level = 0
 
 /obj/item/gun/energy/proc/get_overcharge_add(var/mob/living/user)
-	return overcharge_rate+user.stats.getStat(STAT_VIG)*VIG_OVERCHARGE_GEN
+	return overcharge_rate+user.stats.getStat(STAT_PER)*VIG_OVERCHARGE_GEN
 
 /obj/item/gun/energy/proc/release_charge(var/atom/target, var/mob/living/user)
 	deltimer(overcharge_timer)

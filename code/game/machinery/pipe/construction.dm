@@ -1098,7 +1098,7 @@
 			P.atmos_init()
 			P.build_network()
 	// there was some code, but it is handled in ../tool/ now.
-	W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC)
+	W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_INT)
 	qdel(src)	// remove the pipe item
 
 	return
@@ -1130,5 +1130,5 @@
 		to_chat(user, SPAN_WARNING("You need to fasten it to a pipe"))
 		return 1
 	new/obj/machinery/meter( src.loc )
-	W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC)
+	W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_INT)
 	qdel(src)

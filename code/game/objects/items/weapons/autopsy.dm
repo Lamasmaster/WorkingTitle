@@ -48,7 +48,7 @@
 		var/datum/autopsy_data/W = O.autopsy_data[V]
 
 		if(!W.pretend_weapon)
-			var/error_chance = (user.stats.getStat(STAT_BIO) * 4) //always success at BIO 25
+			var/error_chance = (user.stats.getStat(STAT_INT) * 4) //always success at BIO 25
 			if(prob(error_chance))
 				W.pretend_weapon = W.weapon
 			else

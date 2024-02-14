@@ -77,7 +77,7 @@
 		if (level==1 && isturf(T) && !T.is_plating())
 			to_chat(user, SPAN_WARNING("You must remove the plating first."))
 			return 1
-		if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+		if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_INT))
 			return ..()
 		user.visible_message( \
 			SPAN_NOTICE("\The [user] unfastens \the [src]."), \

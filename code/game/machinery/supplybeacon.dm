@@ -49,7 +49,7 @@
 		if(!anchored && !connect_to_network())
 			to_chat(usr, SPAN_WARNING("This device must be placed over an exposed cable."))
 			return
-		if(!W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_MEC))
+		if(!W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_ZERO, required_stat = STAT_INT))
 			return ..()
 		anchored = !anchored
 		user.visible_message(SPAN_NOTICE("\The [user] [anchored ? "secures" : "unsecures"] \the [src]."))

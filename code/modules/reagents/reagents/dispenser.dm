@@ -133,7 +133,7 @@
 	M.add_chemical_effect(CE_ALCOHOL, 1)
 
 //Tough people can drink a lot
-	var/tolerance = 3 + max(0, M.stats.getStat(STAT_TGH)) * 0.1
+	var/tolerance = 3 + max(0, M.stats.getStat(STAT_END)) * 0.1
 	var/drunkenness = volume * strength_mod / tolerance // Level of drunkenness, based on how many times the strength of ethanol is compared to tolerance
 
 	if(M.stats.getPerk(/datum/perk/sommelier))

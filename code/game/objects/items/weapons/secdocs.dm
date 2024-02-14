@@ -6,9 +6,9 @@
 	price_tag = 5000
 
 	oddity_stats = list(
-		STAT_MEC = 8,
-		STAT_COG = 8,
-		STAT_BIO = 8,
+		STAT_INT = 8,
+		STAT_LCK = 8,
+		STAT_INT = 8,
 	)
 
 	var/static/inv_spawn_count = 3

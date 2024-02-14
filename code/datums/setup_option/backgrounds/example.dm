@@ -10,11 +10,12 @@
 	restricted_depts = MEDICAL | SCIENCE
 	restricted_jobs = list(/datum/job/captain)
 	stat_modifiers = list(
-		STAT_ROB = 1,
-		STAT_TGH = 2,
-		STAT_BIO = 3,
-		STAT_MEC = 4,
-		STAT_VIG = 5,
-		STAT_COG = 6
+		STAT_STR = 1,
+		STAT_PER = 1,
+		STAT_END = 2,
+		STAT_CHR = 3,
+		STAT_INT = 4,
+		STAT_AGI = 5,
+		STAT_LCK = 6
 	)
 	perks = list(/datum/perk)

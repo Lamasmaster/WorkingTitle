@@ -22,7 +22,7 @@
 	if(..())
 		return 1
 
-	if(!usr.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!usr.stat_check(STAT_LCK, STAT_LEVEL_ADEPT))
 		return 1
 
 	var/mob/living/silicon/ai/A = get_ai()
@@ -91,7 +91,7 @@
 	var/list/data = host.initial_data()
 
 	data += "skill_fail"
-	if(!user.stat_check(STAT_COG, STAT_LEVEL_ADEPT))
+	if(!user.stat_check(STAT_LCK, STAT_LEVEL_ADEPT))
 		var/datum/extension/fake_data/fake_data = get_or_create_extension(src, /datum/extension/fake_data, /datum/extension/fake_data, 25)
 		data["skill_fail"] = fake_data.update_and_return_data()
 	data["terminal"] = !!program

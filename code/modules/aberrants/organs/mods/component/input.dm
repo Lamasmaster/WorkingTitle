@@ -126,7 +126,7 @@
 				inputs += "brain ([threshold]), "
 			if(PSY)
 				inputs += "sanity ([threshold]), "
-		
+
 	inputs = copytext(inputs, 1, length(inputs) - 1)
 
 	var/description = "<span style='color:green'>Functional information (input):</span> injury response"
@@ -180,7 +180,7 @@
 				current_damage = owner.getBrainLoss()
 			if(PSY)
 				current_damage = H.sanity.max_level - H.sanity.level
-					
+
 		if(current_damage > threshold)
 			threshold_met = TRUE
 
@@ -220,7 +220,7 @@
 
 	for(var/input in accepted_inputs)
 		var/list/possibilities = input_qualities.Copy()
-		
+
 		if(LAZYLEN(accepted_inputs) > 1)
 			for(var/source in possibilities)
 				var/source_type = possibilities[source]
@@ -282,7 +282,7 @@
 			if(!M.amount)
 				owner.remove_from_mob(M)
 				qdel(M)
-		
+
 		if(energy_supplied > threshold)
 			var/magnitude = 0
 
@@ -292,12 +292,12 @@
 				magnitude = 3 * organ_multiplier
 			if(energy_supplied > 99999)
 				magnitude = 2 * organ_multiplier
-				
+
 			if(magnitude && ishuman(owner))
 				if(prob(2))
 					to_chat(owner, SPAN_NOTICE("A pleasant chill runs down your spine. You feel more focused."))
 				var/mob/living/carbon/human/H = owner
-				H.stats.addTempStat(STAT_COG, magnitude * 2, S.aberrant_cooldown_time + 2 SECONDS, "[parent]")
+				H.stats.addTempStat(STAT_LCK, magnitude * 2, S.aberrant_cooldown_time + 2 SECONDS, "[parent]")
 				H.sanity.changeLevel(magnitude - 2)
 
 		input += power_source

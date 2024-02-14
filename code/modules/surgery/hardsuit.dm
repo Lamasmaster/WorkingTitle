@@ -2,7 +2,7 @@
 
 /datum/old_surgery_step/hardsuit
 	required_tool_quality = QUALITY_DRILLING //Prevent conflict with healing, ported from ThePainkiller PR on Sojourn
-	required_stat = STAT_MEC
+	required_stat = STAT_INT
 
 	can_infect = 0
 	blood_level = 0

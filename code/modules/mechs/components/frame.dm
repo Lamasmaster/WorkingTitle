@@ -109,7 +109,7 @@
 			if(!is_reinforced && !is_wired && !arms && !legs && !head && !body)
 				visible_message("\The [user] begins dismantling \the [src].")
 
-				if(!I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(!I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					return
 
 				if(is_reinforced || is_wired || arms || legs || head || body)
@@ -130,7 +130,7 @@
 				return
 
 			visible_message("\The [user] begins adjusting the reinforcements inside \the [src].")
-			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				return
 
 			if(!is_reinforced || is_reinforced == FRAME_REINFORCED_WELDED)
@@ -151,7 +151,7 @@
 
 			visible_message("\The [user] begins welding the reinforcements inside \the [src].")
 
-			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				return
 
 			if(!is_reinforced || is_reinforced == FRAME_REINFORCED)
@@ -166,7 +166,7 @@
 			// Removing reinforcements
 			if(is_reinforced == FRAME_REINFORCED)
 				user.visible_message(SPAN_NOTICE("\The [user] starts prying the reinforcements off \the [src]."))
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC) && is_reinforced == FRAME_REINFORCED)
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT) && is_reinforced == FRAME_REINFORCED)
 					user.visible_message(SPAN_NOTICE("\The [user] pries the reinforcements off \the [src]."))
 					material.place_sheet(drop_location(), 10)
 					material = null
@@ -182,7 +182,7 @@
 			if(!to_remove || !(to_remove in list(arms, body, legs, head)))
 				return
 
-			if(!I.use_tool(user, src, WORKTIME_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(!I.use_tool(user, src, WORKTIME_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				return
 
 			if(!(to_remove in list(arms, body, legs, head)))
@@ -209,7 +209,7 @@
 
 			user.visible_message("\The [user] begins [is_wired == FRAME_WIRED_ADJUSTED ? "removing" : "adjusting"] the wiring inside \the [src]...")
 
-			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(!I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				return
 
 			if(!is_wired)

@@ -133,7 +133,7 @@
 	var/damage = maxHealth - health
 	if(damage && (QUALITY_WELDING in W.tool_qualities))
 		to_chat(user, "<span class='notice'>You start repairing the damage to [src].</span>")
-		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_STR))
 			playsound(src, 'sound/items/Welder.ogg', 100, 1)
 			to_chat(user, "<span class='notice'>You finish repairing the damage to [src].</span>")
 			take_damage(-damage)

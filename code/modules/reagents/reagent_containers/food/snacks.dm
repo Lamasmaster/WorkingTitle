@@ -618,7 +618,7 @@
 	desc = "A sour citrus flavor you will never forget. The first choice of mechanics."
 	icon_state = "donut_mec"
 	overlay_state = "donut_mec_c"
-	stats_buff = list(STAT_MEC)
+	stats_buff = list(STAT_INT)
 	preloaded_reagents = list("sprinkles" = 1, "lemonjuice" = 1)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/cog
@@ -626,14 +626,14 @@
 	desc = "A sickeningly sweet grape flavor you will never forget. An intellectual's favorite."
 	icon_state = "donut_cog"
 	overlay_state = "donut_cog_c"
-	stats_buff = list(STAT_COG)
+	stats_buff = list(STAT_LCK)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/bio
 	name = "green masterpiece donut"
 	desc = "A spearmint scalpel that cuts through the tongue. You will never forget the flavor. Perfect for the busy doctor."
 	icon_state = "donut_bio"
 	overlay_state = "donut_bio_c"
-	stats_buff = list(STAT_BIO)
+	stats_buff = list(STAT_INT)
 	preloaded_reagents = list("sprinkles" = 1, "mint" = 1)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/rob
@@ -641,7 +641,7 @@
 	desc = "A near-chocolate taste you will never forget. A robust flavor for the strong."
 	icon_state = "donut_rob"
 	overlay_state = "donut_rob_c"
-	stats_buff = list(STAT_ROB)
+	stats_buff = list(STAT_STR)
 	preloaded_reagents = list("sprinkles" = 1, "coco" = 1)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/tgh
@@ -649,14 +649,14 @@
 	desc = "A classic donut flavor you will never forget. Specifically panders to tough people."
 	icon_state = "donut_tgh"
 	overlay_state = "donut_tgh_c"
-	stats_buff = list(STAT_TGH)
+	stats_buff = list(STAT_END)
 
 /obj/item/reagent_containers/food/snacks/donut/stat_buff/vig
 	name = "blue masterpiece donut"
 	desc = "A tart blueberry taste you will never forget. A go-to choice for the vigilant watchman."
 	icon_state = "donut_vig"
 	overlay_state = "donut_vig_c"
-	stats_buff = list(STAT_VIG)
+	stats_buff = list(STAT_AGI)
 	preloaded_reagents = list("sprinkles" = 1, "berryjuice" = 1)
 
 /obj/item/reagent_containers/food/snacks/egg
@@ -3532,7 +3532,7 @@
 // potato + knife = raw sticks
 /obj/item/reagent_containers/food/snacks/grown/potato/attackby(obj/item/item, mob/user) //this is obsolete??
 	if(QUALITY_CUTTING in item.tool_qualities)
-		if(item.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_BIO))
+		if(item.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_CUTTING, FAILCHANCE_ZERO, required_stat = STAT_INT))
 			new /obj/item/reagent_containers/food/snacks/rawsticks(src)
 			to_chat(user, "You cut the potato.")
 			qdel(src)

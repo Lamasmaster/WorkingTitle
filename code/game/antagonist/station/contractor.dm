@@ -8,12 +8,11 @@
 	survive_objective = null
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_BIO = 5,
-		STAT_MEC = 5,
-		STAT_COG = 5,
-		STAT_VIG = 15
+		STAT_STR = 5,
+		STAT_END = 5,
+		STAT_INT = 5,
+		STAT_LCK = 5,
+		STAT_AGI = 15
 	)
 
 

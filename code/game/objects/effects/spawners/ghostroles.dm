@@ -11,12 +11,12 @@
 	flavour_text = "Good. It seems as though your ship crashed. You remember that you were convicted of "
 	assignedrole = "Escaped Prisoner"
 	stat_modifiers = list(
-		STAT_ROB = 16,
-		STAT_TGH = 16,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 16,
+		STAT_END = 16,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
@@ -75,12 +75,12 @@
 	assignedrole = "Hermit"
 	title = "MHS Geary Amputator 3rd Class"
 	stat_modifiers = list(
-		STAT_ROB = 12,
-		STAT_TGH = 24,
-		STAT_BIO = 8,
-		STAT_MEC = 12,
-		STAT_VIG = 16,
-		STAT_COG = 8
+		STAT_STR = 12,
+		STAT_END = 24,
+		STAT_INT = 8,
+		STAT_INT = 12,
+		STAT_AGI = 16,
+		STAT_LCK = 8
 	)
 
 /decl/hierarchy/outfit/hermit

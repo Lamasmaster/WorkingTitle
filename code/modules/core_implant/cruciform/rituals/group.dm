@@ -63,7 +63,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/mechanical
 
 /datum/group_ritual_effect/cruciform/stat/mechanical
-	stat_buff = STAT_MEC
+	stat_buff = STAT_INT
 
 
 /datum/ritual/group/cruciform/stat/cognition
@@ -82,7 +82,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/cognition
 
 /datum/group_ritual_effect/cruciform/stat/cognition
-	stat_buff = STAT_COG
+	stat_buff = STAT_LCK
 
 
 
@@ -102,7 +102,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/biology
 
 /datum/group_ritual_effect/cruciform/stat/biology
-	stat_buff = STAT_BIO
+	stat_buff = STAT_INT
 
 
 /datum/ritual/group/cruciform/stat/robustness
@@ -121,7 +121,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/robustness
 
 /datum/group_ritual_effect/cruciform/stat/robustness
-	stat_buff = STAT_ROB
+	stat_buff = STAT_STR
 
 /datum/ritual/group/cruciform/stat/vigilance
 	name = "Canto of Courage"
@@ -139,7 +139,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/vigilance
 
 /datum/group_ritual_effect/cruciform/stat/vigilance
-	stat_buff = STAT_VIG
+	stat_buff = STAT_AGI
 
 
 /datum/ritual/group/cruciform/stat/toughness
@@ -159,7 +159,7 @@
 	effect_type = /datum/group_ritual_effect/cruciform/stat/toughness
 
 /datum/group_ritual_effect/cruciform/stat/toughness
-	stat_buff = STAT_TGH
+	stat_buff = STAT_END
 
 
 /datum/ritual/group/cruciform/crusade

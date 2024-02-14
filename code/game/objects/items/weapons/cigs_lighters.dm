@@ -657,7 +657,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			to_chat(user, SPAN_WARNING("You need to close the cap of [src]."))
 	if(QUALITY_SCREW_DRIVING in O.tool_qualities)
 		if(!screw)
-			if(O.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(O.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_INT))
 				screw = TRUE
 				to_chat(user, SPAN_NOTICE("You open the cap on [src]."))
 				reagent_flags |= OPENCONTAINER
@@ -665,7 +665,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 				item_state = "vape_mask_open"
 				update_icon()
 		else
-			if(O.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(O.use_tool(user, src, WORKTIME_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_INT))
 				screw = FALSE
 				to_chat(user, SPAN_NOTICE("You close the cap on [src]."))
 				reagent_flags &= ~(OPENCONTAINER)

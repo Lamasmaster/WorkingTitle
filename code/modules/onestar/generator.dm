@@ -45,7 +45,7 @@
 	if(!istype(user))
 		return
 
-	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
+	var/mec_or_cog = max(user.stats.getStat(STAT_INT), user.stats.getStat(STAT_LCK))
 	if(mec_or_cog >= STAT_LEVEL_PROF)
 		if(can_generate_power)
 			to_chat(user, "\The [src] appears to be producing [power_gen*power_output] W.")
@@ -77,7 +77,7 @@
 		power_gen = min(power_gen, max_power_gen)
 
 /obj/machinery/power/port_gen/os_generator/attackby(obj/item/I, mob/user)
-	var/mec_or_cog = max(user.stats.getStat(STAT_MEC), user.stats.getStat(STAT_COG))
+	var/mec_or_cog = max(user.stats.getStat(STAT_INT), user.stats.getStat(STAT_LCK))
 	if(mec_or_cog < STAT_LEVEL_EXPERT)
 		to_chat(user, SPAN_WARNING("You lack the knowledge or skill to perform work on \the [src]."))
 		return
@@ -100,7 +100,7 @@
 			if(istype(get_turf(src), /turf/space) && !anchored)
 				to_chat(user, SPAN_NOTICE("You can't anchor something to empty space. Idiot."))
 				return
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				to_chat(user, SPAN_NOTICE("You [anchored ? "un" : ""]anchor the brace with [I]."))
 				anchored = !anchored
 				if(anchored)

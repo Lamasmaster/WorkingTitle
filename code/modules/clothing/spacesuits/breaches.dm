@@ -185,7 +185,7 @@ var/global/list/breach_burn_descriptors = list(
 			return
 
 		user.visible_message("[user] starts repairing breaches on their [src] with the [I]", "You start repairing breaches on the [src] with the [I]")
-		if (I.use_tool(user, src, 60 + (damage*10), QUALITY_SEALING, 0, STAT_MEC))
+		if (I.use_tool(user, src, 60 + (damage*10), QUALITY_SEALING, 0, STAT_INT))
 			to_chat(user, "There we go, that should hold nicely!")
 			repair_breaches(BURN, burn_damage, user)
 			repair_breaches(BRUTE, damage, user)
@@ -226,7 +226,7 @@ var/global/list/breach_burn_descriptors = list(
 			to_chat(user, SPAN_WARNING("There is no structural damage on \the [src] to repair."))
 			return
 
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 			repair_breaches(BRUTE, 3, user)
 			to_chat(user, SPAN_NOTICE("You repair the damage on the [src]."))
 			return

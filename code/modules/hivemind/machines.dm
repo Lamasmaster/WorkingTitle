@@ -636,7 +636,7 @@
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
-		if(prob(90 - H.stats.getStat(STAT_VIG)))
+		if(prob(90 - H.stats.getStat(STAT_CHR)))
 			H.Weaken(6)
 			to_chat(H, SPAN_WARNING("A terrible howl tears through your mind, the voice senseless, soulless."))
 		else
@@ -715,7 +715,7 @@
 
 	var/mob/living/carbon/human/H = target
 	if(istype(H))
-		if(prob(100 - H.stats.getStat(STAT_VIG)))
+		if(prob(100 - H.stats.getStat(STAT_CHR)))
 			H.adjust_hallucination(20, 20)
 		else
 			to_chat(H, SPAN_NOTICE("Reality flickers for a second, but you manage to focus!"))

@@ -38,12 +38,12 @@ You are a free agent, able to go where you will, and loyal to no particular gove
 Your second loyalty is to your command officers. The heads of each faction. Listen to their counsel, ensure their interests are served, and keep them happy"
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_BIO = 15,
-		STAT_MEC = 15,
-		STAT_VIG = 25,
-		STAT_COG = 15
+		STAT_STR = 15,
+		STAT_END = 15,
+		STAT_INT = 15,
+		STAT_INT = 15,
+		STAT_AGI = 25,
+		STAT_LCK = 15
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
@@ -122,12 +122,12 @@ Act as the captain's sidekick, bodyguard, and last line of defense in a crisis o
 		return get_all_station_access()
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_VIG = 20,
-		STAT_COG = 10
+		STAT_STR = 15,
+		STAT_END = 15,
+		STAT_INT = 10,
+		STAT_INT = 10,
+		STAT_AGI = 20,
+		STAT_LCK = 10
 	)
 
 /obj/landmark/join/start/hop

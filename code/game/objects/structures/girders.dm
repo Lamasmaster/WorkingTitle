@@ -107,13 +107,13 @@
 			if(state == 0)
 				if(anchored && !reinf_material)
 					to_chat(user, SPAN_NOTICE("You start disassembling the girder..."))
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You dissasembled the girder!"))
 						dismantle(user)
 						return
 				if(!anchored)
 					to_chat(user, SPAN_NOTICE("You start securing the girder..."))
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						to_chat(user, SPAN_NOTICE("You secured the girder!"))
 						reset_girder()
 						return
@@ -122,7 +122,7 @@
 		if(QUALITY_PRYING)
 			if(state == 0 && anchored)
 				to_chat(user, SPAN_NOTICE("You start dislodging the girder..."))
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You dislodged the girder!"))
 					icon_state = "displaced"
 					anchored = FALSE
@@ -134,7 +134,7 @@
 		if(QUALITY_WIRE_CUTTING)
 			if(state == 1)
 				to_chat(user, SPAN_NOTICE("You start removing support struts..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You removed the support struts!"))
 					reinf_material.place_sheet(drop_location(), amount=2)
 					reinf_material = null
@@ -145,12 +145,12 @@
 		if(QUALITY_SCREW_DRIVING)
 			if(state == 2)
 				to_chat(user, SPAN_NOTICE("You start unsecuring support struts..."))
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unsecured the support struts!"))
 					state = 1
 					return
 			if(anchored && reinforcing && !reinf_material)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					reinforcing = FALSE
 					new /obj/item/stack/rods(drop_location(), 2)
 					to_chat(user, SPAN_NOTICE("[src] can now be constructed!"))

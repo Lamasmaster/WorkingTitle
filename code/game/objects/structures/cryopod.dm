@@ -11,9 +11,9 @@
 	var/spawn_faction
 	var/outfit_type // The outfit the employee will be dressed in, if any
 	var/stat_modifiers = list(
-		STAT_MEC = 25,
-		STAT_COG = 40,
-		STAT_BIO = 25,
+		STAT_INT = 25,
+		STAT_LCK = 40,
+		STAT_INT = 25,
 	)
 	rarity_value = 10
 	spawn_frequency = 10
@@ -50,9 +50,9 @@
 	spawn_role = "Marine"
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 30,
-		STAT_VIG = 40,
+		STAT_STR = 40,
+		STAT_END = 30,
+		STAT_AGI = 40,
 	)
 
 /obj/structure/cryopod_spawner/medical
@@ -61,9 +61,9 @@
 	spawn_role = "Doctor"
 
 	stat_modifiers = list(
-		STAT_MEC = 25,
-		STAT_COG = 40,
-		STAT_BIO = 25,
+		STAT_INT = 25,
+		STAT_LCK = 40,
+		STAT_INT = 25,
 	)
 
 /obj/structure/cryopod_spawner/technomancer
@@ -72,10 +72,10 @@
 	spawn_role = "Exultant"
 
 	stat_modifiers = list(
-		STAT_MEC = 40,
-		STAT_COG = 20,
-		STAT_TGH = 15,
-		STAT_VIG = 10,
+		STAT_INT = 40,
+		STAT_LCK = 20,
+		STAT_END = 15,
+		STAT_AGI = 10,
 	)
 
 /obj/structure/cryopod_spawner/serbian
@@ -84,7 +84,7 @@
 	spawn_role = "Operative"
 
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 30,
-		STAT_VIG = 40,
+		STAT_STR = 40,
+		STAT_END = 30,
+		STAT_AGI = 40,
 	)

@@ -117,7 +117,7 @@
 	return FALSE
 
 /obj/item/shield/proc/get_block_chance(mob/user)
-	return shield_difficulty/(1+100/get_wielder_skill(user,STAT_ROB))+base_block_chance
+	return shield_difficulty/(1+100/get_wielder_skill(user,STAT_STR))+base_block_chance
 
 /obj/item/shield/proc/get_protected_area(mob/user)
 	return BP_ALL_LIMBS
@@ -218,9 +218,9 @@
 
 /obj/item/shield/riot/get_block_chance(mob/user)
 	if(MOVING_QUICKLY(user))
-		return shield_difficulty/(1+100/get_wielder_skill(user,STAT_ROB))
+		return shield_difficulty/(1+100/get_wielder_skill(user,STAT_STR))
 	if(MOVING_DELIBERATELY(user))
-		return shield_difficulty/(1+100/get_wielder_skill(user,STAT_ROB))+base_block_chance //diminishing returns
+		return shield_difficulty/(1+100/get_wielder_skill(user,STAT_STR))+base_block_chance //diminishing returns
 
 /obj/item/shield/riot/get_protected_area(mob/user)
 	var/list/p_area = list(BP_CHEST, BP_GROIN, BP_HEAD)
@@ -447,7 +447,7 @@
 	return BP_ALL_LIMBS
 
 /obj/item/shield/riot/tray/get_block_chance(mob/user)
-	return shield_difficulty/(1+100/get_wielder_skill(user,STAT_ROB))+base_block_chance
+	return shield_difficulty/(1+100/get_wielder_skill(user,STAT_STR))+base_block_chance
 
 /*
  * Energy Shield

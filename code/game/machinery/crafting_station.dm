@@ -47,14 +47,14 @@ var/global/list/crafting_designs
 		return ERR_DISTANT
 	if(Crafter.incapacitated(INCAPACITATION_DEFAULT) || !(Crafter.machine == src))
 		return ERR_STOPPED
-	if(Crafter.stats.getStat(STAT_COG) < (design_file.design.minimum_quality * 15 + 15))
+	if(Crafter.stats.getStat(STAT_LCK) < (design_file.design.minimum_quality * 15 + 15))
 		return ERR_SKILL_ISSUE
 	. = ..()
 
 /obj/machinery/autolathe/crafting_station/get_quality()
 	var/quality_level = -1
 	if(istype(Crafter))
-		quality_level = min(round((Crafter.stats.getStat(STAT_COG) - 15) / 15), max_quality) + (Crafter.stats.getPerk(/datum/perk/oddity/gunsmith) ? 1 : 0)
+		quality_level = min(round((Crafter.stats.getStat(STAT_LCK) - 15) / 15), max_quality) + (Crafter.stats.getPerk(/datum/perk/oddity/gunsmith) ? 1 : 0)
 	return quality_level
 
 /obj/machinery/autolathe/crafting_station/update_icon()

@@ -20,10 +20,10 @@
 	)
 	ideal_character_age = 40
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_COG = 20,
-		STAT_MEC = 15,
-		STAT_VIG = 10
+		STAT_STR = 10,
+		STAT_LCK = 20,
+		STAT_INT = 15,
+		STAT_AGI = 10
 	)
 
 	perks = list(/datum/perk/merchant, /datum/perk/deep_connection, /datum/perk/oddity/market_prof)
@@ -86,9 +86,9 @@ Your second loyalty is to the guild. Ensure it retains good relations with priva
 	)
 
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_STR = 10,
+		STAT_END = 10,
+		STAT_AGI = 10,
 	)
 
 	perks = list(/datum/perk/deep_connection)
@@ -161,10 +161,10 @@ Character Expectations:<br>\
 
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
-		STAT_MEC = 15
+		STAT_STR = 15,
+		STAT_END = 15,
+		STAT_AGI = 15,
+		STAT_INT = 15
 	)
 
 	perks = list(/datum/perk/deep_connection)

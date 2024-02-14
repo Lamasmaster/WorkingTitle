@@ -268,8 +268,8 @@
 		return
 
 	// Adjust the grab warmup using assailant's ROB stat
-	var/assailant_stat = assailant?.stats.getStat(STAT_ROB)
-	var/affecting_stat = affecting?.stats.getStat(STAT_ROB)
+	var/assailant_stat = assailant?.stats.getStat(STAT_STR)
+	var/affecting_stat = affecting?.stats.getStat(STAT_STR)
 	var/warmup_increase
 	if(assailant_stat > 0)
 		// Positive ROB decreases warmup, but not linearly
@@ -358,7 +358,7 @@
 	return 1
 
 // Function to compute the current slowdown and is more adjustable and uses number as starting value
-// The code will adjust or lower the slowdown depending on STAT_ROB skill, gravity, etc.
+// The code will adjust or lower the slowdown depending on STAT_STR skill, gravity, etc.
 /obj/item/grab/proc/update_slowdown()
 	// The movment speed of assailant will be determined by the victim whatever their size or things he wears minus how strong the assailant ( ROB )
 	// New function should take the victim variables in account : size of mob, under gravity or not
@@ -366,8 +366,8 @@
 	if(isnull(affecting))
 		return //do not upgrade a grab and drop it
 
-	var/affecting_stat = affecting.stats.getStat(STAT_ROB)	// Victim
-	var/assailant_stat = assailant.stats.getStat(STAT_ROB)	// Grabber
+	var/affecting_stat = affecting.stats.getStat(STAT_STR)	// Victim
+	var/assailant_stat = assailant.stats.getStat(STAT_STR)	// Grabber
 	var/difference_stat = assailant_stat - affecting_stat
 
 	// Early exit to save processing time

@@ -363,13 +363,13 @@ var/list/turret_icons
 
 		else if(QUALITY_PULSING in I.tool_qualities)
 			if(debugopen)
-				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_COG))
+				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_PULSING, FAILCHANCE_NORMAL,  required_stat = STAT_LCK))
 					registered_names.Cut()
 					registered_names = list()
 					to_chat(user, SPAN_NOTICE("You access the debug board and reset the turret's access list."))
 
 			else
-				if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD,  required_stat = STAT_COG))
+				if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD,  required_stat = STAT_LCK))
 					if((TOOL_USE_SUCCESS) && (isLocked(user)))
 						locked = 0
 						to_chat(user, SPAN_NOTICE("You manage to hack the ID reader, unlocking the access panel with a satisfying click."))
@@ -378,7 +378,7 @@ var/list/turret_icons
 						locked = 1
 						to_chat(user, SPAN_NOTICE("You manage to hack the ID reader and the access panel's locking lugs snap shut."))
 						updateUsrDialog()
-					else if((TOOL_USE_FAIL) && (!overridden) && (min(prob(35 - STAT_COG), 5)))
+					else if((TOOL_USE_FAIL) && (!overridden) && (min(prob(35 - STAT_LCK), 5)))
 						enabled = 1
 						hackfail = 1
 						user.visible_message(
@@ -392,7 +392,7 @@ var/list/turret_icons
 			return 1 //No whacking the turret with tools on help intent
 
 		else if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_HARD,  required_stat = STAT_INT))
 				if(debugopen)
 					debugopen = 0
 					to_chat(user, SPAN_NOTICE("You carefully shut the secondary maintenance hatch and screw it back into place."))
@@ -406,7 +406,7 @@ var/list/turret_icons
 			if(overridden)
 				to_chat(user, SPAN_WARNING("The security protocol override has already been disconnected!"))
 			else
-				switch(I.use_tool_extended(user, src, WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_VERY_HARD,  required_stat = STAT_MEC))
+				switch(I.use_tool_extended(user, src, WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_VERY_HARD,  required_stat = STAT_INT))
 					if(TOOL_USE_SUCCESS)
 						to_chat(user, SPAN_NOTICE("You disconnect the turret's security protocol override!"))
 						overridden = 1
@@ -793,24 +793,24 @@ var/list/turret_icons
 
 		if(QUALITY_BOLT_TURNING)
 			if(build_step == 0 && !anchored)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You secure the external bolts."))
 					anchored = TRUE
 					build_step = 1
 					return
 			if(build_step == 1)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unfasten the external bolts."))
 					anchored = FALSE
 					build_step = 0
 					return
 			if(build_step == 2)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You bolt the metal armor into place."))
 					build_step = 3
 					return
 			if(build_step == 3)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the turret's metal armor bolts."))
 					build_step = 2
 					return
@@ -818,13 +818,13 @@ var/list/turret_icons
 
 		if(QUALITY_PRYING)
 			if(build_step == 0 && !anchored)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You dismantle the turret construction."))
 					new /obj/item/stack/material/steel( loc, 8)
 					qdel(src)
 					return
 			if(build_step == 7)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You pry off the turret's exterior armor."))
 					new /obj/item/stack/material/steel(loc, 2)
 					build_step = 6
@@ -833,13 +833,13 @@ var/list/turret_icons
 
 		if(QUALITY_WELDING)
 			if(build_step == 2)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, "You remove the turret's interior metal armor.")
 					new /obj/item/stack/material/steel( loc, 2)
 					build_step = 1
 					return
 			if(build_step == 7)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					build_step = 8
 					to_chat(user, SPAN_NOTICE("You weld the turret's armor down."))
 
@@ -858,12 +858,12 @@ var/list/turret_icons
 
 		if(QUALITY_SCREW_DRIVING)
 			if(build_step == 5)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You close the internal access hatch."))
 					build_step = 6
 					return
 			if(build_step == 6)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You open the internal access hatch."))
 					build_step = 5
 					return

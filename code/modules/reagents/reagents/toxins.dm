@@ -76,12 +76,12 @@
 
 /datum/reagent/toxin/carpotoxin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "carpotoxin")
+	M.stats.addTempStat(STAT_AGI, STAT_LEVEL_ADEPT, STIM_TIME, "carpotoxin")
 
 /datum/reagent/toxin/carpotoxin/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC, STIM_TIME, "carpotoxin_w")
 
 /datum/reagent/toxin/carpotoxin/overdose(mob/living/carbon/M, alien)
 	if(prob(80))
@@ -396,7 +396,7 @@
 	if(dose > 3 && ishuman(M))
 		mutate(M, alien, effect_multiplier)
 		dose = dose - 3
-		if(prob(50 - M.stats.getStat(STAT_TGH)))
+		if(prob(50 - M.stats.getStat(STAT_END)))
 			M.vomit() // It really isn't going to help
 
 /datum/reagent/toxin/mutagen/moeball/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
@@ -406,7 +406,7 @@
 	if(dose > 4 && ishuman(M))
 		mutate(M, alien, effect_multiplier)
 		dose = dose - 4
-		if(prob(100 - M.stats.getStat(STAT_TGH)))
+		if(prob(100 - M.stats.getStat(STAT_END)))
 			M.vomit()
 
 /datum/reagent/medicine/slimejelly
@@ -628,9 +628,10 @@
 
 /datum/reagent/toxin/pararein/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
-	M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_CHR, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "pararein")
+	M.stats.addTempStat(STAT_LCK, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "pararein")
 	sanity_gain = 1.2
 	if(prob(10))
 		to_chat(M, SPAN_WARNING ("You feel like your mind is boiling and the blood in your veins is coming alive!"))
@@ -679,11 +680,11 @@
 
 /datum/reagent/toxin/diplopterum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_MEC, STAT_LEVEL_BASIC, STIM_TIME, "diplopterum")
+	M.stats.addTempStat(STAT_INT, STAT_LEVEL_BASIC, STIM_TIME, "diplopterum")
 
 /datum/reagent/toxin/diplopterum/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
+	M.stats.addTempStat(STAT_INT, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC, STIM_TIME, "diplopterum_w")
 
 /datum/reagent/toxin/diplopterum/overdose(mob/living/carbon/M, alien)
 	var/od_toxicity = (dose / 2) * strength
@@ -712,7 +713,7 @@
 	M.heal_organ_damage(0.25 * effect_multiplier, 0, 3)
 
 /datum/reagent/toxin/seligitillin/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "seligitillin_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_ADEPT, STIM_TIME, "seligitillin_w")
 
 /datum/reagent/toxin/seligitillin/overdose(mob/living/carbon/M, alien)
 	if(!ishuman(M))
@@ -742,11 +743,11 @@
 
 /datum/reagent/toxin/starkellin/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC, STIM_TIME, "starkellin")
+	M.stats.addTempStat(STAT_END, STAT_LEVEL_BASIC, STIM_TIME, "starkellin")
 
 /datum/reagent/toxin/starkellin/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC, STIM_TIME, "starkellin_w")
 
 /datum/reagent/toxin/gewaltine
 	name = "Gewaltine"
@@ -766,12 +767,12 @@
 
 /datum/reagent/toxin/gewaltine/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
+	M.stats.addTempStat(STAT_STR, STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine")
 
 /datum/reagent/toxin/gewaltine/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "gewaltine_w")
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_ADEPT, STIM_TIME, "gewaltine_w")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_BASIC, STIM_TIME, "gewaltine_w")
 
 /datum/reagent/toxin/gewaltine/overdose(mob/living/carbon/M, alien)
 	M.adjustCloneLoss(2)
@@ -792,7 +793,7 @@
 
 /datum/reagent/toxin/fuhrerole/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "fuhrerole_w")
+	M.stats.addTempStat(STAT_AGI, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "fuhrerole_w")
 	M.faction = "roach"
 
 /datum/reagent/toxin/fuhrerole/on_mob_delete(mob/living/L)
@@ -800,8 +801,8 @@
 	L.faction = initial(L.faction)
 
 /datum/reagent/toxin/fuhrerole/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_BASIC, STIM_TIME, "fuhrerole_w")
 
 /datum/reagent/toxin/fuhrerole/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, rand(3,4))
@@ -825,15 +826,15 @@
 
 /datum/reagent/toxin/kaiseraurum/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "kaiseraurum")
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "kaiseraurum")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "kaiseraurum")
+	M.stats.addTempStat(STAT_AGI, STAT_LEVEL_ADEPT * effect_multiplier, STIM_TIME, "kaiseraurum")
+	M.stats.addTempStat(STAT_END, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "kaiseraurum")
+	M.stats.addTempStat(STAT_STR, STAT_LEVEL_BASIC * effect_multiplier, STIM_TIME, "kaiseraurum")
 	M.faction = "roach"
 
 /datum/reagent/toxin/kaiseraurum/withdrawal_act(mob/living/carbon/M)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_ADEPT, STIM_TIME, "kaiseraurum_w")
 
 /datum/reagent/toxin/kaiseraurum/overdose(mob/living/carbon/M, alien)
 	M.add_chemical_effect(CE_SPEECH_VOLUME, rand(3, 4))
@@ -855,12 +856,12 @@
 
 /datum/reagent/toxin/biomatter/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	if(prob(10 - (5 * M.stats.getMult(STAT_TGH))))
+	if(prob(10 - (5 * M.stats.getMult(STAT_END))))
 		M.vomit()
 
 /datum/reagent/toxin/biomatter/affect_touch(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	if(prob(5 - (4 * M.stats.getMult(STAT_TGH))))
+	if(prob(5 - (4 * M.stats.getMult(STAT_END))))
 		M.vomit()
 
 /datum/reagent/toxin/biomatter/touch_turf(turf/T)

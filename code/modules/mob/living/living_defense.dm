@@ -130,7 +130,7 @@
 	if(attack_flag == ARMOR_MELEE && ishuman(src) && isitem(used_weapon))
 		var/mob/living/carbon/human/H = src
 		var/obj/item/I = used_weapon
-		var/toughness_val = H.stats.getStat(STAT_TGH)
+		var/toughness_val = H.stats.getStat(STAT_END)
 
 		if(dealt_damage > 10 && prob((dealt_damage - toughness_val * (sharp && edge ? 1 : 0.5) * (I.w_class < ITEM_SIZE_BULKY ? 1 : 0.5))))
 			for(var/obj/item/grab/G in get_both_hands(H))

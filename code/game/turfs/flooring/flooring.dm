@@ -229,7 +229,7 @@ var/list/flooring_types
 		else
 			R.use(2)
 			to_chat(user, SPAN_NOTICE("You start connecting [R.name]s to [src.name], creating catwalk..."))
-			if(do_after(user, (20 * user.stats.getMult(STAT_MEC, STAT_LEVEL_EXPERT))))
+			if(do_after(user, (20 * user.stats.getMult(STAT_INT, STAT_LEVEL_EXPERT))))
 				T.alpha = 0
 				var/obj/structure/catwalk/CT = new /obj/structure/catwalk(T)
 				T.contents += CT

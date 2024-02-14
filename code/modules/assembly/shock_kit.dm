@@ -21,12 +21,12 @@
 	var/tool_type = tool.get_tool_type(user, usable_qualities, src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if(tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				status = !status
 				to_chat(user, SPAN_NOTICE("[src] is now [status ? "secured" : "unsecured"]!"))
 		if(QUALITY_BOLT_TURNING)
 			if(!status)
-				if(tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					var/turf/T = loc
 					if(ismob(T))
 						T = T.loc

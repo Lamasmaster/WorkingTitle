@@ -62,7 +62,7 @@
 				to_chat(user, SPAN_NOTICE("You can't tighten the blade-mechanism onto a blade of air!"))
 				return
 			to_chat(user, SPAN_NOTICE("You start tightening \the [src] onto the blade made of [blade_mat.display_name]."))
-			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, 0, STAT_MEC, 150))
+			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, 0, STAT_INT, 150))
 				if(QDELETED(src))
 					return
 				to_chat(user, SPAN_NOTICE("You tighten the blade on \the [src], creating a mech-mountable blade."))
@@ -1017,7 +1017,7 @@
 		for(var/mob/living/knockable in targets)
 			if(ishuman(knockable))
 				var/mob/living/carbon/human/targ = knockable
-				if(targ.stats.getStat(STAT_VIG) > STAT_LEVEL_EXPERT)
+				if(targ.stats.getStat(STAT_AGI) > STAT_LEVEL_EXPERT)
 					targ.visible_message(SPAN_DANGER("[targ] dodges the shield slam!"), "You dodge [loc]'s shield slam!", "You hear a woosh.", 6)
 					targets.Remove(knockable)
 					continue

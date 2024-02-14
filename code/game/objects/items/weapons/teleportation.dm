@@ -130,7 +130,7 @@
 		else
 			if(do_after(user, 30))
 				if(calibration_required)
-					var/user_intelligence = user.stats.getStat(STAT_COG)
+					var/user_intelligence = user.stats.getStat(STAT_LCK)
 					portal_fail_chance -= user_intelligence
 					if(portal_fail_chance < 0)
 						portal_fail_chance = 0

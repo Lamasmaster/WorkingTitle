@@ -57,13 +57,13 @@
 	switch(tool_type)
 		if(QUALITY_BOLT_TURNING)
 			if(state == 0)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You wrench the frame into place."))
 					anchored = TRUE
 					state = 1
 					return
 			if(state == 1)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unfasten the frame."))
 					anchored = FALSE
 					state = 0
@@ -72,7 +72,7 @@
 
 		if(QUALITY_WELDING)
 			if(state == 0)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You deconstruct the frame."))
 					drop_materials(drop_location())
 					qdel(src)
@@ -81,7 +81,7 @@
 
 		if(QUALITY_PRYING)
 			if(state == 1 && circuit)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the circuit board."))
 					state = 1
 					icon_state = "0"
@@ -89,7 +89,7 @@
 					circuit = null
 					return
 			if(state == 4)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the glass panel."))
 					state = 3
 					icon_state = "3"
@@ -99,19 +99,19 @@
 
 		if(QUALITY_SCREW_DRIVING)
 			if(state == 1 && circuit)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You screw the circuit board into place."))
 					state = 2
 					icon_state = "2"
 					return
 			if(state == 2 && circuit)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unfasten the circuit board."))
 					state = 1
 					icon_state = "1"
 					return
 			if(state == 4)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You connect the monitor."))
 					var/B = new circuit.build_path(drop_location(), src.dir)
 					circuit.construct(B)
@@ -121,7 +121,7 @@
 
 		if(QUALITY_WIRE_CUTTING)
 			if(state == 3)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the cables."))
 					state = 2
 					icon_state = "2"

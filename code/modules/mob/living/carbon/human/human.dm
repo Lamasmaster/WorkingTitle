@@ -1119,7 +1119,7 @@ var/list/rank_prefix = list(\
 				if(wear_suit && wear_suit.item_flags & THICKMATERIAL)
 					. = 0
 	if(!. && error_msg && user)
-		if(BP_IS_LIFELIKE(affecting) && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+		if(BP_IS_LIFELIKE(affecting) && user.stats.getStat(STAT_INT) < STAT_LEVEL_BASIC)
 			fail_msg = "Skin is tough and inelastic."
 		else if(!fail_msg)
 			fail_msg = "There is no exposed flesh or thin material [target_zone == BP_HEAD ? "on their head" : "on their body"] to inject into."

@@ -67,13 +67,13 @@ GLOBAL_LIST_EMPTY(rad_collectors)
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(P && !locked)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					eject()
 			return
 
 		if(QUALITY_BOLT_TURNING)
 			if(!P)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					anchored = !anchored
 					user.visible_message(
 						SPAN_NOTICE("[user] [anchored ? "secures" : "unsecures"] [src]."),

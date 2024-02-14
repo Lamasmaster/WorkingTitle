@@ -191,7 +191,7 @@
 		if(L)
 			to_chat(user, SPAN_NOTICE("You start constructing underplating on the lattice."))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			if(do_after(user, (40 * user.stats.getMult(STAT_MEC, STAT_LEVEL_EXPERT, src))))
+			if(do_after(user, (40 * user.stats.getMult(STAT_INT, STAT_LEVEL_EXPERT, src))))
 				qdel(L)
 				M.use(1)
 				ChangeTurf(/turf/simulated/floor/plating/under)

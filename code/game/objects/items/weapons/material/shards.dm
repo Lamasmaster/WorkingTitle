@@ -118,7 +118,7 @@
 
 	//Do a tool operation for each shard
 	for (var/obj/item/material/shard/S in shards)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 			//We meld each shard with ourselves
 			amount += S.amount
 			qdel(S)

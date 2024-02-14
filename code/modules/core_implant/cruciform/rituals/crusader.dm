@@ -35,9 +35,9 @@
 		if(brother.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			count += 2
 
-	user.stats.changeStat(STAT_TGH, count)
-	user.stats.changeStat(STAT_ROB, count)
-	user.stats.changeStat(STAT_VIG, (count / 2))
+	user.stats.changeStat(STAT_END, count)
+	user.stats.changeStat(STAT_STR, count)
+	user.stats.changeStat(STAT_AGI, (count / 2))
 	log_and_message_admins("performed a crusade litany")
 	to_chat(user, SPAN_NOTICE("You feel an extraordinary burst of energy."))
 	set_personal_cooldown(user)
@@ -45,9 +45,9 @@
 	return TRUE
 
 /datum/ritual/cruciform/crusader/battle_call/proc/discard_effect(mob/living/carbon/human/user, amount)
-	user.stats.changeStat(STAT_TGH, -amount)
-	user.stats.changeStat(STAT_ROB, -amount)
-	user.stats.changeStat(STAT_VIG, -amount / 2)
+	user.stats.changeStat(STAT_END, -amount)
+	user.stats.changeStat(STAT_STR, -amount)
+	user.stats.changeStat(STAT_AGI, -amount / 2)
 
 /datum/ritual/cruciform/crusader/flash
 	name = "Searing Revelation"
@@ -58,7 +58,7 @@
 	cooldown_category = "flash"
 
 /datum/ritual/cruciform/crusader/flash/perform(mob/living/carbon/human/user, obj/item/implant/core_implant/C)
-	if(prob(100 - user.stats.getStat(STAT_VIG)))
+	if(prob(100 - user.stats.getStat(STAT_CHR)))
 		user.Weaken(10)
 		to_chat(user, SPAN_WARNING("The flux of psy-energy knocks over you!"))
 	else
@@ -69,7 +69,7 @@
 		if(!victim.get_core_implant(/obj/item/implant/core_implant/cruciform))
 			if(get_active_mutation(victim, MUTATION_ATHEIST))
 				to_chat(victim, SPAN_NOTICE("You don't even flinch as the flux of psy-energy passes through you!"))
-			else if(prob(100 - victim.stats.getStat(STAT_VIG)))
+			else if(prob(100 - victim.stats.getStat(STAT_CHR)))
 				to_chat(victim, SPAN_WARNING("You feel that your knees bends!"))
 				victim.Weaken(5)
 			else

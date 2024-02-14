@@ -84,7 +84,7 @@
 				if(!do_after(H, 30, src))
 					return
 
-				var/cpr_efficiency = 3 + max(0, 2 * (H.stats.getStat(STAT_BIO) / 10))
+				var/cpr_efficiency = 3 + max(0, 2 * (H.stats.getStat(STAT_INT) / 10))
 				adjustOxyLoss(-(min(getOxyLoss(), cpr_efficiency)))
 				updatehealth()
 				H.visible_message(SPAN_DANGER("\The [H] performs CPR on \the [src]!"))
@@ -108,7 +108,7 @@
 			for(var/obj/item/grab/g in get_both_hands(src)) //countering a grab
 
 				if(g.counter_timer>0 && g.affecting == M) //were we grabbed by src in a span of 3 seconds?
-					if(prob(max(30 + H.stats.getStat(STAT_ROB) - stats.getStat(STAT_ROB) ** 0.7, 1))) // Harder between low rob, easier between high rob wrestlers
+					if(prob(max(30 + H.stats.getStat(STAT_STR) - stats.getStat(STAT_STR) ** 0.7, 1))) // Harder between low rob, easier between high rob wrestlers
 						var/obj/item/grab/G = new /obj/item/grab(M, src)
 						if(!G)	//the grab will delete itself in New if affecting is anchored
 							return
@@ -171,7 +171,7 @@
 				attack_generic(H,rand(1,3),"punched")
 				return
 
-			var/stat_damage = max(0, min(15, (H.stats.getStat(STAT_ROB) / 4)))
+			var/stat_damage = max(0, min(15, (H.stats.getStat(STAT_STR) / 4)))
 			var/limb_efficiency_multiplier = 1
 			var/hit_zone = H.targeted_organ
 			var/obj/item/organ/external/affecting = get_organ(hit_zone)
@@ -201,7 +201,7 @@
 			attack.show_attack(H, src, hit_zone, stat_damage)
 
 			//The stronger you are, the louder you strike!
-			var/attack_volume = 25 + H.stats.getStat(STAT_ROB)
+			var/attack_volume = 25 + H.stats.getStat(STAT_STR)
 			playsound(loc, attack.attack_sound, attack_volume, 1, -1)
 			H.attack_log += text("\[[time_stamp()]\] <font color='red'>[pick(attack.attack_verb)] [src.name] ([src.ckey])</font>")
 			src.attack_log += text("\[[time_stamp()]\] <font color='orange'>Has been [pick(attack.attack_verb)] by [H.name] ([H.ckey])</font>")
@@ -261,8 +261,8 @@
 						W.afterattack(target,src)
 
 			//Actually disarm them
-			var/rob_attacker = (50 / (1 + 150 / max(1, H.stats.getStat(STAT_ROB))) + 40) //soft capped amount of recoil that attacker deals
-			var/rob_target = max(0, min(400,stats.getStat(STAT_ROB))) //hard capped amount of recoil the target negates upon disarming
+			var/rob_attacker = (50 / (1 + 150 / max(1, H.stats.getStat(STAT_STR))) + 40) //soft capped amount of recoil that attacker deals
+			var/rob_target = max(0, min(400,stats.getStat(STAT_STR))) //hard capped amount of recoil the target negates upon disarming
 			var/recoil_damage = (rob_attacker * (1 - (rob_target / 400))) //recoil itself
 			for(var/obj/item/I in holding)
 				external_recoil(recoil_damage)

@@ -21,7 +21,7 @@
 	..()
 	if(fired_one_handed)
 		fired_one_handed = FALSE
-		var/robustness = user.stats.getStat(STAT_ROB)
+		var/robustness = user.stats.getStat(STAT_STR)
 		if(robustness < STAT_LEVEL_GODLIKE)
 			if(!prob(robustness))
 				step(user, pick(cardinal - user.dir))

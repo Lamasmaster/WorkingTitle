@@ -109,7 +109,7 @@
 
 	else if (!has_items)
 		if (I.has_quality(QUALITY_BOLT_TURNING))
-			if (I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, STAT_MEC))
+			if (I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, STAT_INT))
 				dismantle(user)
 			return
 	..()

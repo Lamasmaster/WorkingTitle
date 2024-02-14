@@ -195,7 +195,7 @@ see multiz/movement.dm for some info.
 			if(ishuman(mover))
 				var/mob/living/carbon/human/H = mover
 				if(H.a_intent == I_HURT)
-					fall_damage = (H.mob_size + (min(min(H.stats.getStat(STAT_ROB), 1), 60) / 2)) //max is 50(a lot)
+					fall_damage = (H.mob_size + (min(min(H.stats.getStat(STAT_STR), 1), 60) / 2)) //max is 50(a lot)
 
 			if(M == mover)
 				continue
@@ -242,7 +242,7 @@ see multiz/movement.dm for some info.
 		if(L)
 			to_chat(user, SPAN_NOTICE("You start constructing underplating on the lattice."))
 			playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
-			if(do_after(user, (40 * user.stats.getMult(STAT_MEC, STAT_LEVEL_EXPERT, src))))
+			if(do_after(user, (40 * user.stats.getMult(STAT_INT, STAT_LEVEL_EXPERT, src))))
 				qdel(L)
 				M.use(1)
 				ChangeTurf(/turf/simulated/floor/plating/under)
@@ -303,7 +303,7 @@ see multiz/movement.dm for some info.
 	climbers |= user
 
 	var/delay = (issmall(user) ? 32 : 60) * user.mod_climb_delay
-	var/duration = max(delay * user.stats.getMult(STAT_VIG, STAT_LEVEL_EXPERT), delay * 0.66)
+	var/duration = max(delay * user.stats.getMult(STAT_AGI, STAT_LEVEL_EXPERT), delay * 0.66)
 	if(!do_after(user, duration, src) || !can_descend(user, structure, post_descent_check = 1))
 		climbers -= user
 		return

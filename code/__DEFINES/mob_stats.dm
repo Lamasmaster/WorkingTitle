@@ -1,14 +1,15 @@
 #define STAT_VALUE_DEFAULT	0
 #define STAT_VALUE_MAXIMUM 150
 
-#define STAT_MEC			"Mechanical"
-#define STAT_COG			"Cognition"
-#define STAT_BIO			"Biology"
-#define STAT_ROB			"Robustness"
-#define STAT_TGH			"Toughness"
-#define STAT_VIG			"Vigilance"
+#define STAT_STR			"Strength"
+#define STAT_PER			"Perception"
+#define STAT_END			"Endurance"
+#define STAT_CHR			"Charisma"
+#define STAT_INT			"Intelligence"
+#define STAT_AGI			"Agility"
+#define STAT_LCK			"Luck"
 
-#define ALL_STATS	list(STAT_MEC,STAT_COG,STAT_BIO,STAT_ROB,STAT_TGH,STAT_VIG)
+#define ALL_STATS	list(STAT_STR, STAT_PER, STAT_END, STAT_CHR, STAT_INT, STAT_AGI, STAT_LCK)
 
 #define STAT_LEVEL_NONE     0
 #define STAT_LEVEL_BASIC    15

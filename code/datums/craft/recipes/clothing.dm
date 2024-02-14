@@ -1,7 +1,7 @@
 /datum/craft_recipe/clothing
 	category = "Clothing"
 	time = 50
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/clothing/dusters
 	name = "steel knuckle dusters"

@@ -45,7 +45,7 @@ meteor_act
 /mob/living/carbon/human/hit_impact(damage, dir, hit_zone)
 	if(incapacitated(INCAPACITATION_DEFAULT|INCAPACITATION_BUCKLED_PARTIALLY))
 		return
-	if(damage < stats.getStat(STAT_TGH))
+	if(damage < stats.getStat(STAT_END))
 		..()
 		return
 
@@ -56,7 +56,7 @@ meteor_act
 	var/hit_dirs = (r_dir in cardinal) ? r_dir : list(r_dir & NORTH|SOUTH, r_dir & EAST|WEST)
 
 	if(hit_zone == BP_R_LEG || hit_zone == BP_L_LEG)
-		if(prob(60 - stats.getStat(STAT_TGH)))
+		if(prob(60 - stats.getStat(STAT_END)))
 			step(src, pick(cardinal - hit_dirs))
 			visible_message(SPAN_WARNING("[src] stumbles around."))
 
@@ -210,7 +210,7 @@ meteor_act
 /mob/living/carbon/human/proc/handle_blocking(var/damage)
 	var/stat_affect = 0.3 //lowered to 0.2 if we are blocking with an item
 	var/item_size_affect = 0 //the bigger the thing you hold is, the more damage you can block
-	var/toughness = max(1, stats.getStat(STAT_TGH))
+	var/toughness = max(1, stats.getStat(STAT_END))
 	//passive blocking with shields is handled differently(code is above this proc)
 	if(get_active_hand())//are we blocking with an item?
 		var/obj/item/I = get_active_hand()
@@ -333,7 +333,7 @@ meteor_act
 			target_location.add_blood(src)
 
 		//Intervention attacks
-		if(prob(max(5, min(30, 30 - stats.getStat(STAT_TGH)/2.5)))) //This is hell. 30% is default chance, 5% is minimum which is met at 80 TGH.
+		if(prob(max(5, min(30, 30 - stats.getStat(STAT_END)/2.5)))) //This is hell. 30% is default chance, 5% is minimum which is met at 80 END.
 			//See if we have any guns that might go off,
 			for(var/obj/item/gun/W in get_both_hands())
 				if(W && prob(40))

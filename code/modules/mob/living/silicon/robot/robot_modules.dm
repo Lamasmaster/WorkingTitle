@@ -57,11 +57,10 @@ var/global/list/robot_modules = list(
 
 	//Stat modifiers for skillchecks
 	var/list/stat_modifiers = list(
-		STAT_BIO = 5,
-		STAT_COG = 5,
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_MEC = 5
+		STAT_LCK = 5,
+		STAT_STR = 5,
+		STAT_END = 5,
+		STAT_INT = 5
 	)
 
 
@@ -245,11 +244,10 @@ var/global/list/robot_modules = list(
 
 	desc = "The baseline, jack of all trades. Can do a little of everything. Some DIY, some healing, some combat."
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_COG = 15,
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_MEC = 15
+		STAT_INT = 15,
+		STAT_LCK = 15,
+		STAT_STR = 15,
+		STAT_END = 15,
 	)
 
 
@@ -313,8 +311,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 0.6 //Very poor, shackled to a charger
 
 	stat_modifiers = list(
-		STAT_BIO = 40,
-		STAT_COG = 10
+		STAT_INT = 40,
+		STAT_LCK = 10
 	)
 
 /obj/item/robot_module/medical/general/New(var/mob/living/silicon/robot/R)
@@ -400,9 +398,9 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.2 //Good for long journeys
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_ROB = 10,
-		STAT_TGH = 10
+		STAT_INT = 20,
+		STAT_STR = 10,
+		STAT_END = 10
 	)
 
 	desc = "The rescue borg fills the role of paramedic. \
@@ -494,8 +492,8 @@ var/global/list/robot_modules = list(
 	engineering tasks."
 
 	stat_modifiers = list(
-		STAT_COG = 20,
-		STAT_MEC = 40
+		STAT_LCK = 20,
+		STAT_INT = 40
 	)
 
 /obj/item/robot_module/engineering/construction
@@ -677,8 +675,8 @@ var/global/list/robot_modules = list(
 	heavily armored, though lightly armed battle unit."
 
 	stat_modifiers = list(
-		STAT_ROB = 30,
-		STAT_TGH = 20
+		STAT_STR = 30,
+		STAT_END = 20
 	)
 
 /obj/item/robot_module/security/general
@@ -738,7 +736,7 @@ var/global/list/robot_modules = list(
 	power_efficiency = 0.8 //Poor
 
 	stat_modifiers = list(
-		STAT_ROB = 20
+		STAT_STR = 20
 	)
 
 	robot_traits = CYBORG_TRAIT_CLEANING_WALK
@@ -887,8 +885,8 @@ var/global/list/robot_modules = list(
 	power_efficiency = 1.5 //Best efficiency
 
 	stat_modifiers = list(
-		STAT_ROB = 20,
-		STAT_TGH = 20
+		STAT_STR = 20,
+		STAT_END = 20
 	)
 
 	desc = "Built for digging on asteroids, excavating the ores and materials to keep the ship running, \
@@ -932,9 +930,8 @@ var/global/list/robot_modules = list(
 	chemistry, xenobiology and robotics."
 
 	stat_modifiers = list(
-		STAT_BIO = 30,
-		STAT_COG = 40,
-		STAT_MEC = 30
+		STAT_INT = 30,
+		STAT_LCK = 40
 	)
 
 /obj/item/robot_module/research/New(var/mob/living/silicon/robot/R)
@@ -1036,8 +1033,8 @@ var/global/list/robot_modules = list(
 	networks = list(NETWORK_ENGINEERING)
 	channels = list("Engineering" = 1, "Common" = 1)
 	stat_modifiers = list(
-		STAT_COG = 15,
-		STAT_MEC = 40
+		STAT_LCK = 15,
+		STAT_INT = 40
 	)
 
 /obj/item/robot_module/drone/New(var/mob/living/silicon/robot/R)
@@ -1125,12 +1122,11 @@ var/global/list/robot_modules = list(
 	speed_factor = 1.2
 	hide_on_manifest = TRUE
 	stat_modifiers = list(
-		STAT_BIO = 15,
-		STAT_COG = 30,
-		STAT_ROB = 25,
-		STAT_TGH = 15,
-		STAT_MEC = 25,
-		STAT_VIG = 50
+		STAT_INT = 20,
+		STAT_LCK = 30,
+		STAT_STR = 25,
+		STAT_END = 15,
+		STAT_AGI = 50
 	)
 
 /obj/item/robot_module/blitzshell/New()

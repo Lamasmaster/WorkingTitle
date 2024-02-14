@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(statverbs)
 // Statverb datum //
 /datum/statverb
 	var/name
-	var/required_stat = STAT_MEC
+	var/required_stat = STAT_INT
 	var/base_range = RANGE_ADJACENT	//maximum distance or RANGE_ADJACENT
 	var/minimal_stat = 0
 
@@ -43,18 +43,20 @@ SUBSYSTEM_DEF(statverbs)
 
 	if(user.stats.getStat(required_stat) < minimal_stat)
 		switch(required_stat)
-			if(STAT_MEC)
-				to_chat(user, SPAN_WARNING("You don't know enough about engineering to do that!"))
-			if(STAT_BIO)
-				to_chat(user, SPAN_WARNING("You don't know enough about medicine to do that!"))
-			if(STAT_TGH)
-				to_chat(user, SPAN_WARNING("You're not tough enough to do that!"))
-			if(STAT_ROB)
+			if(STAT_STR)
 				to_chat(user, SPAN_WARNING("You're not strong enough to do that!"))
-			if(STAT_COG)
-				to_chat(user, SPAN_WARNING("You're not smart enough to do that!"))
-			if(STAT_VIG)
+			if(STAT_PER)
 				to_chat(user, SPAN_WARNING("You're not perceptive enough to do that!"))
+			if(STAT_END)
+				to_chat(user, SPAN_WARNING("You're not tough enough to do that!"))
+			if(STAT_CHR)
+				to_chat(user, SPAN_WARNING("You're not charismatic enough to do that!"))
+			if(STAT_INT)
+				to_chat(user, SPAN_WARNING("You're not smart enough to do that!"))
+			if(STAT_AGI)
+				to_chat(user, SPAN_WARNING("You're not agile enough to do that!"))
+			if(STAT_LCK)
+				to_chat(user, SPAN_WARNING("You're not lucky enough to do that!"))
 		return FALSE
 
 	action(user, target)
@@ -115,7 +117,7 @@ SUBSYSTEM_DEF(statverbs)
 
 /datum/statverb/remove_plating
 	name = "Remove plating"
-	required_stat = STAT_ROB
+	required_stat = STAT_STR
 	minimal_stat  = STAT_LEVEL_ADEPT
 
 /datum/statverb/remove_plating/action(mob/user, turf/simulated/floor/target)
@@ -143,7 +145,7 @@ SUBSYSTEM_DEF(statverbs)
 
 /datum/statverb/hack_console
 	name = "Hack console"
-	required_stat = STAT_COG
+	required_stat = STAT_LCK
 	minimal_stat  = STAT_LEVEL_ADEPT
 
 /datum/statverb/hack_console/action(mob/user, obj/machinery/target)
@@ -153,7 +155,7 @@ SUBSYSTEM_DEF(statverbs)
 		)
 		return
 	if(!target.hacked)
-		var/timer = 220 - (user.stats.getStat(STAT_COG) * 2)
+		var/timer = 220 - (user.stats.getStat(STAT_LCK) * 2)
 		var/datum/repeating_sound/keyboardsound = new(30, timer, 0.15, target, "keyboard", 80, 1)
 		user.visible_message(
 			SPAN_DANGER("[user] begins hacking into [target]!"),
@@ -187,7 +189,7 @@ SUBSYSTEM_DEF(statverbs)
 
 /datum/statverb/fix_computer
 	name = "Fix computer"
-	required_stat = STAT_COG
+	required_stat = STAT_LCK
 	minimal_stat  = STAT_LEVEL_ADEPT
 
 /datum/statverb/fix_computer/action(mob/user, obj/item/modular_computer/target)
@@ -196,7 +198,7 @@ SUBSYSTEM_DEF(statverbs)
 			SPAN_WARNING("[target] doesn't need repairs!")
 		)
 		return
-	var/timer = 160 - (user.stats.getStat(STAT_COG) * 2)
+	var/timer = 160 - (user.stats.getStat(STAT_LCK) * 2)
 	if(target.hard_drive.damage == 100)
 		var/datum/repeating_sound/keyboardsound = new(30, timer, 0.15, target, "keyboard", 80, 1)
 		user.visible_message(

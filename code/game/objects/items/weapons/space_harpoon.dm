@@ -61,7 +61,7 @@
 		return //No actual telefragging, wasn't allowed to do that at the time
 	if(!Using)
 		Using = TRUE
-		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_COG, STAT_LEVEL_GODLIKE/20, src)))
+		if(do_after(user, 4 SECONDS - user.stats.getMult(STAT_LCK, STAT_LEVEL_GODLIKE/20, src)))
 			Using = FALSE
 			if(!cell || !cell.checked_use(100))
 				to_chat(user, SPAN_WARNING("\The [src]'s battery is dead or missing."))

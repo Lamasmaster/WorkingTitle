@@ -38,7 +38,7 @@
 
 /obj/structure/lattice/attackby(obj/item/I, mob/user)
 	if(I.get_tool_type(user, list(QUALITY_WELDING), src))
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			to_chat(user, SPAN_NOTICE("Slicing lattice joints ..."))
 			new /obj/item/stack/rods(get_turf(user))
 			qdel(src)

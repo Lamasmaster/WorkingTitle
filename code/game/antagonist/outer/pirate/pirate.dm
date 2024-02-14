@@ -29,12 +29,11 @@
 
     // A bunch of rowdy pirates should be somewhat equivalent to roundstart IH operative
 	stat_modifiers = list(
-		STAT_ROB = 25,
-		STAT_TGH = 20,
-		STAT_VIG = 25,
-		STAT_BIO = 10,
-		STAT_MEC = 10,
-		STAT_COG = 10
+		STAT_STR = 25,
+		STAT_END = 20,
+		STAT_AGI = 25,
+		STAT_INT = 10,
+		STAT_LCK = 10
 	)
 
 	perks = list(PERK_SURVIVOR)

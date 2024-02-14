@@ -11,7 +11,7 @@
 	return
 
 /obj/structure/bed/chair/e_chair/attackby(var/obj/item/tool/tool, var/mob/user)
-	if(!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+	if(!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 		return
 	var/obj/structure/bed/chair/C = new /obj/structure/bed/chair(loc)
 	C.set_dir(dir)

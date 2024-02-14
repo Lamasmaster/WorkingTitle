@@ -303,7 +303,7 @@
 			to_chat(user, SPAN_WARNING("Close the valve first."))
 			return
 		if(tank)
-			if(!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(!W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				return
 			if(!is_loosen)
 				is_loosen = TRUE

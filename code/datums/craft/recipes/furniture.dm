@@ -1,7 +1,7 @@
 /datum/craft_recipe/furniture
 	category = "Furniture"
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 	time = 80
 
 

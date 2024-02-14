@@ -94,7 +94,7 @@
 
 		if(QUALITY_WIRE_CUTTING)
 			if(state == STATE_WIRES)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the cables."))
 					state = STATE_NONE
 					icon_state = "[base_state]_0"
@@ -104,7 +104,7 @@
 
 		if(QUALITY_PRYING)
 			if(state == STATE_CIRCUIT)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					state = STATE_WIRES
 					circuit.forceMove(drop_location())
 					circuit = null
@@ -123,7 +123,7 @@
 
 		if(QUALITY_BOLT_TURNING)
 			if(state == STATE_NONE)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You dismantle the frame"))
 					drop_materials(drop_location())
 					qdel(src)

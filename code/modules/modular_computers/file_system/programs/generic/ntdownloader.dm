@@ -115,9 +115,9 @@
 		return 1
 	if(href_list["PRG_downloadfile"])
 		if(!downloaded_file)
-			begin_file_download(href_list["PRG_downloadfile"], usr.stats.getStat(STAT_COG))
+			begin_file_download(href_list["PRG_downloadfile"], usr.stats.getStat(STAT_LCK))
 		else if(check_file_download(href_list["PRG_downloadfile"]) && !downloads_queue.Find(href_list["PRG_downloadfile"]) && downloaded_file.filename != href_list["PRG_downloadfile"])
-			downloads_queue[href_list["PRG_downloadfile"]] = usr.stats.getStat(STAT_COG)
+			downloads_queue[href_list["PRG_downloadfile"]] = usr.stats.getStat(STAT_LCK)
 		return 1
 	if(href_list["PRG_removequeued"])
 		downloads_queue.Remove(href_list["PRG_removequeued"])

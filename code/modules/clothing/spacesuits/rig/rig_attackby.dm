@@ -42,7 +42,7 @@
 				return 1
 
 			if(open)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					var/list/current_mounts = list()
 					if(cell) current_mounts   += "cell"
 					if(installed_modules && installed_modules.len) current_mounts += "system module"
@@ -111,7 +111,7 @@
 
 		if(QUALITY_PRYING)
 			if(locked != 1)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					open = !open
 					to_chat(user, SPAN_NOTICE("You [open ? "open" : "close"] the access panel."))
 					return
@@ -129,7 +129,7 @@
 					to_chat(user, "You can't remove an installed tank while the hardsuit is being worn.")
 					return 1
 
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					user.put_in_hands(air_supply)
 					to_chat(user, "You detach and remove \the [air_supply].")
 					air_supply = null
@@ -143,7 +143,7 @@
 			//Ridiculously difficult to do, hijacking a rig will take a long time if you don't have good mechanical training
 			if(locked == 1 && user.a_intent == I_HURT)
 				to_chat(user, SPAN_NOTICE("You start cutting through the access panel's cover lock. This is a delicate task."))
-				if(I.use_tool(user, src, WORKTIME_EXTREMELY_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_EXTREMELY_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_INT))
 					locked = -1 //Broken, it can never be locked again
 					to_chat(user, SPAN_NOTICE("Success! The tension in the panel loosens with a dull click"))
 					playsound(src.loc, 'sound/weapons/guns/interact/pistol_magin.ogg', 75, 1)
@@ -155,7 +155,7 @@
 			if (ablative_max <= ablative_armor)
 				to_chat(user, SPAN_WARNING("There is no damage on \the [src]'s armor layers to repair."))
 
-			else if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WELDING, FAILCHANCE_ZERO, required_stat = STAT_MEC, instant_finish_tier = INFINITY)) // no instant repairs
+			else if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_WELDING, FAILCHANCE_ZERO, required_stat = STAT_INT, instant_finish_tier = INFINITY)) // no instant repairs
 				ablative_armor = min(ablative_armor + 2, ablative_max)
 				to_chat(user, SPAN_NOTICE("You repair the damage on the [src]'s armor layers."))
 				return

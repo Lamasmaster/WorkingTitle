@@ -77,7 +77,7 @@
 		if (anchored)
 			if(!on)
 				to_chat(user, SPAN_NOTICE("You begin to unfasten \the [src] from the floor..."))
-				if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB))
+				if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_STR))
 					user.visible_message( \
 						SPAN_NOTICE("\The [user] unfastens \the [src]."), \
 						SPAN_NOTICE("You have unfastened \the [src]. Now it can be pulled somewhere else."), \
@@ -87,7 +87,7 @@
 				to_chat(user, SPAN_WARNING("Turn off \the [src] first."))
 		else
 			to_chat(user, SPAN_NOTICE("You begin to fasten \the [src] to the floor..."))
-			if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB))
+			if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_STR))
 				user.visible_message( \
 					SPAN_NOTICE("\The [user] fastens \the [src]."), \
 					SPAN_NOTICE("You have fastened \the [src]. Now it can counteract gravity."), \

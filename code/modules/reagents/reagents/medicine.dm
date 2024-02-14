@@ -276,7 +276,7 @@
 	M.hallucination(120, 30)
 	M.slurring = max(M.slurring, 30)
 	M.add_chemical_effect(CE_SPEEDBOOST, -1)
-	if(prob(3 - (2 * M.stats.getMult(STAT_TGH))))
+	if(prob(3 - (2 * M.stats.getMult(STAT_END))))
 		M.Stun(3)
 
 /datum/reagent/medicine/tramadol/holy
@@ -306,7 +306,7 @@
 	M.druggy = max(M.druggy, 10)
 	M.slurring = max(M.slurring, 30)
 	M.add_chemical_effect(CE_SPEEDBOOST, -1)
-	if(prob(5 - (2 * M.stats.getMult(STAT_TGH))))
+	if(prob(5 - (2 * M.stats.getMult(STAT_END))))
 		M.Stun(5)
 
 /* Other medicine */

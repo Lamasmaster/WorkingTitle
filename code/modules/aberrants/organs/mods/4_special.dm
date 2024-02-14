@@ -34,7 +34,7 @@
 /obj/item/modification/organ/internal/special/on_pickup/shock/powerful
 	name = "powerful shocking membrane"
 	desc = "A graftable outer membrane for organ tissues. There is significant bioelectric phenomena present and it hurts to touch."
-	
+
 /obj/item/modification/organ/internal/special/on_pickup/shock/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	AddComponent(/datum/component/modification/organ/on_pickup/shock/powerful)
 	..()
@@ -127,7 +127,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/mechanical/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_MEC
+	S.stat = STAT_INT
 	S.boost = 10
 	..()
 
@@ -135,7 +135,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/cognition/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_COG
+	S.stat = STAT_LCK
 	S.boost = 10
 	..()
 
@@ -143,7 +143,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/biology/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_BIO
+	S.stat = STAT_INT
 	S.boost = 10
 	..()
 
@@ -151,7 +151,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/robustness/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_ROB
+	S.stat = STAT_STR
 	S.boost = 10
 	..()
 
@@ -159,7 +159,7 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/toughness/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_TGH
+	S.stat = STAT_END
 	S.boost = 10
 	..()
 
@@ -167,6 +167,6 @@
 /obj/item/modification/organ/internal/special/on_cooldown/stat_boost/vigilance_5/New(loc, generate_organ_stats = FALSE, predefined_modifier = null)
 	var/datum/component/modification/organ/on_cooldown/stat_boost/S = AddComponent(/datum/component/modification/organ/on_cooldown/stat_boost)
 
-	S.stat = STAT_VIG
+	S.stat = STAT_AGI
 	S.boost = 10
 	..()

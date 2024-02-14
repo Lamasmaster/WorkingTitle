@@ -24,24 +24,24 @@ COMSIG_ABERRANT_SECONDARY
 	var/install_start_action = "attaching"
 	var/install_success_action = "attached"
 	var/install_time = WORKTIME_FAST
-	//var/install_tool_quality = null				
+	//var/install_tool_quality = null
 	var/install_difficulty = FAILCHANCE_ZERO
-	var/install_stat = STAT_COG
+	var/install_stat = STAT_LCK
 	var/install_sound = WORKSOUND_HONK
 
 	var/removal_time = WORKTIME_SLOW
 	var/removal_tool_quality = QUALITY_CLAMPING
 	var/removal_difficulty = FAILCHANCE_CHALLENGING
-	var/removal_stat = STAT_COG
+	var/removal_stat = STAT_LCK
 
 	var/mod_time = WORKTIME_FAST
-	var/mod_tool_quality = null				
+	var/mod_tool_quality = null
 	var/mod_difficulty = FAILCHANCE_ZERO
-	var/mod_stat = STAT_COG
+	var/mod_stat = STAT_LCK
 	var/mod_sound = WORKSOUND_HONK
 
 	var/adjustable = FALSE
-	var/destroy_on_removal = FALSE 
+	var/destroy_on_removal = FALSE
 	var/removable = TRUE
 	var/breakable = FALSE //Some mods are meant to be tamper-resistant and should be removed only in a hard way
 
@@ -52,7 +52,7 @@ COMSIG_ABERRANT_SECONDARY
 	var/examine_msg = null	// Examine message for the mod, not the item it is attached to
 
 	// Stat-gated details
-	var/examine_stat = STAT_COG
+	var/examine_stat = STAT_LCK
 	var/examine_difficulty = STAT_LEVEL_BASIC
 	var/examine_stat_secondary = null
 	var/examine_difficulty_secondary = STAT_LEVEL_BASIC
@@ -115,7 +115,7 @@ COMSIG_ABERRANT_SECONDARY
 				if(user)
 					to_chat(user, SPAN_WARNING("\The [I] can not accept \the [parent]!"))
 				return FALSE
-	
+
 	return TRUE
 
 /datum/component/modification/proc/apply(obj/item/A, mob/living/user)
@@ -171,7 +171,7 @@ COMSIG_ABERRANT_SECONDARY
 	details_unlocked = (user.stats.getStat(examine_stat) >= examine_difficulty) ? TRUE : FALSE
 	if(examine_stat_secondary)
 		details_unlocked = (user.stats.getStat(examine_stat_secondary) >= examine_difficulty_secondary) ? TRUE : FALSE
-	
+
 	if(examine_msg)
 		to_chat(user, SPAN_WARNING(examine_msg))
 	if(details_unlocked)

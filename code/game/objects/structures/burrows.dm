@@ -481,7 +481,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 	if(isSealed)
 		if (I.has_quality(QUALITY_WELDING))
 			user.visible_message("[user] attempts to weld [src] with the [I]", "You start welding [src] with the [I]")
-			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC) && isSealed)
+			if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT) && isSealed)
 				user.visible_message("[user] welds [src] with the [I].", "You welds [src] with the [I].")
 				if(recieving)
 					if(prob(33))
@@ -521,7 +521,7 @@ percentage is a value in the range 0..1 that determines what portion of this mob
 			var/start = world.time
 			var/target_time = WORKTIME_FAST+ 2*health
 
-			if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_MEC, STAT_ROB), forced_sound = WORKSOUND_PICKAXE))
+			if (I.use_tool(user, src, target_time, QUALITY_DIGGING, health * 0.66, list(STAT_INT, STAT_STR), forced_sound = WORKSOUND_PICKAXE))
 				//On success, the hole is destroyed!
 				new /obj/spawner/scrap/sparse(get_turf(user))
 				user.visible_message("[user] collapses [src] with the [I] and dumps trash which was in the way.", "You collapse [src] with the [I] and dump trash which was in the way.")

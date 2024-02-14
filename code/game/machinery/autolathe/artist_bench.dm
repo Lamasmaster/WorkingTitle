@@ -74,14 +74,14 @@
 		LStats = inspiration.calculate_statistics()
 
 	var/weight_artwork_statue = 20
-	var/weight_artwork_revolver = 1 + LStats[STAT_VIG] * 2
-	var/weight_artwork_weapon = 1 + max(LStats[STAT_ROB], LStats[STAT_TGH]) * 2
-	var/weight_artwork_oddity = 1 + max(LStats[STAT_COG], LStats[STAT_BIO]) * 2
-	var/weight_artwork_tool = 2 + LStats[STAT_MEC] * 2
-	var/weight_artwork_toolmod = 2 + LStats[STAT_MEC] * 2
-	var/weight_artwork_gunmod = 2 + LStats[STAT_COG] * 2
-	var/weight_artwork_gunPart = 1 + LStats[STAT_COG] + LStats[STAT_MEC]
-	var/weight_artwork_armorPart = 2 + LStats[STAT_TGH] + LStats[STAT_BIO]
+	var/weight_artwork_revolver = 1 + LStats[STAT_AGI] * 2
+	var/weight_artwork_weapon = 1 + max(LStats[STAT_STR], LStats[STAT_END]) * 2
+	var/weight_artwork_oddity = 1 + max(LStats[STAT_LCK], LStats[STAT_INT]) * 2
+	var/weight_artwork_tool = 2 + LStats[STAT_INT] * 2
+	var/weight_artwork_toolmod = 2 + LStats[STAT_INT] * 2
+	var/weight_artwork_gunmod = 2 + LStats[STAT_PER] * 2
+	var/weight_artwork_gunPart = 1 + LStats[STAT_LCK] + LStats[STAT_INT]
+	var/weight_artwork_armorPart = 2 + LStats[STAT_END] + LStats[STAT_INT]
 
 	if(ins_used >= 85)//Arbitrary values
 		weight_artwork_revolver += 9
@@ -118,23 +118,23 @@
 	if(inspiration && user.stats.getPerk(PERK_ARTIST))
 		LStats = inspiration.calculate_statistics()
 
-	//var/weight_mechanical = 0 + LStats[STAT_MEC]
-	var/weight_cognition = 0 + LStats[STAT_COG]
-	//var/weight_biology = 0 + LStats[STAT_BIO]
-	var/weight_robustness = 0 + LStats[STAT_ROB]
-	var/weight_toughness = 0 + LStats[STAT_TGH]
-	var/weight_vigilance = 0 + LStats[STAT_VIG]
+	//var/weight_mechanical = 0 + LStats[STAT_INT]
+	var/weight_luck = 0 + LStats[STAT_LCK]
+	//var/weight_biology = 0 + LStats[STAT_INT]
+	var/weight_strength = 0 + LStats[STAT_STR]
+	var/weight_endurance = 0 + LStats[STAT_END]
+	var/weight_agility = 0 + LStats[STAT_AGI]
 
 	if(full_artwork == "artwork_revolver")
 		var/obj/item/gun/projectile/revolver/artwork_revolver/R = new(src)
 
 		var/gun_pattern = pickweight(list(
-			"pistol" = 16 + weight_robustness,
-			"magnum" = 8 + weight_vigilance,
-			"shotgun" = 8 + weight_robustness,
-			"rifle" = 8 + weight_vigilance,
-			"sniper" = 8 + max(weight_vigilance, weight_cognition),
-			"rocket" = 8 + weight_toughness
+			"pistol" = 16 + weight_strength,
+			"magnum" = 8 + weight_agility,
+			"shotgun" = 8 + weight_strength,
+			"rifle" = 8 + weight_agility,
+			"sniper" = 8 + max(weight_agility, weight_luck),
+			"rocket" = 8 + weight_endurance
 		))
 
 		switch(gun_pattern)
@@ -225,7 +225,7 @@
 
 	else if(full_artwork == "artwork_oddity")
 		var/obj/item/oddity/artwork/O = new(src)
-		var/list/oddity_stats = list(STAT_MEC = rand(0,1), STAT_COG = rand(0,1), STAT_BIO = rand(0,1), STAT_ROB = rand(0,1), STAT_TGH = rand(0,1), STAT_VIG = rand(0,1))//May not be nessecary
+		var/list/oddity_stats = list(STAT_INT = rand(0,1), STAT_LCK = rand(0,1), STAT_CHR = rand(0,1), STAT_PER = rand(0,1), STAT_STR = rand(0,1), STAT_END = rand(0,1), STAT_AGI = rand(0,1))//May not be nessecary
 		var/stats_amt = 3
 		if(ins_used >= 85)//Arbitrary values
 			stats_amt += 3
@@ -255,7 +255,7 @@
 		return
 	flick("[initial(icon_state)]_work", src)
 	working = TRUE
-	if(!do_after(user, 15 * user.stats.getMult(STAT_MEC, STAT_LEVEL_GODLIKE), src))
+	if(!do_after(user, 15 * user.stats.getMult(STAT_INT, STAT_LEVEL_GODLIKE), src))
 		error = "Lost artist."
 		working = FALSE
 		return

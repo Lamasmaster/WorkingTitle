@@ -280,7 +280,7 @@
 
 	var/tool_type = I.get_tool_type(user, usable_qualities, src)
 	if(tool_type == QUALITY_SCREW_DRIVING)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 			open_hatch = !open_hatch
 			to_chat(user, SPAN_NOTICE("You [open_hatch ? "open" : "close"] the maintenance hatch of \the [src] with [I]."))
 		return
@@ -296,7 +296,7 @@
 				if(!tempTDir.is_plating())
 					to_chat(user, SPAN_WARNING("You must remove the floor plating first."))
 					return
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 				building_terminal = 1
 				if (prob(50) && electrocute_mob(usr, terminal.powernet, terminal))
 					var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread

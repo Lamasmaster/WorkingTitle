@@ -42,7 +42,7 @@
 	switch(tool_type)
 		if(QUALITY_WELDING, QUALITY_SAWING)
 			to_chat(user, SPAN_NOTICE("You start cutting \the [src] apart."))
-			if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_SLOW, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 				to_chat(user, SPAN_NOTICE("You dismantle \the [src]."))
 				drop_materials(drop_location())
 				for(var/obj/thing in contents)

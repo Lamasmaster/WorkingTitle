@@ -184,7 +184,7 @@
 				return
 			var/turf/user_interaction_loc = user.loc
 			var/set_canister = FALSE
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_INT))
 				if(canister)
 					set_canister = unset_canister(canister)
 				else

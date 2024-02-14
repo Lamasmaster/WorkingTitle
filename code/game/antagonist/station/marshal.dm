@@ -13,8 +13,8 @@
 	survive_objective = /datum/objective/escape
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_VIG = 15
+		STAT_STR = 5,
+		STAT_AGI = 15
 	)
 
 	welcome_text = "You are a freelance bounty hunter, contracted by Ironhammer to bring in a wanted fugitive, dead or alive.\n\

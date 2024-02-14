@@ -23,12 +23,12 @@
 
 //Experienced, battle-tested mercenaries should be at least as strong as a round start Ironhammer Commander.
 	stat_modifiers = list(
-		STAT_ROB = 40,
-		STAT_TGH = 40,
-		STAT_VIG = 40,
-		STAT_BIO = 10,
-		STAT_MEC = 20,
-		STAT_COG = 20
+		STAT_STR = 40,
+		STAT_END = 40,
+		STAT_AGI = 40,
+		STAT_INT = 10,
+		STAT_INT = 20,
+		STAT_LCK = 20
 	)
 
 	perks = list(PERK_SURVIVOR, PERK_CODESPEAK_SERB)

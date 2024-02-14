@@ -162,12 +162,12 @@
 /datum/ritual/cruciform/priest/acolyte/short_boost/wisdom
 	name = "Grace of Perseverance"
 	phrase = "Domine petra mea et robur meum et salvator meus Deus meus fortis meus sperabo in eo scutum meum et cornu salutis meae susceptor meus."
-	stats_to_boost = list(STAT_MEC = 10, STAT_COG = 10, STAT_BIO = 10)
+	stats_to_boost = list(STAT_INT = 10, STAT_LCK = 10)
 
 /datum/ritual/cruciform/priest/acolyte/short_boost/courage
 	name = "To Uphold the Holy Word"
 	phrase = "In Deo laudabo verbum in Domino praedicabo sermonem in Deo speravi non timebo quid faciat homo mihi."
-	stats_to_boost = list(STAT_ROB = 10, STAT_TGH = 10, STAT_VIG = 10)
+	stats_to_boost = list(STAT_STR = 10, STAT_END = 10)
 
 /datum/ritual/targeted/cruciform/priest/atonement
 	name = "Atonement"

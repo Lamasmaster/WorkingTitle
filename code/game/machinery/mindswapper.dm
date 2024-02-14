@@ -42,7 +42,7 @@
 	var/tool_type = I.get_tool_type(user, list(QUALITY_BOLT_TURNING), src)
 	switch(tool_type)
 		if(QUALITY_BOLT_TURNING)
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_INT))
 				anchored = anchored ? FALSE : TRUE
 
 /obj/machinery/mindswapper/examine()

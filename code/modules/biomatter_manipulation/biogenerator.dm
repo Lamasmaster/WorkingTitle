@@ -235,7 +235,7 @@
 			if(panel_open)
 				to_chat(user, SPAN_WARNING("You should close cover first."))
 				return
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_INT))
 				var/set_canister = FALSE
 				if(tank)
 					tank.can_anchor = TRUE
@@ -261,7 +261,7 @@
 			if(tank)
 				to_chat(user, SPAN_WARNING("You need to detach [tank] first."))
 				return
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, forced_sound = WORKSOUND_SCREW_DRIVING))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, forced_sound = WORKSOUND_SCREW_DRIVING))
 				panel_open = !panel_open
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the panel."))
 
@@ -365,7 +365,7 @@
 	var/tool_type = I.get_tool_type(user, list(QUALITY_SCREW_DRIVING, QUALITY_WIRE_CUTTING), src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, forced_sound = WORKSOUND_SCREW_DRIVING))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, forced_sound = WORKSOUND_SCREW_DRIVING))
 				panel_open = !panel_open
 				to_chat(user, SPAN_NOTICE("You [panel_open ? "open" : "close"] the cover."))
 
@@ -376,7 +376,7 @@
 					if(biogenerator.working)
 						shock(user, 100)
 						return
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, forced_sound = WORKSOUND_WIRECUTTING))
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, forced_sound = WORKSOUND_WIRECUTTING))
 						wires = FALSE
 						to_chat(user, SPAN_NOTICE("You cut old wires."))
 				else
@@ -473,7 +473,7 @@
 	var/tool_type = I.get_tool_type(user, list(QUALITY_SCREW_DRIVING, QUALITY_WELDING, QUALITY_PRYING), src)
 	switch(tool_type)
 		if(QUALITY_SCREW_DRIVING)
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, forced_sound = WORKSOUND_SCREW_DRIVING))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, forced_sound = WORKSOUND_SCREW_DRIVING))
 				if(coil_frame)
 					coil_frame = FALSE
 					to_chat(user, SPAN_NOTICE("You carefully open frame of [src]."))
@@ -485,7 +485,7 @@
 			if(coil_frame)
 				to_chat(user, SPAN_WARNING("You need to remove coil frame first!"))
 				return
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL,  required_stat = STAT_INT))
 				to_chat(user, SPAN_NOTICE("You fixed damaged sectors of [src]'s coil."))
 				coil_condition = 100
 				working_cycles = 0
@@ -493,7 +493,7 @@
 		if(QUALITY_PRYING)
 			if(generator.chamber.panel_open && !coil_frame)
 				to_chat(user, SPAN_NOTICE("You begin deconstructing [generator]..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, forced_sound = WORKSOUND_REMOVING))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, forced_sound = WORKSOUND_REMOVING))
 					to_chat(user, SPAN_NOTICE("You deconstructed [generator]."))
 					generator.dismantle()
 			else

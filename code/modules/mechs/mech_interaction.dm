@@ -518,7 +518,7 @@
 			if(mc.brute_damage <= 0)
 				to_chat(user, SPAN_WARNING("Brute damage on this part is already repaired."))
 				return TRUE
-			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 				visible_message(SPAN_WARNING("\The [mc] has been repaired by [user]!"),"You hear welding.")
 				mc.repair_brute_damage(15)
 				return TRUE

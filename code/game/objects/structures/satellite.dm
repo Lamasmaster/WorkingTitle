@@ -40,5 +40,5 @@
 		if(nosignal == FALSE)
 			nosignal = TRUE
 			var/mob/living/carbon/human/H = user
-			var/mystat = pick(STAT_MEC, STAT_COG, STAT_TGH, STAT_VIG, STAT_BIO)
+			var/mystat = pick(STAT_INT, STAT_LCK, STAT_END, STAT_AGI)
 			H.stats.changeStat(mystat, H.stats:getStat(mystat) + 20)

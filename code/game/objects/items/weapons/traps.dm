@@ -88,8 +88,8 @@ Freeing yourself is much harder than freeing someone else. Calling for help is a
 			difficulty += 5 //Robots are less dextrous
 
 		//How about your stats? Being strong or crafty helps.
-		//We'll subtract the highest of either robustness or mechanical, from the difficulty
-		var/reduction = user.stats.getMaxStat(list(STAT_ROB, STAT_MEC))
+		//We'll subtract the highest of either strength or luck, from the difficulty
+		var/reduction = user.stats.getMaxStat(list(STAT_STR, STAT_LCK))
 		if (user == buckled_mob)
 			reduction *= 0.66 //But it helps less if you don't have good leverage
 		difficulty -= reduction

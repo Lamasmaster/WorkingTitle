@@ -12,11 +12,11 @@
 	story_ineligible = list(JOBS_SECURITY, JOBS_COMMAND)
 
 	stat_modifiers = list(
-		STAT_ROB = 5,
-		STAT_TGH = 5,
-		STAT_MEC = 10,
-		STAT_COG = 5,
-		STAT_VIG = 15
+		STAT_STR = 5,
+		STAT_END = 5,
+		STAT_INT = 10,
+		STAT_LCK = 5,
+		STAT_AGI = 15
 	)
 
 /datum/antagonist/excelsior/equip()

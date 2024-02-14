@@ -101,7 +101,7 @@
 	switch(tool_type)
 		if(QUALITY_DIGGING)
 			to_chat(user, SPAN_NOTICE("You start digging the [src]."))
-			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_ROB))
+			if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_STR))
 				to_chat(user, SPAN_NOTICE("You finish digging the [src]."))
 				GetDrilled()
 			return

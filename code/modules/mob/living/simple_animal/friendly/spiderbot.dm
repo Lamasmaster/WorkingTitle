@@ -94,7 +94,7 @@
 
 	if(QUALITY_WELDING in O.tool_qualities)
 		if(health < maxHealth)
-			if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				health += pick(1,1,1,2,2,3)
 				if(health > maxHealth)
 					health = maxHealth

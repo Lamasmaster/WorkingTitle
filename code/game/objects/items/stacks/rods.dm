@@ -39,7 +39,7 @@
 			to_chat(user, SPAN_WARNING("You need at least two rods to do this."))
 			return
 
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 			var/obj/item/stack/material/steel/new_item = new (usr.loc)
 			new_item.add_to_stacks(usr)
 			for (var/mob/M in viewers(src))

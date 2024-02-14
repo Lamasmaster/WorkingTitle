@@ -599,7 +599,7 @@ proc/is_blind(A)
 		prob_evade += base_prob_evade
 	if(!stats)
 		return prob_evade
-	prob_evade += base_prob_evade * (stats.getStat(STAT_VIG)/STAT_LEVEL_GODLIKE - weight_coeff())
+	prob_evade += base_prob_evade * (stats.getStat(STAT_AGI)/STAT_LEVEL_GODLIKE + stats.getStat(STAT_PER)/STAT_LEVEL_GODLIKE - weight_coeff())
 	if(stats.getPerk(PERK_SURE_STEP))
 		prob_evade += base_prob_evade*30/STAT_LEVEL_GODLIKE
 	if(stats.getPerk(PERK_RAT))

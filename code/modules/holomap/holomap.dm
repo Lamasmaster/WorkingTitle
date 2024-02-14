@@ -237,7 +237,7 @@
 
 		if(QUALITY_WIRE_CUTTING)
 			if(wiresexposed && buildstage == 2)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					user.visible_message(SPAN_WARNING("[user] removed the wires from \the [src]!"), "You have removed the wires from \the [src].")
 					new/obj/item/stack/cable_coil(get_turf(user), 5)
 					buildstage = 1
@@ -248,7 +248,7 @@
 
 		if(QUALITY_PRYING)
 			if(buildstage == 1)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, "You pry out the circuit!")
 					new /obj/item/electronics/circuitboard/holomap(get_turf(user))
 					buildstage = 0
@@ -258,7 +258,7 @@
 
 		if(QUALITY_BOLT_TURNING)
 			if(buildstage == 0)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					to_chat(user, "You remove the [src] assembly from the wall!")
 					new /obj/item/frame/holomap(get_turf(user))
 					qdel(src)

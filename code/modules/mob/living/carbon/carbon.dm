@@ -293,7 +293,7 @@
 	if(item)
 		if((target.z > src.z) && istype(get_turf(GetAbove(src)), /turf/simulated/open))
 			var/obj/item/I = item
-			var/robust = stats.getStat(STAT_ROB)
+			var/robust = stats.getStat(STAT_STR)
 			var/timer = ((5 * I.w_class) - (robust * 0.1)) //(W_CLASS * 5) - (STR * 0.1)
 			visible_message(SPAN_DANGER("[src] is trying to toss \the [item] into the air!"))
 			if((I.w_class < ITEM_SIZE_GARGANTUAN) && do_after(src, timer))

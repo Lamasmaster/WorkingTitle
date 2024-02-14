@@ -26,7 +26,7 @@
 
 /mob/living/carbon/superior_animal/attackby(obj/item/I, mob/living/user, var/params)
 	if (meat_type && (stat == DEAD) && (QUALITY_CUTTING in I.tool_qualities))
-		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_BIO))
+		if (I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_CUTTING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 			harvest(user)
 	else
 		. = ..()
@@ -90,7 +90,7 @@
 				M.visible_message("\red [M] missed \the [src]")
 			else
 				if (istype(H))
-					damage += max(0, (H.stats.getStat(STAT_ROB) / 10))
+					damage += max(0, (H.stats.getStat(STAT_STR) / 10))
 //					if (HULK in H.mutations)
 //						damage *= 2
 

@@ -264,7 +264,7 @@
 			if(locked)
 				to_chat(user, SPAN_NOTICE("The bolts are covered, unlocking this would retract the covers."))
 				return
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT))
 				if(anchored)
 					to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
 					if(active)
@@ -278,7 +278,7 @@
 			return
 
 		if(QUALITY_SCREW_DRIVING)
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY,  required_stat = STAT_MEC, instant_finish_tier = 30))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY,  required_stat = STAT_INT, instant_finish_tier = 30))
 				is_open = !is_open
 				to_chat(user, SPAN_NOTICE("You [is_open ? "open" : "close"] the panel of \the [src] with [I]."))
 			return

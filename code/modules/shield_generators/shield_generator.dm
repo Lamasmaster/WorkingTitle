@@ -700,7 +700,7 @@
 
 
 /obj/machinery/power/shield_generator/proc/wrench(var/user, var/obj/item/O)
-	if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+	if(O.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_INT))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		if(anchored)
 			to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))
@@ -806,7 +806,7 @@
 	if(tendrils_deployed)
 		to_chat(usr, SPAN_NOTICE("Retract conduits first!"))
 		return
-	if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+	if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_INT))
 		playsound(src.loc, 'sound/items/Ratchet.ogg', 75, 1)
 		if(anchored)
 			to_chat(user, SPAN_NOTICE("You unsecure the [src] from the floor!"))

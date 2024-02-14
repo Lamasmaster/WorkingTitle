@@ -42,7 +42,7 @@ true, and the mob is not yet deleted, so we need to check that as well*/
 		var/embed_threshold = weapon_sharp? 5*I.w_class : 15*I.w_class
 
 		//The user's robustness stat adds to the threshold, allowing you to use more powerful weapons without embedding risk
-		embed_threshold += user.stats.getStat(STAT_ROB)
+		embed_threshold += user.stats.getStat(STAT_STR)
 		var/embed_chance = (damage*I.embed_mult - embed_threshold)/2
 		if(embed_chance > 0 && prob(embed_chance))
 			src.embed(I, hit_zone)
@@ -72,7 +72,7 @@ true, and the mob is not yet deleted, so we need to check that as well*/
 			return 0
 
 		damage_through_armor(W.force, W.damtype, BP_HEAD, wounding_multiplier = 2, sharp = W.sharp, edge = W.edge, used_weapon = W)
-		
+
 		user.visible_message(SPAN_DANGER("\The [user] cuts [src]'s neck with \the [W]!"), SPAN_DANGER("You cut [src]'s neck with \the [W]!"))
 
 		if(W.hitsound)

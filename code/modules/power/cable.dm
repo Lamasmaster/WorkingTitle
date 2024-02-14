@@ -140,22 +140,22 @@ var/list/possible_cable_coil_colours = list(
 		return
 
 	if(QUALITY_WIRE_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			if(!shock(user, 50))
 				cutting(user)
 				return
-		var/fail_chance = FAILCHANCE_NORMAL - user.stats.getStat(STAT_MEC)
+		var/fail_chance = FAILCHANCE_NORMAL - user.stats.getStat(STAT_INT)
 		if(prob(fail_chance))
 			to_chat(user, SPAN_NOTICE("Oh God, what a mess!"))
 			spawnSplicing()
 		return
 
 	if(QUALITY_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_INSTANT, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			if(!shock(user, 50))
 				cutting(user)
 				return
-		var/fail_chance = FAILCHANCE_NORMAL - user.stats.getStat(STAT_MEC)
+		var/fail_chance = FAILCHANCE_NORMAL - user.stats.getStat(STAT_INT)
 		if(prob(fail_chance))
 			to_chat(user, SPAN_NOTICE("Oh God, what a mess!"))
 			spawnSplicing()
@@ -180,7 +180,7 @@ var/list/possible_cable_coil_colours = list(
 				used_now = FALSE
 				return 		//he didn't
 			if(do_after(user, 20, src))
-				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
+				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_INT) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, 100)) //why not
 						to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to screw this up."))
@@ -578,7 +578,7 @@ obj/structure/cable/proc/cableColor(var/colorC)
 					if(!use(1))
 						to_chat(user, SPAN_WARNING("You have run out of \the [src]."))
 						return
-					W.heal_damage(CLAMP(user.stats.getStat(STAT_MEC)/2.5, 5, 15))
+					W.heal_damage(CLAMP(user.stats.getStat(STAT_INT)/2.5, 5, 15))
 					to_chat(user, SPAN_NOTICE("You patch some wounds on \the [S]."))
 				S.update_damages()
 				if(S.burn_dam)

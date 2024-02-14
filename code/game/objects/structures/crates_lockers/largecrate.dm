@@ -12,7 +12,7 @@
 
 /obj/structure/largecrate/attackby(obj/item/I, mob/user)
 	if(QUALITY_PRYING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_EASY, required_stat = STAT_STR))
 			drop_materials(drop_location())
 			var/turf/T = get_turf(src)
 			for(var/atom/movable/AM in contents)
@@ -35,7 +35,7 @@
 
 /obj/structure/largecrate/hoverpod/attackby(obj/item/I, mob/user)
 	if(QUALITY_PRYING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			var/obj/item/mech_equipment/ME
 			var/mob/living/exosuit/working/hoverpod/H = new (loc)
 

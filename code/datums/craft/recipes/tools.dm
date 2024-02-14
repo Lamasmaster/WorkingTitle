@@ -1,7 +1,7 @@
 /datum/craft_recipe/tool
 	category = "Tools"
 	time = 100
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 
 /datum/craft_recipe/tool/webtape
@@ -107,7 +107,7 @@
 		list(QUALITY_WIRE_CUTTING, 10, "time" = 60),
 		list(QUALITY_ADHESIVE, 15, 70)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /*************************
 	TOOL MODS
@@ -170,7 +170,7 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTEEL),			//additional frame to support wires
 		list(QUALITY_WELDING, 10, "time" = 70),				//secure frame
 		list(/obj/item/stack/cable_coil, 30, "time" = 10),	//add wiring
-		list(QUALITY_WIRE_CUTTING, 10, "time" = 60),		//adjust wiring	
+		list(QUALITY_WIRE_CUTTING, 10, "time" = 60),		//adjust wiring
 	)
 
 //Welding backpack disassembled into a smaller tank

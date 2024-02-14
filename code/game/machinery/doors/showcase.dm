@@ -20,14 +20,14 @@
 	if(density)
 		if(QUALITY_WELDING in I.tool_qualities)
 			if((stat&BROKEN) && have_glass)
-				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_INT))
 					have_glass = FALSE
 					update_icon()
 					return
 			else
 				if(user.a_intent == I_HELP)
 					if(health < maxHealth)
-						if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+						if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WELDING, FAILCHANCE_EASY, required_stat = STAT_INT))
 							health = maxHealth
 							update_icon()
 					return

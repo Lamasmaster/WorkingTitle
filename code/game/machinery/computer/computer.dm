@@ -92,7 +92,7 @@
 
 /obj/machinery/computer/attackby(obj/item/I, mob/user)
 	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 			var/obj/structure/computerframe/A = new /obj/structure/computerframe(src.loc)
 			A.dir = src.dir
 			A.circuit = circuit

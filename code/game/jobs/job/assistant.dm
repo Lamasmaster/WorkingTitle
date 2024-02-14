@@ -17,12 +17,12 @@
 	outfit_type = /decl/hierarchy/outfit/job/assistant
 
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 	perks = list(/datum/perk/vagabond)

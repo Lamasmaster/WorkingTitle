@@ -5,7 +5,7 @@
 	)
 	flags = CRAFT_BATCH
 	time = 1 //Crafting individual tiles is fast
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/floor/classic
 	name = "wood floor tile"

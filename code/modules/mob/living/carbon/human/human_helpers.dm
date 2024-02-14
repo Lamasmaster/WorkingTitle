@@ -25,7 +25,7 @@
 			return TRUE
 	if(stats.check_for_shared_perk(PERK_SHARED_SEE_REAGENTS))
 		return TRUE
-	if(stats.getStat(STAT_COG) >= HUMAN_REQ_COG_FOR_REG || stats.getStat(STAT_BIO) >= HUMAN_REQ_BIO_FOR_REG)
+	if(stats.getStat(STAT_PER) >= HUMAN_REQ_PER_FOR_REG || stats.getStat(STAT_INT) >= HUMAN_REQ_INT_FOR_REG)
 		return TRUE
 	/*
 	if(stats.check_for_shared_perk(PERK_SHARED_SEE_CONSUMER_REAGENTS))

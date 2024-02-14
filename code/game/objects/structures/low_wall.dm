@@ -424,19 +424,19 @@
 				to_chat(user, SPAN_NOTICE("You must remove the window mounted on this wall before it can be repaired or deconstructed"))
 				return
 			if(locate(/obj/effect/overlay/wallrot) in src)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You burn away the fungi with \the [I]."))
 					for(var/obj/effect/overlay/wallrot/WR in src)
 						qdel(WR)
 					return
 			if(health < maxHealth)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You repair the damage to [src]."))
 					take_damage(maxHealth - health)
 					return
 			if(isnull(construction_stage))
 				to_chat(user, SPAN_NOTICE("You begin removing the outer plating..."))
-				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the outer plating."))
 					dismantle_wall()
 					user.visible_message(SPAN_WARNING("The wall was torn open by [user]!"))
@@ -456,7 +456,7 @@
 		var/dam_prob = min(100,60*1.4) //60 is hardness of steel
 		if(ishuman(user))
 			var/mob/living/carbon/human/attacker = user
-			dam_prob -= attacker.stats.getStat(STAT_ROB)
+			dam_prob -= attacker.stats.getStat(STAT_STR)
 		if(dam_prob < 100 && attackforce > (dam_threshhold/10))
 			playsound(src, hitsound, 80, 1)
 			if(!prob(dam_prob))

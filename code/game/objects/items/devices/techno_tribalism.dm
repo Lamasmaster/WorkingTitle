@@ -10,7 +10,7 @@
 	price_tag = 20000
 	spawn_frequency = 0
 	spawn_blacklisted = TRUE
-	var/list/oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
+	var/list/oddity_stats = list(STAT_INT = 0, STAT_LCK = 0, STAT_INT = 0, STAT_STR = 0, STAT_END = 0, STAT_AGI = 0)
 	/// double  for taking out combat-oddities (skydriver , sword of truth)
 	// summ of all combat stats points thats permitted
 	// 5 power shovels = 30 points
@@ -50,57 +50,57 @@
 		to_chat(user, "You need to be in a disarming stance to insert items into the [src]")
 		return FALSE
 	var/starting_sum = list(
-		STAT_TGH = oddity_stats[STAT_TGH],
-		STAT_ROB = oddity_stats[STAT_ROB],
-		STAT_VIG = oddity_stats[STAT_VIG],
-		STAT_BIO = oddity_stats[STAT_BIO],
-		STAT_MEC = oddity_stats[STAT_MEC],
-		STAT_COG = oddity_stats[STAT_COG]
+		STAT_END = oddity_stats[STAT_END],
+		STAT_STR = oddity_stats[STAT_STR],
+		STAT_AGI = oddity_stats[STAT_AGI],
+		STAT_INT = oddity_stats[STAT_INT],
+		STAT_INT = oddity_stats[STAT_INT],
+		STAT_LCK = oddity_stats[STAT_LCK]
 	)
 	if(items_count < max_count)
 		if(W in GLOB.all_faction_items)
 			to_chat(user, "Inserting the departmental relic decreases the [src]'s delay by 2 minutes!")
 			cooldown -= 2 MINUTES
 			if(GLOB.all_faction_items[W] == GLOB.department_moebius)
-				oddity_stats[STAT_COG] += 3
-				oddity_stats[STAT_BIO] += 3
-				oddity_stats[STAT_MEC] += 3
+				oddity_stats[STAT_LCK] += 3
+				oddity_stats[STAT_INT] += 3
+				oddity_stats[STAT_INT] += 3
 			else if(GLOB.all_faction_items[W] == GLOB.department_security)
-				oddity_stats[STAT_VIG] += 3
-				oddity_stats[STAT_TGH] += 3
-				oddity_stats[STAT_ROB] += 3
+				oddity_stats[STAT_AGI] += 3
+				oddity_stats[STAT_END] += 3
+				oddity_stats[STAT_STR] += 3
 				if(istype(W, /obj/item/gun/projectile/revolver/sky_driver))
 					to_chat(user, "This departmental relic is used for combat, it has boosted the [src]'s capability of creating combat oddities.")
 					combat_cap *= 2
 			else if(GLOB.all_faction_items[W] == GLOB.department_church)
-				oddity_stats[STAT_BIO] += 3
-				oddity_stats[STAT_COG] += 2
-				oddity_stats[STAT_VIG] += 2
-				oddity_stats[STAT_TGH] += 2
+				oddity_stats[STAT_INT] += 3
+				oddity_stats[STAT_LCK] += 2
+				oddity_stats[STAT_AGI] += 2
+				oddity_stats[STAT_END] += 2
 				if(istype(W, /obj/item/tool/sword/nt_sword))
 					to_chat(user, "This departmental relic is used for combat, it has boosted the [src]'s capability of creating combat oddities.")
 					combat_cap *= 2
 			else if(GLOB.all_faction_items[W] == GLOB.department_guild)
-				oddity_stats[STAT_COG] += 3
-				oddity_stats[STAT_MEC] += 3
-				oddity_stats[STAT_ROB] += 1
-				oddity_stats[STAT_VIG] += 2
+				oddity_stats[STAT_LCK] += 3
+				oddity_stats[STAT_INT] += 3
+				oddity_stats[STAT_STR] += 1
+				oddity_stats[STAT_AGI] += 2
 			else if(GLOB.all_faction_items[W] == GLOB.department_engineering)
-				oddity_stats[STAT_MEC] += 5
-				oddity_stats[STAT_COG] += 2
-				oddity_stats[STAT_TGH] += 1
-				oddity_stats[STAT_VIG] += 1
+				oddity_stats[STAT_INT] += 5
+				oddity_stats[STAT_LCK] += 2
+				oddity_stats[STAT_END] += 1
+				oddity_stats[STAT_AGI] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_command)
-				oddity_stats[STAT_ROB] += 2
-				oddity_stats[STAT_TGH] += 1
-				oddity_stats[STAT_BIO] += 1
-				oddity_stats[STAT_MEC] += 1
-				oddity_stats[STAT_VIG] += 3
-				oddity_stats[STAT_COG] += 1
+				oddity_stats[STAT_STR] += 2
+				oddity_stats[STAT_END] += 1
+				oddity_stats[STAT_INT] += 1
+				oddity_stats[STAT_INT] += 1
+				oddity_stats[STAT_AGI] += 3
+				oddity_stats[STAT_LCK] += 1
 			else if(GLOB.all_faction_items[W] == GLOB.department_civilian)
-				oddity_stats[STAT_BIO] += 3
-				oddity_stats[STAT_VIG] += 2
-				oddity_stats[STAT_COG] += 2
+				oddity_stats[STAT_INT] += 3
+				oddity_stats[STAT_AGI] += 2
+				oddity_stats[STAT_LCK] += 2
 			else
 				CRASH("[W], incompatible department")
 
@@ -113,27 +113,27 @@
 					if(W.tool_qualities[quality] >= 35)
 						var/stat_cost = round(W.tool_qualities[quality] / 15)
 						if(quality == QUALITY_BOLT_TURNING || quality == QUALITY_SCREW_DRIVING || quality == QUALITY_CUTTING)
-							oddity_stats[STAT_COG] += stat_cost
+							oddity_stats[STAT_LCK] += stat_cost
 							useful = TRUE
 
 						else if (quality == QUALITY_PULSING || quality == QUALITY_ADHESIVE || quality == QUALITY_SEALING)
-							oddity_stats[STAT_MEC] += stat_cost
+							oddity_stats[STAT_INT] += stat_cost
 							useful = TRUE
 
 						else if (quality == QUALITY_PRYING || quality == QUALITY_HAMMERING || quality == QUALITY_DIGGING)
-							oddity_stats[STAT_ROB] += stat_cost
+							oddity_stats[STAT_STR] += stat_cost
 							useful = TRUE
 
 						else if (quality == QUALITY_WELDING || quality == QUALITY_WIRE_CUTTING || quality == QUALITY_SAWING || quality == QUALITY_LASER_CUTTING)
-							oddity_stats[STAT_VIG] += stat_cost
+							oddity_stats[STAT_AGI] += stat_cost
 							useful = TRUE
 
 						else if (quality == QUALITY_CLAMPING || quality == QUALITY_CAUTERIZING || quality == QUALITY_RETRACTING || quality == QUALITY_BONE_SETTING)
-							oddity_stats[STAT_BIO] += stat_cost
+							oddity_stats[STAT_INT] += stat_cost
 							useful = TRUE
 
 						else if (quality == QUALITY_DRILLING || quality == QUALITY_SHOVELING || quality == QUALITY_EXCAVATION)
-							oddity_stats[STAT_TGH] += stat_cost
+							oddity_stats[STAT_END] += stat_cost
 							useful = TRUE
 
 				if(!useful)
@@ -149,40 +149,40 @@
 			var/obj/item/tool_upgrade/T = W
 
 			if(istype(T, /obj/item/tool_upgrade/reinforcement))
-				oddity_stats[STAT_TGH] += 3
+				oddity_stats[STAT_END] += 3
 
 			else if(istype(T, /obj/item/tool_upgrade/productivity))
-				oddity_stats[STAT_COG] += 3
+				oddity_stats[STAT_LCK] += 3
 
 			else if(istype(T, /obj/item/tool_upgrade/refinement))
-				oddity_stats[STAT_VIG] += 3
+				oddity_stats[STAT_AGI] += 3
 
 			else if(istype(T, /obj/item/tool_upgrade/augment))
-				oddity_stats[STAT_BIO] += 3
+				oddity_stats[STAT_INT] += 3
 
 
 		else if(istype(W, /obj/item/cell))
 			if(istype(W, /obj/item/cell/small/moebius/nuclear))
-				oddity_stats[STAT_ROB] += 2
+				oddity_stats[STAT_STR] += 2
 
 			else if(istype(W, /obj/item/cell/medium/moebius/nuclear))
-				oddity_stats[STAT_ROB] += 3
+				oddity_stats[STAT_STR] += 3
 
 			else if(istype(W, /obj/item/cell/large/moebius/nuclear))
-				oddity_stats[STAT_ROB] += 4
+				oddity_stats[STAT_STR] += 4
 
 			else
-				oddity_stats[STAT_ROB] += 1
+				oddity_stats[STAT_STR] += 1
 
 		else if(isgun(W))
-			oddity_stats[STAT_ROB] += 2
-			oddity_stats[STAT_VIG] += 2
+			oddity_stats[STAT_STR] += 2
+			oddity_stats[STAT_AGI] += 2
 
 		else
 			to_chat(user, SPAN_WARNING("The [W] is not suitable for [src]!"))
 			return
 
-		if(oddity_stats[STAT_ROB] + oddity_stats[STAT_VIG] + oddity_stats[STAT_TGH] > combat_cap)
+		if(oddity_stats[STAT_STR] + oddity_stats[STAT_AGI] + oddity_stats[STAT_END] > combat_cap)
 			to_chat(user, SPAN_WARNING("The [W] goes beyond the Tribalism's capability for combat, perhaps it could be upgraded with combat relics from other factions."))
 			for(var/stat in starting_sum)
 				oddity_stats[stat] = starting_sum[stat]
@@ -205,7 +205,7 @@
 				T.oddity_stats = src.oddity_stats
 				T.AddComponent(/datum/component/inspiration, T.oddity_stats, T.perk)
 				items_count = 0
-				oddity_stats = list(STAT_MEC = 0, STAT_COG = 0, STAT_BIO = 0, STAT_ROB = 0, STAT_TGH = 0, STAT_VIG = 0)
+				oddity_stats = list(STAT_INT = 0, STAT_LCK = 0, STAT_INT = 0, STAT_STR = 0, STAT_END = 0, STAT_AGI = 0)
 				// let technos know
 				addtimer(CALLBACK(src, PROC_REF(alert_technomancers)), cooldown)
 				last_produce = world.time

@@ -367,7 +367,7 @@
 	switch(tool_type)
 		if(QUALITY_WELDING)
 			if(!opened)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					welded = !welded
 					update_icon()
 					visible_message(
@@ -375,7 +375,7 @@
 						"You hear [tool_type]."
 					)
 			else
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					visible_message(
 						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
 						"You hear [tool_type]."
@@ -386,7 +386,7 @@
 
 		if(QUALITY_SAWING, QUALITY_BOLT_TURNING)
 			if(opened)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 					visible_message(
 						SPAN_NOTICE("\The [src] has been [tool_type == QUALITY_BOLT_TURNING ? "taken" : "cut"] apart by [user] with \the [I]."),
 						"You hear [tool_type]."
@@ -409,7 +409,7 @@
 			SPAN_WARNING("[user] picks in wires of the [src.name] with a multitool"), \
 			SPAN_WARNING("[pick("Picking wires in [src.name] lock", "Hacking [src.name] security systems", "Pulsing in locker controller")].")
 			)
-			if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_LONG, QUALITY_PULSING, FAILCHANCE_HARD, required_stat = STAT_INT))
 				if(hack_stage < hack_require)
 					var/obj/item/tool/T = I
 					if(istype(T) && T.item_flags & SILENT)
@@ -423,7 +423,7 @@
 						playsound(loc, WORKSOUND_HONK, 70, 1, -2)
 
 				//Cognition can be used to speed up the proccess
-					if(prob (user.stats.getStat(STAT_COG)))
+					if(prob (user.stats.getStat(STAT_LCK)))
 						hack_stage = hack_require
 						to_chat(user, SPAN_NOTICE("You discover an exploit in [src]'s security system and it shuts down! Now you just need to pulse the lock."))
 					else

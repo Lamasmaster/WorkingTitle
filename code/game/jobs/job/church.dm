@@ -24,10 +24,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/church/chaplain
 
 	stat_modifiers = list(
-		STAT_TGH = 10,
-		STAT_ROB = 20,
-		STAT_VIG = 15,
-		STAT_COG = 20,
+		STAT_END = 10,
+		STAT_STR = 20,
+		STAT_AGI = 15,
+		STAT_LCK = 20,
 	)
 
 	perks = list(/datum/perk/channeling)
@@ -85,10 +85,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/church/acolyte
 
 	stat_modifiers = list(
-		STAT_VIG = 15,
-		STAT_TGH = 15,
-		STAT_ROB = 15,
-		STAT_COG = 10,
+		STAT_AGI = 15,
+		STAT_END = 15,
+		STAT_STR = 15,
+		STAT_LCK = 10,
 	)
 
 	core_upgrades = list(
@@ -130,10 +130,10 @@
 
 	outfit_type = /decl/hierarchy/outfit/job/church/gardener
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_TGH = 10,
-		STAT_ROB = 10,
-		STAT_COG = 10,
+		STAT_INT = 20,
+		STAT_END = 10,
+		STAT_STR = 10,
+		STAT_LCK = 10,
 	)
 
 	core_upgrades = list(
@@ -177,10 +177,10 @@
 	outfit_type = /decl/hierarchy/outfit/job/church/janitor
 
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 10,
-		STAT_VIG = 15,
-		STAT_COG = 10,
+		STAT_STR = 15,
+		STAT_END = 10,
+		STAT_AGI = 15,
+		STAT_LCK = 10,
 	)
 
 	core_upgrades = list(

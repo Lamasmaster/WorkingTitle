@@ -44,7 +44,7 @@
 		return FALSE
 
 	if(QUALITY_HAMMERING in W.tool_qualities)
-		if(W.use_tool(user, src, WORKTIME_INSTANT, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_ROB))
+		if(W.use_tool(user, src, WORKTIME_INSTANT, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_STR))
 			playsound(src, "shatter", 70, 1)
 			new /obj/item/clothing/head/collectable/kitty(get_turf(src))
 			qdel(src)

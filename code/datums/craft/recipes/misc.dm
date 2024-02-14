@@ -6,7 +6,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_STEEL)
 	)
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/wall_girders/low
 	name = "low wall girder"
@@ -15,7 +15,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 3, MATERIAL_STEEL)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/kitchen_spike
 	name = "Meat spike"
@@ -26,7 +26,7 @@
 		list(QUALITY_WELDING, 20, 50)
 	)
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/plasticflaps
 	name = "plastic flaps"
@@ -35,7 +35,7 @@
 		list(CRAFT_MATERIAL, 4, MATERIAL_PLASTIC)
 	)
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/metal_rod
 	name = "metal rod"
@@ -45,7 +45,7 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
 	flags = CRAFT_BATCH
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/box
 	name = "box"
@@ -53,7 +53,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/bone_braces
 	name = "bone braces"
@@ -63,7 +63,7 @@
 		list(QUALITY_WELDING, 20, 50),
 		list(QUALITY_WIRE_CUTTING, 10, 120)
 	)
-	related_stats = list(STAT_COG, STAT_BIO, STAT_MEC)
+	related_stats = list(STAT_LCK, STAT_INT)
 
 /datum/craft_recipe/plastic_bag
 	name = "plastic bag"
@@ -71,7 +71,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/blood_pack
 	name = "blood pack"
@@ -79,7 +79,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_PLASTIC)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/ashtray
 	name = "ashtray"
@@ -87,7 +87,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/beehive_assembly
 	name = "beehive assembly"
@@ -95,7 +95,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_WOOD)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/beehive_frame
 	name = "beehive frame"
@@ -103,7 +103,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_WOOD)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/canister
 	name = "canister"
@@ -112,7 +112,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/pulsar_fuel_tank
 	name = "pulsar fuel tank"
@@ -121,7 +121,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 30, MATERIAL_STEEL)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/cannon_frame
 	name = "cannon frame"
@@ -130,7 +130,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_STEEL)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/folder
 	name = "grey folder"
@@ -138,7 +138,7 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 1, MATERIAL_CARDBOARD)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/folder/blue
 	name = "blue folder"
@@ -166,7 +166,7 @@
 	steps = list(
 		list(/obj/item/clothing, 1, time = 30)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/handmade_handtele
 	name = "cheap hand-tele"
@@ -180,7 +180,7 @@
 		list(/obj/item/cell/small, 1),
 		list(/obj/item/stack/cable_coil, 5, "time" = 20)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/tray
 	name = "dinner tray"
@@ -189,7 +189,7 @@
 		list(CRAFT_MATERIAL, 1, MATERIAL_STEEL, "time" = 40),
 		list(QUALITY_WIRE_CUTTING, 10, 120)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/bucket
 	name = "Bucket"
@@ -198,7 +198,7 @@
 		list(CRAFT_MATERIAL, 2, MATERIAL_PLASTIC, "time" = 10),
 		list(QUALITY_SEALING, 10, 60),
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 //You build a frame from rods, add metal shelves, plastic wheels and handles
 /datum/craft_recipe/janicart
@@ -213,7 +213,7 @@
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTIC, "time" = 40),
 		list(QUALITY_BOLT_TURNING, 10, 60)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 
 //Cut variously sized bits of plastic down to size, tape them together, and then use a welder to melt gaps
@@ -227,7 +227,7 @@
 		list(QUALITY_SEALING, 10, 60),
 		list(QUALITY_WELDING, 10, 60)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 
 //You get some article of clothing and shred it with a blade to make a mophead. Add in some metal rods for a handle
@@ -240,7 +240,7 @@
 		list(/obj/item/stack/rods, 2),
 		list(QUALITY_BOLT_TURNING, 10, 60)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 //Make a drill bit with some material and a welder! So you won't need to print a whole new exosuit drill when your head snaps.
 
@@ -252,7 +252,7 @@
 		list(CRAFT_MATERIAL, 6, MATERIAL_STEEL, "time" = 30),
 		list(QUALITY_WELDING, 10, 60)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/drill_head/plasteel
 	name = "plasteel drill head"
@@ -279,7 +279,7 @@
 		list(CRAFT_MATERIAL, 5, MATERIAL_WOOD, "time" = 0),
 		list(QUALITY_CUTTING, 10, 10)
 	)
-	related_stats = list(STAT_COG)
+	related_stats = list(STAT_LCK)
 
 /datum/craft_recipe/rolling_pin
 	name = "Rolling pin"
@@ -301,7 +301,7 @@
 		list(QUALITY_PULSING, 10, 10),
 		list(/obj/item/reagent_containers/glass/bucket, 1)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/makeshift_leg/right
 	name = "Makeshift prosthetic right leg"
@@ -318,7 +318,7 @@
 		list(QUALITY_WIRE_CUTTING, 10, 10),
 		list(QUALITY_PULSING, 10, 10),
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/makeshift_arm/right
 	name = "Makeshift prosthetic right arm"
@@ -339,4 +339,4 @@
 		list(CRAFT_MATERIAL, 3, MATERIAL_GLASS),
 		list(CRAFT_MATERIAL, 3, MATERIAL_PLASTIC)
 	)
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)

@@ -457,7 +457,7 @@
 				return
 
 			var/used_sound = mode ? 'sound/machines/Custom_screwdriverclose.ogg' : 'sound/machines/Custom_screwdriveropen.ogg'
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT, instant_finish_tier = 30, forced_sound = used_sound))
 				to_chat(user, "You [panel_open ? "attach" : "remove"] the screws around the power connection.")
 				panel_open = !panel_open
 				return

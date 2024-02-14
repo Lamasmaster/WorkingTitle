@@ -141,7 +141,7 @@
 		kick_dir = turn(kick_dir, 180)
 	target.throw_at(get_edge_target_turf(target, kick_dir), 3, 1)
 	//deal damage AFTER the kick
-	var/damage = max(1, min(30, (attacker.stats.getStat(STAT_ROB) / 3)))
+	var/damage = max(1, min(30, (attacker.stats.getStat(STAT_STR) / 3)))
 	target.damage_through_armor(damage, BRUTE, BP_CHEST, ARMOR_MELEE)
 	//admin messaging
 	attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>Dropkicked [target.name] ([target.ckey])</font>")
@@ -161,7 +161,7 @@
 	if(do_after(attacker, 20, progress=0) && target)
 		visible_message(SPAN_DANGER("...And falls backwards, slamming the opponent back onto the floor!"))
 		target.SpinAnimation(5,1)
-		var/damage = min(80, attacker.stats.getStat(STAT_ROB) + 15) //WE ARE GONNA KILL YOU
+		var/damage = min(80, attacker.stats.getStat(STAT_STR) + 15) //WE ARE GONNA KILL YOU
 		target.damage_through_armor(damage, BRUTE, BP_CHEST, ARMOR_MELEE) //crunch
 		attacker.Weaken(2)
 		target.Stun(6)
@@ -178,7 +178,7 @@
 /obj/item/grab/proc/gut_punch(mob/living/carbon/human/target, mob/living/carbon/human/attacker)
 	//no check for grab levels
 	visible_message(SPAN_DANGER("[attacker] thrusts \his fist in [target]'s guts!"))
-	var/damage = max(1, (10 - target.stats.getStat(STAT_TGH) / 4))//40+ TGH = 1 dmg
+	var/damage = max(1, (10 - target.stats.getStat(STAT_END) / 4))//40+ TGH = 1 dmg
 	target.damage_through_armor(damage, BRUTE, BP_GROIN, ARMOR_MELEE, wounding_multiplier = 2)
 	//vomiting goes on cd for 35 secs, which means it's impossible to spam this
 	target.vomit(TRUE)
@@ -256,7 +256,7 @@
 	var/fireman_dir = (get_dir(target, attacker))
 	if(attacker.loc == target.loc) // if we are on the same tile(e.g. neck grab), turn the direction to still push them away
 		fireman_dir = turn(attacker.dir, 180)
-	var/damage = max(1, min(20, (attacker.stats.getStat(STAT_ROB) / 3)))
+	var/damage = max(1, min(20, (attacker.stats.getStat(STAT_STR) / 3)))
 
 	target.loc = attacker.loc
 	attacker.drop_from_inventory(src)

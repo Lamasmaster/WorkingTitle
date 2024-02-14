@@ -966,7 +966,7 @@ There are 9 wires.
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(!repairing)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = list(STAT_MEC, STAT_ROB)))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_VERY_EASY,  required_stat = list(STAT_INT, STAT_STR)))
 					if(p_open && (operating < 0 || (!operating && welded && !arePowerSystemsOn() && density && (!locked || (stat & BROKEN)))) )
 						to_chat(user, SPAN_NOTICE("You removed the airlock electronics!"))
 
@@ -1009,7 +1009,7 @@ There are 9 wires.
 
 		if(QUALITY_SCREW_DRIVING)
 			var/used_sound = p_open ? 'sound/machines/Custom_screwdriveropen.ogg' :  'sound/machines/Custom_screwdriverclose.ogg'
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC, instant_finish_tier = 30, forced_sound = used_sound))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT, instant_finish_tier = 30, forced_sound = used_sound))
 				if (p_open)
 					if (stat & BROKEN)
 						to_chat(usr, SPAN_WARNING("The panel is broken and cannot be closed."))
@@ -1022,7 +1022,7 @@ There are 9 wires.
 
 		if(QUALITY_WELDING)
 			if(!repairing && !(operating > 0) && density)
-				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 					if(!welded)
 						welded = 1
 					else
@@ -1036,7 +1036,7 @@ There are 9 wires.
 			if(stat & NOPOWER && locked)
 				to_chat(user, SPAN_NOTICE("You start hammering the bolts into the unlocked position"))
 				// long time and high chance to fail.
-				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_LONG, tool_type, FAILCHANCE_VERY_HARD, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You unbolt the door."))
 					locked = FALSE
 			else

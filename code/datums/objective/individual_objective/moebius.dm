@@ -1,14 +1,14 @@
 /datum/individual_objective/big_brain
 	name = "The Biggest Brain"
 	req_department = list(DEPARTMENT_SCIENCE, DEPARTMENT_MEDICAL)
-	var/target_stat = STAT_COG
+	var/target_stat = STAT_LCK
 	var/target_val
 	var/delta = 10
 
 /datum/individual_objective/big_brain/assign()
 	..()
-	target_val = mind_holder.stats.getStat(STAT_COG) + delta
-	desc = "Ensure that your COG stat will be increased to [target_val]."
+	target_val = mind_holder.stats.getStat(STAT_LCK) + delta
+	desc = "Ensure that your LCK stat will be increased to [target_val]."
 	RegisterSignal(mind_holder, COMSIG_STAT, PROC_REF(task_completed))
 
 /datum/individual_objective/big_brain/task_completed(stat_name, stat_value, stat_value_pure)

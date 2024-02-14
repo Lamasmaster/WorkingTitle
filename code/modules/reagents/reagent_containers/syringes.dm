@@ -143,7 +143,7 @@
 				return
 			if(isliving(target))
 				var/mob/living/L = target
-				var/injtime = time - (user.stats.getStat(STAT_BIO)*0.375) // 375 was choosen to make a steady increase on speed from 0 being default time and 80 being 0, even if its never really 0
+				var/injtime = time - (user.stats.getStat(STAT_INT)*0.375) // 375 was choosen to make a steady increase on speed from 0 being default time and 80 being 0, even if its never really 0
 				if(injtime < 10) injtime=10 //should make the "fastest" injection take at least 10
 
 				//Injecting through a hardsuit takes longer due to needing to find a port.
@@ -166,7 +166,7 @@
 					else if(!H.can_inject(user, FALSE))
 						// lets check if user is easily fooled
 						var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
-						if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+						if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_INT) < STAT_LEVEL_BASIC)
 							break_syringe(user = user)
 							to_chat(user, SPAN_WARNING("\The [src] have broken while trying to inject [target]."))
 							return
@@ -181,7 +181,7 @@
 				if(target != user)
 					user.setClickCooldown(DEFAULT_QUICK_COOLDOWN)
 					user.do_attack_animation(target)
-					if(injtime == time - (user.stats.getStat(STAT_BIO)*0.375))
+					if(injtime == time - (user.stats.getStat(STAT_INT)*0.375))
 						user.visible_message(SPAN_WARNING("[user] is trying to inject [target] with [visible_name]!"), SPAN_WARNING("You are trying to inject [target] with [visible_name]!"))
 						to_chat(target, SPAN_NOTICE("You feel a tiny prick!"))
 					else
@@ -201,9 +201,9 @@
 				var/mob/living/carbon/human/H = target
 				if(istype(H))
 					var/obj/item/organ/external/affecting = H.get_organ(user.targeted_organ)
-					if(user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
-						if(prob(affecting.get_damage() - user.stats.getStat(STAT_BIO)))
-							var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_BIO))
+					if(user && user.stats.getStat(STAT_INT) < STAT_LEVEL_BASIC)
+						if(prob(affecting.get_damage() - user.stats.getStat(STAT_INT)))
+							var/pain = rand(min(30,affecting.get_damage()), max(affecting.get_damage() + 30,60) - user.stats.getStat(STAT_INT))
 							H.pain(affecting, pain)
 							if(user != H)
 								to_chat(H, "<span class='[pain > 50 ? "danger" : "warning"]'>\The [user]'s amateur actions caused you [pain > 50 ? "a lot of " : ""]pain.</span>")

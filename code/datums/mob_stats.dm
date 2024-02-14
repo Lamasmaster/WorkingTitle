@@ -118,7 +118,7 @@
 
 
 // return value from 0 to 1 based on value of stat, more stat value less return value
-// use this proc to get multiplier for decreasing delay time (exaple: "50 * getMult(STAT_ROB, STAT_LEVEL_ADEPT)"  this will result in 5 seconds if stat STAT_ROB = 0 and result will be 0 if STAT_ROB = STAT_LEVEL_ADEPT)
+// use this proc to get multiplier for decreasing delay time (exaple: "50 * getMult(STAT_STR, STAT_LEVEL_ADEPT)"  this will result in 5 seconds if stat STAT_STR = 0 and result will be 0 if STAT_STR = STAT_LEVEL_ADEPT)
 /datum/stat_holder/proc/getMult(statName, statCap = STAT_LEVEL_MAX, pure = FALSE)
     if(!statName)
         return
@@ -221,29 +221,33 @@
 /datum/stat/proc/copyTo(var/datum/stat/recipient)
 	recipient.value = getValue(TRUE)
 
-/datum/stat/productivity
-	name = STAT_MEC
-	desc = "The world hadn't ever had so many moving parts or so few labels. Character's ability in building and using various tools.."
+/datum/stat/strength
+	name = STAT_STR
+	desc = "It takes a special kind of person to strangle a deathclaw. Increases damage in melee combat and affects the knockdown chance."
 
-/datum/stat/cognition
-	name = STAT_COG
-	desc = "Too many dots, not enough lines. Knowledge and ability to create new items."
+/datum/stat/perception
+	name = STAT_PER
+	desc = "It's not paranoia if it's warranted. Affects armor penetration and your firearm accuracy."
 
-/datum/stat/biology
-	name = STAT_BIO
-	desc = "What's the difference between being dead, and just not knowing you're alive? Competence in physiology and chemistry."
+/datum/stat/endurance
+	name = STAT_END
+	desc = "The wasteland turns a body into a hardworking machine. Increases your health, enhances your resistance to chems, and raises your speed in heavy gear."
 
-/datum/stat/robustness
-	name = STAT_ROB
-	desc = "Violence is what people do when they run out of good ideas. Increases your health, damage in unarmed combat, affect the knockdown chance."
+/datum/stat/charisma
+	name = STAT_CHR
+	desc = "Smile a little; you'll need it. Improves your ability to resist insanity."
 
-/datum/stat/toughness
-	name = STAT_TGH
-	desc = "You're a tough guy, but I'm a nightmare wrapped in the apocalypse. Enhances your resistance to poisons and also raises your speed in uncomfortable clothes."
+/datum/stat/intelligence
+	name = STAT_INT
+	desc = "An empty mind is a vessel for knowledge. Improves your ability in building structures, using various tools, and competence in physiology and chemistry."
 
-/datum/stat/aiming
-	name = STAT_VIG
-	desc = "Here, paranoia is nothing but a useful trait. Improves your ability to control recoil on guns, helps you resist insanity."
+/datum/stat/agility
+	name = STAT_AGI
+	desc = "No cowboy's complete without a fast draw. Improves your ability to control recoil on guns and move quickly over and around obstacles."
+
+/datum/stat/luck
+	name = STAT_LCK
+	desc = "Got your rabbit's foot? Improves the chance to succeed at tasks you don't know how to do, conserving items, and your ability to create new ones."
 
 // Use to perform stat checks
 /mob/proc/stat_check(stat_path, needed)

@@ -114,7 +114,7 @@
 		return
 	var/calculated_delay = wield_delay
 	if(ishuman(user))
-		calculated_delay = wield_delay - (wield_delay * (user.stats.getStat(STAT_VIG) / (100 * (wield_delay_factor ? wield_delay_factor : 0.01)))) // wield delay - wield_delay * user vigilance / 100 * wield_factor
+		calculated_delay = wield_delay - (wield_delay * (user.stats.getStat(STAT_AGI) / (100 * (wield_delay_factor ? wield_delay_factor : 0.01)))) // wield delay - wield_delay * user vigilance / 100 * wield_factor
 	if(calculated_delay > 0 && do_after(user, calculated_delay, immobile = FALSE))
 		..()
 	else if(calculated_delay <= 0)
@@ -127,7 +127,7 @@
 	switch(tool_type)
 		if(QUALITY_HAMMERING)
 			user.visible_message(SPAN_NOTICE("[user] begins scribbling \the [name]'s gun serial number away."), SPAN_NOTICE("You begin removing the serial number from \the [name]."))
-			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_HAMMERING, FAILCHANCE_EASY, required_stat = STAT_INT))
 				user.visible_message(SPAN_DANGER("[user] removes \the [name]'s gun serial number."), SPAN_NOTICE("You successfully remove the serial number from \the [name]."))
 				serial_type = null
 				return FALSE
@@ -138,7 +138,7 @@
 				return FALSE
 
 			user.visible_message(SPAN_NOTICE("[user] begins breaking apart [src]."), SPAN_WARNING("You begin breaking apart [src] for gun parts."))
-			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_INT))
 				user.visible_message(SPAN_NOTICE("[user] breaks [src] apart for gun parts!"), SPAN_NOTICE("You break [src] apart for gun parts."))
 				for(var/target_item in gun_parts)
 					var/amount = gun_parts[target_item]
@@ -442,7 +442,7 @@
 			var/obj/item/projectile/P = projectile
 			P.adjust_damages(proj_damage_adjust)
 			P.adjust_ricochet(noricochet)
-			P.multiply_projectile_accuracy(CLAMP(user.stats.getStat(STAT_VIG), 1, STAT_LEVEL_PROF) / 8)
+			P.multiply_projectile_accuracy(CLAMP(user.stats.getStat(STAT_PER), 1, STAT_LEVEL_PROF) / 8)
 
 		//shooting point blank increases accuracy
 		if(pointblank)

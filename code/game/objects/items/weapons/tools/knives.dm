@@ -198,8 +198,8 @@
 	var/reagent_modifier = 1
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		modifier += min(30,H.stats.getStat(STAT_ROB))
-		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_BIO)/10), 1, 5)
+		modifier += min(30,H.stats.getStat(STAT_STR))
+		reagent_modifier = CLAMP(round(H.stats.getStat(STAT_INT)/10), 1, 5)
 	var/mob/living/L = target
 	if(prob(min(100,(100-L.getarmor(user.targeted_organ, ARMOR_MELEE))+modifier)))
 		var/trans = reagents.trans_to_mob(target, rand(1,3)*reagent_modifier, CHEM_BLOOD)

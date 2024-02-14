@@ -7,7 +7,7 @@
 	var/list/steps
 	var/flags
 	var/time = 30 //Used when no specific time is set
-	var/related_stats = list(STAT_COG)	// used to decrease crafting time for non tool steps
+	var/related_stats = list(STAT_LCK)	// used to decrease crafting time for non tool steps
 	var/avaliableToEveryone = TRUE
 	var/dir_type = CRAFT_WITH_USER_DIR  // spawn the result in the user's direction by default
 	// set it to CRAFT_TOWARD_USER to spawn the result towards the user

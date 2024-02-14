@@ -107,7 +107,7 @@
 	var/obj/item/tool/tool = I
 	if (!tool)
 		return ..()
-	if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+	if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 		return ..()
 	anchored = !src.anchored
 	anchored ? (src.stat &= ~MAINT) : (src.stat |= MAINT)

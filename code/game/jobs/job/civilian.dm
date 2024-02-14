@@ -19,9 +19,9 @@
 	wage = WAGE_NONE // Makes his own money
 	department_account_access = TRUE
 	stat_modifiers = list(
-		STAT_ROB = 15,
-		STAT_TGH = 15,
-		STAT_VIG = 15,
+		STAT_STR = 15,
+		STAT_END = 15,
+		STAT_AGI = 15,
 	)
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender //Re-using this.
 	description = "As the Club Manager, you run the club aboard CEV Eris. Provide the crewmembers with drinks, food, and entertainment.<br>\
@@ -56,9 +56,9 @@
 	wage = WAGE_NONE //They should get paid by the club owner, otherwise you know what to do.
 	department_account_access = TRUE
 	stat_modifiers = list(
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 5,
+		STAT_STR = 10,
+		STAT_END = 10,
+		STAT_AGI = 5,
 	)
 	outfit_type = /decl/hierarchy/outfit/job/service/waiter
 	description = "As a Club Worker, you work for the Club Manager. Your job is to fulfill your duties in running the Club and making sure all the customers are satisfied.<br>\
@@ -95,7 +95,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/service/artist
 	wage = WAGE_NONE //They should get paid by the club owner, otherwise you know what to do.
 	stat_modifiers = list(
-		STAT_TGH = 30,
+		STAT_END = 30,
 	)
 
 	perks = list(PERK_ARTIST)

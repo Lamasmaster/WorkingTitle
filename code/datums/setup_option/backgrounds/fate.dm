@@ -11,12 +11,13 @@
 			But here you are, on a spaceship flying to hell. There is something more to you, something that may come to light later."
 
 	stat_modifiers = list(
-		STAT_ROB = -10,
-		STAT_TGH = -10,
-		STAT_BIO = -10,
-		STAT_MEC = -10,
-		STAT_VIG = -10,
-		STAT_COG = -10
+		STAT_STR = -10,
+		STAT_PER = -10,
+		STAT_END = -10,
+		STAT_CHR = -10,
+		STAT_INT = -10,
+		STAT_AGI = -10,
+		STAT_LCK = -10
 	)
 	perks = list(PERK_PAPER_WORM)
 
@@ -59,7 +60,7 @@
 			You never stopped from coming back to it, trying again and again, poisoning your mind until you lost control. Now your face bears witness to your self-destruction. \
 			There is only one key to survival, and it is the liquid that has shown you the way down."
 
-	stat_modifiers = list(STAT_COG = -10)
+	stat_modifiers = list(STAT_LCK = -10)
 	perks = list(PERK_ALCOHOLIC)
 
 /datum/category_item/setup_option/background/fate/noble
@@ -67,7 +68,7 @@
 	desc = "You are a descendant of a long-lasting family, being part of a lineage of high status that can be traced back to the early civilization of your domain. \
 			What legacy will you build? \
 			Start with an heirloom weapon, higher chance to be on contractor contracts and removed sanity cap. Stay clear of filth and danger."
-			
+
 	perks = list(PERK_NOBLE)
 
 /datum/category_item/setup_option/background/fate/rat
@@ -77,8 +78,8 @@
 
 	perks = list(PERK_RAT)
 	stat_modifiers = list(
-		STAT_MEC = 10,
-		STAT_VIG = -10
+		STAT_INT = 10,
+		STAT_AGI = -10
 	)
 
 /datum/category_item/setup_option/background/fate/rejected_genius

@@ -218,7 +218,7 @@
 	if(user)
 		user.visible_message(SPAN_NOTICE("[user] starts applying [parent] to [A]"), SPAN_NOTICE("You start applying \the [parent] to \the [A]"))
 		var/obj/item/I = parent
-		if(!I.use_tool(user = user, target =  A, base_time = WORKTIME_FAST, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_MEC, forced_sound = WORKSOUND_WRENCHING))
+		if(!I.use_tool(user = user, target =  A, base_time = WORKTIME_FAST, required_quality = null, fail_chance = FAILCHANCE_ZERO, required_stat = STAT_INT, forced_sound = WORKSOUND_WRENCHING))
 			return FALSE
 		to_chat(user, SPAN_NOTICE("You have successfully installed \the [parent] in \the [A]"))
 		user.drop_from_inventory(parent)
@@ -716,7 +716,7 @@
 					if(MG.loaded.len || MG.ammo_magazine || MG.chambered)
 						to_chat(user, SPAN_DANGER("You must unload the [upgrade_loc] before removing \the [toremove]!"))
 						return TRUE
-			if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_MEC))
+			if(C.use_tool(user = user, target =  upgrade_loc, base_time = IU.removal_time, required_quality = QUALITY_SCREW_DRIVING, fail_chance = IU.removal_difficulty, required_stat = STAT_INT))
 				//If you pass the check, then you manage to remove the upgrade intact
 				if(!IU.destroy_on_removal && user)
 					to_chat(user, SPAN_NOTICE("You successfully remove \the [toremove] while leaving it intact."))

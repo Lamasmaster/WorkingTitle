@@ -42,10 +42,10 @@
 		H.flash(3, FALSE , TRUE , TRUE, 15)
 	else
 		M.flash(5, FALSE, TRUE , TRUE)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
-	M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
-	M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
-	M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
+	M.stats.addTempStat(STAT_LCK, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
+	M.stats.addTempStat(STAT_INT, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
+	M.stats.addTempStat(STAT_PER, -STAT_LEVEL_ADEPT, 10 SECONDS, "flashbang")
 	M.update_icons()
 
 /obj/item/proc/flashbang_bang(var/turf/T, var/mob/living/carbon/M, var/explosion_text = "BANG", var/stat_reduction = TRUE, var/intensity = FALSE) //Bang made into an item proc so lot's of stuff can use it wtihout copy - paste
@@ -130,10 +130,10 @@
 		if (M.ear_damage >= 5)
 			to_chat(M, SPAN_DANGER("Your ears start to ring!"))
 	if(stat_reduction)
-		M.stats.addTempStat(STAT_VIG, stat_def, 10 SECONDS, "flashbang")
-		M.stats.addTempStat(STAT_COG, stat_def, 10 SECONDS, "flashbang")
-		M.stats.addTempStat(STAT_BIO, stat_def, 10 SECONDS, "flashbang")
-		M.stats.addTempStat(STAT_MEC, stat_def, 10 SECONDS, "flashbang")
+		M.stats.addTempStat(STAT_AGI, stat_def, 10 SECONDS, "flashbang")
+		M.stats.addTempStat(STAT_LCK, stat_def, 10 SECONDS, "flashbang")
+		M.stats.addTempStat(STAT_INT, stat_def, 10 SECONDS, "flashbang")
+		M.stats.addTempStat(STAT_PER, stat_def, 10 SECONDS, "flashbang")
 	M.update_icons()
 
 /obj/item/grenade/flashbang/nt

@@ -211,12 +211,11 @@ var/list/ai_verbs_default = list(
 	..()
 
 	//Stats
-	//The AI gets 100 in all three knowledge stats.
+	//The AI gets 100 in knowledge stats.
 	//These are only ever used to operate machinery and software
 	//It doesnt get any physical stats, like robustness, since its a disembodied mind
-	stats.changeStat(STAT_BIO, 100)
-	stats.changeStat(STAT_MEC, 100)
-	stats.changeStat(STAT_COG, 100)
+	stats.changeStat(STAT_INT, 100)
+	stats.changeStat(STAT_LCK, 100)
 
 	// AI bound drone related stuff
 	time_destroyed = world.time - drone_cooldown_time

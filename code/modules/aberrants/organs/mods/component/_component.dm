@@ -2,22 +2,22 @@
 	install_time = WORKTIME_FAST
 	//install_tool_quality = null
 	install_difficulty = FAILCHANCE_VERY_EASY + 5
-	install_stat = STAT_BIO
+	install_stat = STAT_INT
 	install_sound = 'sound/effects/squelch1.ogg'
 
 	mod_time = WORKTIME_FAST
-	mod_tool_quality = QUALITY_LASER_CUTTING			
+	mod_tool_quality = QUALITY_LASER_CUTTING
 	mod_difficulty = FAILCHANCE_HARD - 5
-	mod_stat = STAT_BIO
+	mod_stat = STAT_INT
 	mod_sound = 'sound/effects/squelch1.ogg'
 
 	removal_time = WORKTIME_SLOW
 	removal_tool_quality = QUALITY_LASER_CUTTING
 	removal_difficulty = FAILCHANCE_HARD - 5
-	removal_stat = STAT_BIO
+	removal_stat = STAT_INT
 
 	adjustable = FALSE
-	destroy_on_removal = FALSE 
+	destroy_on_removal = FALSE
 	removable = TRUE
 	breakable = FALSE
 
@@ -25,9 +25,9 @@
 	//blacklisted_types = list(/obj/item/organ/internal/scaffold/hive)
 
 	examine_msg = "Can be attached to organ scaffolds and aberrant organs."
-	examine_stat = STAT_BIO
+	examine_stat = STAT_INT
 	examine_difficulty = STAT_LEVEL_EXPERT - 5
-	examine_stat_secondary = STAT_COG
+	examine_stat_secondary = STAT_LCK
 	examine_difficulty_secondary = STAT_LEVEL_BASIC - 5
 
 	// Internal organ stuff
@@ -75,7 +75,7 @@
 
 /datum/component/modification/organ/apply_values(obj/item/organ/internal/holder)
 	ASSERT(holder)
-	
+
 	var/using_generated_name = FALSE
 	var/using_generated_color = FALSE
 
@@ -166,7 +166,7 @@
 	if(istype(O, /obj/item/organ/internal/scaffold))
 		var/obj/item/organ/internal/scaffold/S = O
 		S.try_ruin()
-	
+
 	// If the organ has no owner or is still modded, do nothing
 	if(!O.owner || LAZYLEN(O.item_upgrades))
 		return
@@ -203,13 +203,13 @@
 		info += "\nRequirements: <span style='color:red'>[blood_req_mod ? blood_req_mod : "0"]\
 								</span>/<span style='color:blue'>[oxygen_req_mod ? oxygen_req_mod : "0"]\
 								</span>/<span style='color:orange'>[nutriment_req_mod ? nutriment_req_mod : "0"]</span>"
-		
+
 		var/organs
 		for(var/organ in organ_efficiency_mod)
 			organs += organ + " ([organ_efficiency_mod[organ]]), "
 		organs = copytext(organs, 1, length(organs) - 1)
 		info += "\nOrgan tissues present: <span style='color:pink'>[organs ? organs : "none"]</span>"
-		
+
 		to_chat(user, SPAN_NOTICE(info))
 
 		var/function_info = get_function_info()

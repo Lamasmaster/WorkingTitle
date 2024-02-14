@@ -29,7 +29,7 @@
 			choice = input(user, "Where do you want to place \the [src]?", "Offset selection") in list("North", "South", "West", "East", "This tile", "Cancel")
 			if(choice == "Cancel")
 				return
-		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+		if(W.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_VERY_EASY, required_stat = STAT_LCK))
 			if(anchored)
 				shutdown_computer()
 				anchored = FALSE

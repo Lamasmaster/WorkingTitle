@@ -169,7 +169,7 @@
 /datum/reagent/nanites/nanosymbiotes/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
 		M.add_chemical_effect(CE_ONCOCIDAL, 1)
-		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.03)) * effect_multiplier) 
+		M.adjustOxyLoss(-(1 + (M.getOxyLoss() * 0.03)) * effect_multiplier)
 		M.adjustFireLoss(-(1 + (M.getFireLoss() * 0.03)) * effect_multiplier)
 		M.adjustBruteLoss(-(1 + (M.getBruteLoss() * 0.03)) * effect_multiplier)
 
@@ -237,9 +237,8 @@
 
 /datum/reagent/nanites/uncapped/control_booster_utility/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
-		M.stats.addTempStat(STAT_MEC, STAT_LEVEL_ADEPT, STIM_TIME, "CBU")
-		M.stats.addTempStat(STAT_BIO, STAT_LEVEL_ADEPT, STIM_TIME, "CBU")
-		M.stats.addTempStat(STAT_COG, STAT_LEVEL_ADEPT, STIM_TIME, "CBU")
+		M.stats.addTempStat(STAT_INT, STAT_LEVEL_ADEPT, STIM_TIME, "CBU")
+		M.stats.addTempStat(STAT_LCK, STAT_LEVEL_ADEPT, STIM_TIME, "CBU")
 
 /datum/reagent/nanites/uncapped/control_booster_combat
 	name = "Control Booster Combat"
@@ -251,9 +250,10 @@
 
 /datum/reagent/nanites/uncapped/control_booster_combat/affect_blood(mob/living/carbon/M, alien, effect_multiplier)
 	if(..())
-		M.stats.addTempStat(STAT_VIG, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
-		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
-		M.stats.addTempStat(STAT_ROB, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
+		M.stats.addTempStat(STAT_AGI, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
+		M.stats.addTempStat(STAT_PER, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
+		M.stats.addTempStat(STAT_END, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
+		M.stats.addTempStat(STAT_STR, STAT_LEVEL_ADEPT, STIM_TIME, "CBC")
 
 /datum/reagent/nanites/uncapped/voice_mimic
 	name = "Voice mimics"

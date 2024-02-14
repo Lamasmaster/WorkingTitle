@@ -259,7 +259,7 @@ update_flag
 		return
 
 	else if(QUALITY_PULSING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PULSING, FAILCHANCE_EASY,  required_stat = STAT_INT))
 			if(valve_open == 1)
 				to_chat(user, SPAN_WARNING("You can't seal the gasket while the valve is open!"))
 				return

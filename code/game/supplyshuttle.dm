@@ -55,7 +55,7 @@
 				SPAN_NOTICE("\The [user] start disassembling \the [src]."),
 				SPAN_NOTICE("You start disassembling \the [src].")
 		)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 			user.visible_message(
 				SPAN_NOTICE("\The [user] disassembled \the [src]!"),
 				SPAN_NOTICE("You disassembled \the [src]!")

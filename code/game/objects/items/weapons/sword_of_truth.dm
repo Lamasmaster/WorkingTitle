@@ -68,12 +68,13 @@
 				var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 				if(I && I.active && I.wearer)
 					continue
-				M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-				M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-				M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-				M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-				M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-				M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_END, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_STR, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_INT, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_LCK, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_CHR, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+				M.stats.addTempStat(STAT_PER, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
 				flashbang_bang(get_turf(src), M, bang_text, FALSE)
 
 
@@ -81,12 +82,13 @@
 		var/obj/item/implant/core_implant/I = M.get_core_implant(/obj/item/implant/core_implant/cruciform)
 		if(I && I.active && I.wearer)
 			continue
-		M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-		M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-		M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-		M.stats.addTempStat(STAT_BIO, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-		M.stats.addTempStat(STAT_COG, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
-		M.stats.addTempStat(STAT_MEC, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_END, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_STR, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_INT, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_LCK, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_CHR, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
+		M.stats.addTempStat(STAT_PER, -STAT_LEVEL_ADEPT, 45 SECONDS, "Sword of truth")
 		flashbang_bang(get_turf(src), M, bang_text, FALSE)
 
 	for(var/obj/effect/blob/B in hear(8,get_turf(src)))       		//Blob damage here
@@ -126,11 +128,11 @@
 /obj/structure/nt_pedestal/attackby(obj/item/I, mob/user)
 	if(I.has_quality(QUALITY_BOLT_TURNING))
 		if(!anchored)
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				to_chat(user, SPAN_NOTICE("You've secured the [src] assembly!"))
 				anchored = TRUE
 		else if(anchored)
-			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				to_chat(user, SPAN_NOTICE("You've unsecured the [src] assembly!"))
 				anchored = FALSE
 	if(istype(I, /obj/item/tool/sword/nt_sword))
@@ -157,7 +159,7 @@
 		if(!do_after(user, 30 SECONDS))
 			to_chat(src, SPAN_DANGER("You were interrupted!"))
 			return
-		if(H.stats.getStat(STAT_ROB) >= 60)
+		if(H.stats.getStat(STAT_STR) >= 60)
 			H.put_in_hands(sword)
 			visible_message(SPAN_DANGER("[user] succsesufully removed [sword] from the [src]!"))
 			sword = null

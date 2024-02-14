@@ -104,13 +104,13 @@
 
 /obj/structure/wire_splicing/attackby(obj/item/I, mob/user)
 	if(QUALITY_WIRE_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			if(!shock(user, 100))
 				to_chat(user, SPAN_NOTICE("You remove the splicing."))
 				qdel(src)
 
 	if(QUALITY_CUTTING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			if(!shock(user, 100))
 				to_chat(user, SPAN_NOTICE("You remove the splicing."))
 				qdel(src)
@@ -135,7 +135,7 @@
 				if(shock(user)) //check if he got his insulation gloves. Again.
 					used_now = FALSE
 					return
-				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_MEC) // 72 for assistant
+				var/fail_chance = FAILCHANCE_HARD - user.stats.getStat(STAT_INT) // 72 for assistant
 				if(prob(fail_chance))
 					if(!shock(user, FALSE)) //why not
 						to_chat(user, SPAN_WARNING("You failed to finish your task with [src.name]! There was a [fail_chance]% chance to screw this up."))

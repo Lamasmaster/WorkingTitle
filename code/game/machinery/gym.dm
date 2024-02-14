@@ -5,7 +5,7 @@
 	icon = 'icons/obj/machines/gym.dmi'
 	icon_state = "vigilance"
 
-	var/stat_used = STAT_VIG //STAT_TGH, STAT_ROB, STAT_VIG, STAT_COG, STAT_MEC, STAT_BIO
+	var/stat_used = STAT_AGI //STAT_STR, STAT_PER, STAT_END, STAT_CHR, STAT_INT, STAT_AGI, STAT_LCK,
 	var/mob/living/carbon/human/occupant
 	var/unlocked = FALSE
 
@@ -22,14 +22,14 @@
 	desc = "This device uses a system of vacuum tubes and flywheel cables to simulate the process of free weight exercises that increase your strength. Are those barbells decorative...?"
 	icon_state = "robustness"
 
-	stat_used = STAT_ROB
+	stat_used = STAT_STR
 
 /obj/machinery/gym/toughness
 	name = "Total Resistance Punch Machine"
 	desc = "Whatever the reason behind creating this thing is, experiencing the life of a punching bag really helps you become tougher."
 	icon_state = "toughness"
 
-	stat_used = STAT_TGH
+	stat_used = STAT_END
 
 /obj/machinery/gym/power_change()
 	..()

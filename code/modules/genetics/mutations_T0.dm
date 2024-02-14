@@ -43,7 +43,7 @@
 /datum/mutation/t0/stat_debuff
 	name = "Mnemonic degradation"
 	desc = "Decreases ability to iteract with mechanisms."
-	buff_type = STAT_MEC
+	buff_type = STAT_INT
 	buff_power = -STAT_LEVEL_BASIC
 
 /datum/mutation/t0/stat_debuff/imprint(mob/living/carbon/user)
@@ -57,24 +57,24 @@
 /datum/mutation/t0/stat_debuff/biology
 	name = "Tremor"
 	desc = "Involuntary twitching hand movements."
-	buff_type = STAT_BIO
+	buff_type = STAT_INT
 
 /datum/mutation/t0/stat_debuff/cognition
 	name = "Dementia"
 	desc = "Progressive impairments in memory and thinking."
-	buff_type = STAT_COG
+	buff_type = STAT_LCK
 
 /datum/mutation/t0/stat_debuff/vigilance
 	name = "Ataxia"
 	desc = "Inability to judge distances or ranges of movement happens, most notably when shooting a gun."
-	buff_type = STAT_VIG
+	buff_type = STAT_AGI
 
 /datum/mutation/t0/stat_debuff/robustness
 	name = "Muscular dystrophy"
 	desc = "Causes progressive weakness and loss of muscle mass."
-	buff_type = STAT_ROB
+	buff_type = STAT_STR
 
 /datum/mutation/t0/stat_debuff/toughness
 	name = "Thin skin"
 	desc = "Makes body more susceptible to damage."
-	buff_type = STAT_TGH
+	buff_type = STAT_END

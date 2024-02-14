@@ -61,7 +61,7 @@
 		organ.take_damage(5, BRUTE, 0)
 
 /datum/surgery_step/insert_item/robotic
-	required_stat = STAT_MEC
+	required_stat = STAT_INT
 
 
 /obj/item/organ/external/proc/get_total_occupied_volume()

@@ -3,12 +3,12 @@
 	var/list/stat_modifiers
 
 /datum/job_flavor/assistant/stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/veterinarian
@@ -26,34 +26,34 @@
 /datum/job_flavor/assistant/ecologist
 	title = "Colony Expansion Vehicle \"Eris\" Ecologist"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 16,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 16,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/ensign
 	title = "Command Evacuation Vehicle \"Eris\" Ensign"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 16,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 16,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/pilot
 	title = "Command Evacuation Vehicle \"Eris\" Pilot"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 16,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 16,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/cmcp_janitor
@@ -62,23 +62,23 @@
 /datum/job_flavor/assistant/dc_tech
 	title = "Combat Engineer Vehicle \"Eris\" Damage Control Technician"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 16,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 16,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/field_eng
 	title = "Combat Engineer Vehicle \"Eris\" Field Engineer"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 16,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 16,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/politruk
@@ -90,12 +90,12 @@
 /datum/job_flavor/assistant/kosmonavt
 	title = "Cosmicheskiy Edinstveniy Velikohod \"Eris\" Kosmonavt"
 	stat_modifiers = list(
-		STAT_ROB = 16,
-		STAT_TGH = 16,
-		STAT_BIO = 16,
-		STAT_MEC = 16,
-		STAT_VIG = 16,
-		STAT_COG = 16
+		STAT_STR = 16,
+		STAT_END = 16,
+		STAT_INT = 16,
+		STAT_INT = 16,
+		STAT_AGI = 16,
+		STAT_LCK = 16
 	)
 
 /datum/job_flavor/assistant/reg_officer
@@ -110,66 +110,66 @@
 /datum/job_flavor/assistant/protein_farmer
 	title = "Cockroach Exile Vessel \"Eris\" Protein Farmer"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 16,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 16,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/biotechnician
 	title = "Cockroach Exile Vessel \"Eris\" Biotechnician"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 16,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 16,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/bioterror_spec
 	title = "Cockroach Exile Vessel \"Eris\" Bioterror Specialist"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 16,
-		STAT_MEC = 8,
-		STAT_VIG = 16,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 16,
+		STAT_INT = 8,
+		STAT_AGI = 16,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/bomber
 	title = "Capital Extermination Vessel \"Eris\" Bomber"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 16,
-		STAT_COG = 8
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 16,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/m_arms
 	title = "Capital Extermination Vessel \"Eris\" Master at Arms"
 	stat_modifiers = list(
-		STAT_ROB = 16,
-		STAT_TGH = 16,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
-		STAT_COG = 8
+		STAT_STR = 16,
+		STAT_END = 16,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
+		STAT_LCK = 8
 	)
 
 /datum/job_flavor/assistant/loader
 	title = "Capital Extermination Vessel \"Eris\" Loader"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 16,
-		STAT_BIO = 8,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
+		STAT_STR = 8,
+		STAT_END = 16,
+		STAT_INT = 8,
+		STAT_INT = 8,
+		STAT_AGI = 8,
 	)
 
 /datum/job_flavor/assistant/cat_psy
@@ -184,11 +184,11 @@
 /datum/job_flavor/assistant/mixologist
 	title = "Corporate Entertain Vehicle \"Eris\" Mixologist"
 	stat_modifiers = list(
-		STAT_ROB = 8,
-		STAT_TGH = 8,
-		STAT_BIO = 16,
-		STAT_MEC = 8,
-		STAT_VIG = 8,
+		STAT_STR = 8,
+		STAT_END = 8,
+		STAT_INT = 16,
+		STAT_INT = 8,
+		STAT_AGI = 8,
 	)
 
 /datum/job_flavor/assistant/stripper

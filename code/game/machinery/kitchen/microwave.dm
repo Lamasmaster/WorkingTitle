@@ -74,7 +74,7 @@
 						SPAN_NOTICE("\The [user] starts to fix part of the [src]."), \
 						SPAN_NOTICE("You start to fix part of the [src].") \
 					)
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						user.visible_message( \
 							SPAN_NOTICE("\The [user] fixes part of the [src]."), \
 							SPAN_NOTICE("You have fixed part of the [src].") \
@@ -89,7 +89,7 @@
 						SPAN_NOTICE("\The [user] starts to fix part of the [src]."), \
 						SPAN_NOTICE("You start to fix part of the [src].") \
 					)
-					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 						user.visible_message( \
 							SPAN_NOTICE("\The [user] fixes the [src]."), \
 							SPAN_NOTICE("You have fixed the [src].") \
@@ -165,7 +165,7 @@
 		"<span class='notice'>\The [user] begins [src.anchored ? "unsecuring" : "securing"] the [src].</span>", \
 		"<span class='notice'>You attempt to [src.anchored ? "unsecure" : "secure"] the [src].</span>"
 		)
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_INT))
 			user.visible_message( \
 			"<span class='notice'>\The [user] [src.anchored ? "unsecures" : "secures"] the [src].</span>", \
 			"<span class='notice'>You [src.anchored ? "unsecure" : "secure"] the [src].</span>"

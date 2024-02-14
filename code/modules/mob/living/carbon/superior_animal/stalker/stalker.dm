@@ -92,7 +92,7 @@
 
 	else if(stat == DEAD)
 		if(QUALITY_PRYING in O.tool_qualities)
-			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_HARD, required_stat = STAT_MEC))
+			if(O.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_HARD, required_stat = STAT_INT))
 				new /obj/item/stack/material/steel/random(src.loc)
 				new /obj/item/stack/material/plasteel/random(src.loc)
 				new /obj/item/stack/cable_coil(src.loc)

@@ -62,7 +62,7 @@
 				using_sci_goggles = G.active	// Meat vision
 
 		// Stat check
-		details_unlocked = (user.stats.getStat(STAT_BIO) >= STAT_LEVEL_EXPERT - 5 && user.stats.getStat(STAT_COG) >= STAT_LEVEL_BASIC - 5) ? TRUE : FALSE
+		details_unlocked = (user.stats.getStat(STAT_INT) >= STAT_LEVEL_EXPERT - 5 && user.stats.getStat(STAT_PER) >= STAT_LEVEL_BASIC - 5) ? TRUE : FALSE
 
 	if(using_sci_goggles || details_unlocked)
 		var/function_info
@@ -142,7 +142,7 @@
 	if(use_generated_name)
 		name = generate_name_from_eff()
 	else
-		name = ruined ? ruined_name : name		
+		name = ruined ? ruined_name : name
 
 	for(var/prefix in prefixes)
 		name = "[prefix] [name]"
@@ -280,7 +280,7 @@
 	var/list/additional_input_info = list()
 	var/list/output_types = list()
 	var/list/additional_output_info = list()
-	
+
 	if(req_num_inputs)
 		var/list/inputs_sans_blacklist = list()
 		var/list/input_pool = list()

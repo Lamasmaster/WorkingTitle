@@ -47,7 +47,7 @@
 				if(!use(1))
 					to_chat(user, SPAN_WARNING("You have run out of \the [src]."))
 					return
-				W.heal_damage(CLAMP(user.stats.getStat(STAT_MEC)/2.5, 5, 20))
+				W.heal_damage(CLAMP(user.stats.getStat(STAT_INT)/2.5, 5, 20))
 				to_chat(user, SPAN_NOTICE("You patch some wounds on \the [S]."))
 			S.update_damages()
 			if(S.get_damage())

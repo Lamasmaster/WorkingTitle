@@ -26,9 +26,9 @@
 	ideal_character_age = 50
 
 	stat_modifiers = list(
-		STAT_MEC = 25,
-		STAT_COG = 40,
-		STAT_BIO = 25,
+		STAT_INT = 25,
+		STAT_LCK = 40,
+		STAT_INT = 25,
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -82,9 +82,9 @@ Your second loyalty is to moebius corp. In order to ensure it can continue its m
 	)
 
 	stat_modifiers = list(
-		STAT_MEC = 20,
-		STAT_COG = 30,
-		STAT_BIO = 20,
+		STAT_INT = 20,
+		STAT_LCK = 30,
+		STAT_INT = 20,
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -140,9 +140,9 @@ Your second loyalty is to moebius corp. In order to ensure it can continue its m
 	software_on_spawn = list(/datum/computer_file/program/chem_catalog)
 
 	stat_modifiers = list(
-		STAT_MEC = 30,
-		STAT_COG = 20,
-		STAT_BIO = 25,
+		STAT_INT = 30,
+		STAT_LCK = 20,
+		STAT_INT = 25,
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -188,9 +188,9 @@ Lastly, though they're not commonly used, you have the facilities to construct m
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 25,
-		STAT_COG = 15,
-		STAT_VIG = 15
+		STAT_INT = 25,
+		STAT_LCK = 15,
+		STAT_AGI = 15
 	)
 
 	perks = list(/datum/perk/selfmedicated)

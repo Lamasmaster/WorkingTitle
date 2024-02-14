@@ -93,11 +93,11 @@ var/global/list/stool_cache = list() //haha stool
 
 /obj/item/stool/attackby(obj/item/W, mob/user)
 	if(istool(W))
-		if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+		if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 			dismantle()
 			qdel(src)
 		if(padding_material)
-			if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_CUTTING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+			if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_CUTTING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 				to_chat(user, "You remove the padding from \the [src].")
 				remove_padding()
 	else if(istype(W,/obj/item/stack))
@@ -142,7 +142,7 @@ var/global/list/stool_cache = list() //haha stool
 
 /obj/item/stool/custom/attackby(obj/item/W as obj, mob/user as mob)
 	if(istool(W))
-		if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+		if(W.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 			dismantle()
 			qdel(src)
 	else if(istype(W,/obj/item/stack))

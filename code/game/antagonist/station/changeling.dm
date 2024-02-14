@@ -18,9 +18,9 @@
 	allow_neotheology = FALSE
 
 	stat_modifiers = list(
-		STAT_TGH = 5,
-		STAT_VIG = 15,
-		STAT_BIO = 20 //Good at surgery
+		STAT_END = 5,
+		STAT_AGI = 15,
+		STAT_INT = 20 //Good at surgery
 	)
 
 /datum/antagonist/carrion/special_init()
@@ -41,5 +41,5 @@
 
 	for(var/name in stat_modifiers)
 		L.stats.changeStat(name, stat_modifiers[name])
-		
+
 	spawn_uplink(L, 5)

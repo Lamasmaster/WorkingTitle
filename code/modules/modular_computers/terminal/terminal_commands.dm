@@ -7,7 +7,7 @@ GLOBAL_LIST_INIT(terminal_commands, init_subtypes(/datum/terminal_command))
 	var/pattern                           // Matched using regex
 	var/regex_flags                       // Used in the regex
 	var/regex/regex                       // The actual regex, produced from above.
-	var/core_skill = STAT_COG       // The skill which is checked
+	var/core_skill = STAT_LCK       // The skill which is checked
 	var/skill_needed = STAT_LEVEL_EXPERT       // How much skill the user needs to use this. This is not for critical failure effects at unskilled; those are handled globally.
 	var/req_access = list()               // Stores access needed, if any
 	var/req_one_access = list()           // Like for objects

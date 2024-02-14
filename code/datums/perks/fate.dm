@@ -51,7 +51,7 @@
 	if(holder)
 		holder.sanity.positive_prob -= 10
 		holder.sanity.negative_prob -= 20
-		holder.stats.removeTempStat(STAT_COG, "Fate Nihilist")
+		holder.stats.removeTempStat(STAT_LCK, "Fate Nihilist")
 	..()
 
 /datum/perk/fate/moralist
@@ -107,15 +107,17 @@
 
 /datum/perk/fate/alcoholic_active/assign(mob/living/carbon/human/H)
 	if(..())
-		holder.stats.addTempStat(STAT_ROB, 15, INFINITY, "Fate Alcoholic")
-		holder.stats.addTempStat(STAT_TGH, 15, INFINITY, "Fate Alcoholic")
-		holder.stats.addTempStat(STAT_VIG, 15, INFINITY, "Fate Alcoholic")
+		holder.stats.addTempStat(STAT_STR, 15, INFINITY, "Fate Alcoholic")
+		holder.stats.addTempStat(STAT_END, 15, INFINITY, "Fate Alcoholic")
+		holder.stats.addTempStat(STAT_AGI, 15, INFINITY, "Fate Alcoholic")
+		holder.stats.addTempStat(STAT_CHR, 15, INFINITY, "Fate Alcoholic")
 
 /datum/perk/fate/alcoholic_active/remove()
 	if(holder)
-		holder.stats.removeTempStat(STAT_ROB, "Fate Alcoholic")
-		holder.stats.removeTempStat(STAT_TGH, "Fate Alcoholic")
-		holder.stats.removeTempStat(STAT_VIG, "Fate Alcoholic")
+		holder.stats.removeTempStat(STAT_STR, "Fate Alcoholic")
+		holder.stats.removeTempStat(STAT_END, "Fate Alcoholic")
+		holder.stats.removeTempStat(STAT_AGI, "Fate Alcoholic")
+		holder.stats.removeTempStat(STAT_CHR, "Fate Alcoholic")
 	..()
 
 /datum/perk/fate/noble

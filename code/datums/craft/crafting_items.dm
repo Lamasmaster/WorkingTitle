@@ -48,7 +48,7 @@
 	matter = list()
 	bad_type = /obj/item/craft_frame
 	spawn_frequency = 0
-	var/req_sat = STAT_MEC
+	var/req_sat = STAT_INT
 	var/suitable_part
 	var/view_only = 0
 	var/tags_to_spawn = list()

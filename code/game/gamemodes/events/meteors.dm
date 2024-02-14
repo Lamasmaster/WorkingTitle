@@ -386,7 +386,7 @@
 /obj/effect/meteor/attackby(obj/item/W as obj, mob/user as mob, params)
 	var/tool_type = W.get_tool_type(user, list(QUALITY_DIGGING, QUALITY_EXCAVATION), src)
 	if(tool_type & QUALITY_DIGGING | QUALITY_EXCAVATION)
-		if(W.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_ROB))
+		if(W.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_VERY_EASY,  required_stat = STAT_STR))
 			qdel(src)
 			return
 	..()

@@ -27,24 +27,24 @@
 
 /datum/perk/cooldown/exertion/assign(mob/living/carbon/human/H)
 	if(..())
-		holder.stats.addTempStat(STAT_TGH, -15, INFINITY, "Overexertion")
+		holder.stats.addTempStat(STAT_END, -15, INFINITY, "Overexertion")
 
 /datum/perk/cooldown/exertion/remove()
 	if(holder)
-		holder.stats.removeTempStat(STAT_TGH, "Overexertion")
+		holder.stats.removeTempStat(STAT_END, "Overexertion")
 	..()
 
 /datum/perk/cooldown/reason
 	name = "Dimmed reason"
 	desc = "Your mind had soaked up a lot of knowledge. \
-			Your COG stat is reduced for some time."
+			Your LCK stat is reduced for some time."
 	icon_state = "reason" //https://game-icons.net/1x1/lorc/brainstorm.html
 
 /datum/perk/cooldown/reason/assign(mob/living/carbon/human/H)
 	if(..())
-		holder.stats.addTempStat(STAT_COG, -15, INFINITY, "Dimmed reason")
+		holder.stats.addTempStat(STAT_LCK, -15, INFINITY, "Dimmed reason")
 
 /datum/perk/cooldown/reason/remove()
 	if(holder)
-		holder.stats.removeTempStat(STAT_COG, "Dimmed reason")
+		holder.stats.removeTempStat(STAT_LCK, "Dimmed reason")
 	..()

@@ -24,9 +24,9 @@
 	ideal_character_age = 50
 
 	stat_modifiers = list(
-		STAT_BIO = 50,
-		STAT_MEC = 10,
-		STAT_COG = 25
+		STAT_INT = 50,
+		STAT_INT = 10,
+		STAT_LCK = 25
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -80,8 +80,8 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 40,
-		STAT_COG = 10
+		STAT_INT = 40,
+		STAT_LCK = 10
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -140,9 +140,9 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 	)
 
 	stat_modifiers = list(
-		STAT_COG = 10,
-		STAT_MEC = 10,
-		STAT_BIO = 30
+		STAT_LCK = 10,
+		STAT_INT = 10,
+		STAT_INT = 30
 	)
 
 	perks = list(/datum/perk/selfmedicated/chemist)
@@ -192,10 +192,10 @@ Your second loyalty is to your career with Moebius corp, and to your coworkers i
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 20,
-		STAT_ROB = 10,
-		STAT_TGH = 10,
-		STAT_VIG = 10,
+		STAT_INT = 20,
+		STAT_STR = 10,
+		STAT_END = 10,
+		STAT_AGI = 10,
 	)
 
 	perks = list(/datum/perk/selfmedicated)
@@ -262,9 +262,9 @@ Remember that you are a noncombatant. Any weapons you carry should be used for b
 	)
 
 	stat_modifiers = list(
-		STAT_BIO = 35,
-		STAT_COG = 20,
-		STAT_MEC = 15
+		STAT_INT = 35,
+		STAT_LCK = 20,
+		STAT_INT = 15
 	)
 
 	perks = list(/datum/perk/selfmedicated)

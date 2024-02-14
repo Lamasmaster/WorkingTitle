@@ -255,8 +255,8 @@
 	//So we pass false on the use_item flag so it doesn't look like they hit the window with something
 	// clamped between 3 times and a third of the effects
 	// it takes the grabber's rob , adds 1 so it can't be 0
-	var/grabberRob = user.stats.getStat(STAT_ROB, FALSE) == 0 ? 1 : user.stats.getStat(STAT_ROB, FALSE)
-	var/targetTgh = target.stats.getStat(STAT_TGH, FALSE) == 0 ? 1 : target.stats.getStat(STAT_TGH, FALSE)
+	var/grabberRob = user.stats.getStat(STAT_STR, FALSE) == 0 ? 1 : user.stats.getStat(STAT_STR, FALSE)
+	var/targetTgh = target.stats.getStat(STAT_END, FALSE) == 0 ? 1 : target.stats.getStat(STAT_END, FALSE)
 	var/windowResistance = resistance ? resistance : 1
 	// get them positive (and add to one side if the other is negative)
 	if(grabberRob < 0 && targetTgh < 0)
@@ -277,7 +277,7 @@
 			// max damage can be 30 without armor, and gets mitigated by having 15 melee armor
 			target.damage_through_armor(round(10 * skillRatio * (health/maxHealth) / (toughTarget ? 3 : 1)), BRUTE, BP_HEAD, ARMOR_MELEE, sharp = FALSE, armor_divisor = 0.5)
 			if(!toughTarget)
-				target.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT, 8 SECONDS, "window_smash")
+				target.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT, 8 SECONDS, "window_smash")
 			hit(round(target.mob_size * skillRatio * (toughTarget ? 2 : 1 ) / windowResistance))
 		if(GRAB_AGGRESSIVE)
 			visible_message(SPAN_DANGER("[user] bashes [target] against \the [src]!"))
@@ -285,7 +285,7 @@
 			if(skillRatio > 2 && !(target.weakened || toughTarget))
 				visible_message(SPAN_DANGER("<big>[target] gets staggered by [user]'s smash against \the [src]!</big>"))
 				target.Weaken(1)
-			target.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT * 1.5, toughTarget ? 6 SECONDS : 12 SECONDS, "window_smash")
+			target.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT * 1.5, toughTarget ? 6 SECONDS : 12 SECONDS, "window_smash")
 			// at most 60 without armor , 23 with 15 melee armor
 			target.damage_through_armor(round(20 * skillRatio * health/maxHealth / (toughTarget ? 3 : 1)), BRUTE, BP_HEAD, ARMOR_MELEE, sharp = FALSE, armor_divisor = 0.4)
 			hit(round(target.mob_size * skillRatio * 1.5 * (toughTarget ? 2 : 1) / windowResistance))
@@ -293,7 +293,7 @@
 			visible_message(SPAN_DANGER("<big>[user] crushes [target] against \the [src]!</big>"))
 			// at most 90 damage without armor, 40 with 15 melee armor
 			target.damage_through_armor(round(30 * skillRatio * health/maxHealth / (toughTarget ? 3 : 1)), BRUTE, BP_HEAD, ARMOR_MELEE, sharp = FALSE, armor_divisor = 0.3)
-			target.stats.addTempStat(STAT_VIG, -STAT_LEVEL_ADEPT * 2, toughTarget ? 10 SECONDS : 20 SECONDS, "window_smash")
+			target.stats.addTempStat(STAT_AGI, -STAT_LEVEL_ADEPT * 2, toughTarget ? 10 SECONDS : 20 SECONDS, "window_smash")
 			hit(round(target.mob_size * skillRatio * 2 * ((toughTarget ? 2 : 1)) / windowResistance))
 	admin_attack_log(user, target,
 		"Smashed [key_name(target)] against \the [src]",
@@ -316,7 +316,7 @@ proc/end_grab_onto(mob/living/user, mob/living/target)
 	visible_message(SPAN_DANGER("[M] slams against \the [src]!"))
 	// being super tough has its perks!
 	if(!M.stats.getPerk(PERK_ASS_OF_CONCRETE))
-		var/victimToughness = M.stats.getStat(STAT_TGH, FALSE)
+		var/victimToughness = M.stats.getStat(STAT_END, FALSE)
 		victimToughness = victimToughness ? victimToughness : 1
 		var/windowResistance = resistance ? resistance : 1
 		var/healthRatio = health/maxHealth
@@ -362,7 +362,7 @@ proc/end_grab_onto(mob/living/user, mob/living/target)
 		switch(tool_type)
 			if(QUALITY_SEALING)
 				user.visible_message("[user] starts sealing up cracks in [src] with the [I]", "You start sealing up cracks in [src] with the [I]")
-				if (I.use_tool(user, src, 60 + ((maxHealth - health)*3), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_MEC))
+				if (I.use_tool(user, src, 60 + ((maxHealth - health)*3), QUALITY_SEALING, FAILCHANCE_NORMAL, STAT_INT))
 					to_chat(user, SPAN_NOTICE("The [src] looks pretty solid now!"))
 					health = maxHealth
 			if(QUALITY_BOLT_TURNING)
@@ -370,7 +370,7 @@ proc/end_grab_onto(mob/living/user, mob/living/target)
 					if(!glasstype)
 						to_chat(user, SPAN_NOTICE("You're not sure how to dismantle \the [src] properly."))
 						return
-					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 						visible_message(SPAN_NOTICE("[user] dismantles \the [src]."))
 						var/obj/glass
 						if(is_fulltile())
@@ -385,7 +385,7 @@ proc/end_grab_onto(mob/living/user, mob/living/target)
 
 			if(QUALITY_PRYING)
 				if(reinf && state <= 1)
-					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 						state = 1 - state
 						to_chat(user, (state ? SPAN_NOTICE("You have pried the window into the frame.") : SPAN_NOTICE("You have pried the window out of the frame.")))
 				return 1 //No whacking the window with tools unless harm intent
@@ -393,13 +393,13 @@ proc/end_grab_onto(mob/living/user, mob/living/target)
 
 			if(QUALITY_SCREW_DRIVING)
 				if(reinf && state >= 1)
-					if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 						state = 3 - state
 						update_nearby_icons()
 						to_chat(user, (state == 1 ? SPAN_NOTICE("You have unfastened the window from the frame.") : SPAN_NOTICE("You have fastened the window to the frame.")))
 						return
 				if(reinf && state == 0)
-					if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, tool_type, FAILCHANCE_EASY, required_stat = STAT_INT))
 						set_anchored(!anchored)
 						to_chat(user, (anchored ? SPAN_NOTICE("You have fastened the frame to the floor.") : SPAN_NOTICE("You have unfastened the frame from the floor.")))
 						return

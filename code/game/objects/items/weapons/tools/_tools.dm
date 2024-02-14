@@ -440,11 +440,11 @@
 		T.breakTool(user)
 		return TOOL_USE_FAIL
 	else if(T && !T.health_threshold)
-		if(user.stats.getStat(STAT_MEC) >= STAT_LEVEL_BASIC && T.health < T.maxHealth/100 * 5)// tool health is < 5%
+		if(user.stats.getStat(STAT_INT) >= STAT_LEVEL_BASIC && T.health < T.maxHealth/100 * 5)// tool health is < 5%
 			if(T.lastNearBreakMessage > world.time + 60 SECONDS) // once in 1 minute
 				T.lastNearBreakMessage = world.time
 				to_chat(user, SPAN_DANGER("Your [src.name] is about to fall apart."))
-		else if(user.stats.getStat(STAT_MEC) >= STAT_LEVEL_ADEPT && T.health < T.maxHealth/100 * 15) // tool health is < 15%
+		else if(user.stats.getStat(STAT_INT) >= STAT_LEVEL_ADEPT && T.health < T.maxHealth/100 * 15) // tool health is < 15%
 			if(T.lastNearBreakMessage > world.time + 300 SECONDS) // once in 5 minutes
 				T.lastNearBreakMessage = world.time
 				to_chat(user, SPAN_WARNING("Some parts in your [src.name] are reeling."))
@@ -941,9 +941,9 @@
 			if(T.health)
 				user.visible_message(SPAN_NOTICE("[user] begins repairing \the [O] with the [src]!"))
 				//Toolception!
-				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_MEC))
-					T.adjustToolHealth(T.maxHealth * 0.8 + (user.stats.getStat(STAT_MEC)/2)/100, user)
-					if(user.stats.getStat(STAT_MEC) > STAT_LEVEL_BASIC/2)
+				if(use_tool(user, T, 60, QUALITY_ADHESIVE, FAILCHANCE_EASY, STAT_INT))
+					T.adjustToolHealth(T.maxHealth * 0.8 + (user.stats.getStat(STAT_INT)/2)/100, user)
+					if(user.stats.getStat(STAT_INT) > STAT_LEVEL_BASIC/2)
 						to_chat(user, SPAN_NOTICE("You knowledge in tools helped you repair it better."))
 					refresh_upgrades()
 				return
@@ -1023,10 +1023,10 @@
 							return
 						if(W.damtype_sanitize() != BRUTE)
 							continue
-						if(!use_tool(user, M, W.damage/5, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+						if(!use_tool(user, M, W.damage/5, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 							to_chat(user, SPAN_NOTICE("You must stand still to repair \the [S]."))
 							break
-						W.heal_damage(CLAMP(user.stats.getStat(STAT_MEC)/2.5, 5, 15))
+						W.heal_damage(CLAMP(user.stats.getStat(STAT_INT)/2.5, 5, 15))
 						to_chat(user, SPAN_NOTICE("You patch some wounds on \the [S]."))
 					S.update_damages()
 					if(S.brute_dam)

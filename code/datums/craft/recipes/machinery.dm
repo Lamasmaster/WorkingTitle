@@ -2,7 +2,7 @@
 	category = "Machinery"
 	flags = CRAFT_ON_FLOOR|CRAFT_ONE_PER_TURF
 	time = 120
-	related_stats = list(STAT_MEC)
+	related_stats = list(STAT_INT)
 
 /datum/craft_recipe/machinery/machine_frame
 	name = "machine frame"
@@ -19,7 +19,7 @@
 	)
 
 /datum/craft_recipe/machinery/computer
-	related_stats = list(STAT_MEC, STAT_COG)
+	related_stats = list(STAT_INT, STAT_LCK)
 
 /datum/craft_recipe/machinery/computer/computer_frame
 	name = "computer frame"
@@ -120,4 +120,4 @@
 	steps = list(
 		list(CRAFT_MATERIAL, 10, MATERIAL_PLASTEEL),
 	)
-	related_stats = list(STAT_MEC, STAT_COG)
+	related_stats = list(STAT_INT, STAT_LCK)

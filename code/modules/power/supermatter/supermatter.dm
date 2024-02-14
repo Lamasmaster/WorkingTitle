@@ -357,7 +357,7 @@
 	*/
 	if (W.has_quality(QUALITY_SEALING) && damage > 0)
 		user.visible_message("[user] starts sealing up cracks in [src] with the [W]", "You start sealing up cracks in [src] with the [W]")
-		if (W.use_tool(user, src, 140, QUALITY_SEALING, FAILCHANCE_VERY_HARD, STAT_MEC))
+		if (W.use_tool(user, src, 140, QUALITY_SEALING, FAILCHANCE_VERY_HARD, STAT_INT))
 			to_chat(user, SPAN_NOTICE("Your insane actions are somehow paying off."))
 			user.apply_effect(100, IRRADIATE)
 			damage = 0

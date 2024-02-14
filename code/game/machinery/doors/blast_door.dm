@@ -245,7 +245,7 @@
 	switch(tool_type)
 		if(QUALITY_PRYING)
 			if(user.a_intent == I_DISARM)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_VERY_EASY,  required_stat = STAT_ROB))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_PRYING, FAILCHANCE_VERY_EASY,  required_stat = STAT_STR))
 					if(((stat & NOPOWER) || (stat & BROKEN)) && !( src.operating ))
 						force_toggle()
 					else
@@ -256,14 +256,14 @@
 					to_chat(user,SPAN_NOTICE("The [src] must be closed for the metal coverings to be pried off."))
 					return
 				to_chat(user,  SPAN_NOTICE("You start prying off the metal coverings of \the [src]."))
-				if(I.use_tool(user,  src,  WORKTIME_NORMAL, QUALITY_PRYING , FAILCHANCE_VERY_EASY , required_stat = STAT_MEC))
+				if(I.use_tool(user,  src,  WORKTIME_NORMAL, QUALITY_PRYING , FAILCHANCE_VERY_EASY , required_stat = STAT_INT))
 					to_chat(user,  SPAN_NOTICE("You pry off the metal coverings of \the [src]."))
 					assembly_step = -3
 					update_icon()
 				return
 			if(assembly_step == -3)
 				to_chat(user,  SPAN_NOTICE("You start prying back in the metal coverings of \the [src]."))
-				if(I.use_tool(user,  src,  WORKTIME_NORMAL, QUALITY_PRYING , FAILCHANCE_VERY_EASY , required_stat = STAT_MEC))
+				if(I.use_tool(user,  src,  WORKTIME_NORMAL, QUALITY_PRYING , FAILCHANCE_VERY_EASY , required_stat = STAT_INT))
 					to_chat(user,  SPAN_NOTICE("You pry the metal coverings of \the [src] back in."))
 					assembly_step = -2
 					update_icon()
@@ -284,7 +284,7 @@
 			if(screws_welded)
 				to_chat(user,  SPAN_NOTICE("You start welding off the metal seals around the screws of \the [src]."))
 				user.show_message(SPAN_NOTICE("[user] starts welding off at \the [src]."))
-				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
+				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_INT))
 					to_chat(user,  SPAN_NOTICE("You manage to weld off the metal seals, giving way to remove the screws."))
 					user.show_message(SPAN_NOTICE("[user] stops welding off at \the [src]."))
 					screws_welded = FALSE
@@ -293,7 +293,7 @@
 			if(assembly_step == -6)
 				to_chat(user,  SPAN_NOTICE("You start welding off the framework of \the [src]."))
 				user.show_message(SPAN_NOTICE("[user] starts welding off at \the [src]."))
-				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
+				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_INT))
 					to_chat(user,  SPAN_NOTICE("You manage to completly dismantle \the [src]."))
 					user.show_message(SPAN_NOTICE("[user] dismantles \the [src]."))
 					drop_materials(get_turf(user), user)
@@ -305,7 +305,7 @@
 					return
 				to_chat(user, SPAN_NOTICE("You start sealing the screws to the circuit panel of \the [src]."))
 				user.show_message(SPAN_NOTICE("[user] starts sealing the screws of \the [src]."))
-				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_MEC))
+				if(I.use_tool(user, src , WORKTIME_LONG, QUALITY_WELDING, FAILCHANCE_CHALLENGING, required_stat = STAT_INT))
 					to_chat(user,  SPAN_NOTICE("You manage to seal the screws of \the [src]."))
 					user.show_message(SPAN_NOTICE("[user] finishes sealing the screws of \the [src]."))
 					screws_welded = TRUE
@@ -318,19 +318,19 @@
 					switch(result)
 						if("dc")
 							to_chat(user, SPAN_NOTICE("You start removing the door control circuit of \the [src]."))
-							if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+							if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 								to_chat(user, SPAN_NOTICE("You remove the door control circuit of \the [src]."))
 								electronics.forceMove(get_turf(user))
 								electronics = null
 								assembly_step = -6
 							return
 						if("sp")
-							if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+							if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 								panel_open = !panel_open
 								to_chat(user, SPAN_NOTICE("You screw [panel_open ? "open" : "shut"] the circuit panel of \the [src]."))
 								update_icon()
 			else
-				if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_SCREW_DRIVING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					panel_open = !panel_open
 					to_chat(user, SPAN_NOTICE("You screw [panel_open ? "open" : "shut"] the circuit panel of \the [src]."))
 					update_icon()
@@ -348,7 +348,7 @@
 						to_chat(user, SPAN_NOTICE("The pressure inside the hydraulics of \the [src] makes the turning harder, this might be dangerous."))
 					else
 						turning_time = WORKTIME_NORMAL
-					if(I.use_tool(user, src, turning_time, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src, turning_time, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -1
 						to_chat(user,  SPAN_NOTICE("You weaken the hydraulic sockets of \the [src]."))
 						// Uh Oh
@@ -361,20 +361,20 @@
 					return
 				if(-1)
 					to_chat(user,  SPAN_NOTICE("You start tightening the hydraulic sockets of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = 0
 						to_chat(user,  SPAN_NOTICE("You tighten the hydraulic sockets of \the [src]."))
 					return
 				if(-3)
 					to_chat(user, SPAN_NOTICE("You start weakening the locking bolts of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -4
 						to_chat(user,  SPAN_NOTICE("You weaken the locking bolts of \the [src]."))
 						anchored = FALSE
 					return
 				if(-4)
 					to_chat(user, SPAN_NOTICE("You start tightening the locking bolts of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -3
 						to_chat(user,  SPAN_NOTICE("You tighten the locking bolts of \the [src]."))
 						anchored = TRUE
@@ -385,14 +385,14 @@
 			switch(assembly_step)
 				if(-1)
 					to_chat(user, SPAN_NOTICE("You start cutting off the hydraulic sockets of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -2
 						to_chat(user,  SPAN_NOTICE("You cut off the hydraulic sockets of \the [src], rendering it unfunctional."))
 						stat |= BROKEN
 					return
 				if(-2)
 					to_chat(user,  SPAN_NOTICE("You start reconnecting the hydraulic sockets of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -1
 						to_chat(user,  SPAN_NOTICE("You reconnect the hydraulic sockets, making the door work again."))
 						if(stat & BROKEN)
@@ -400,7 +400,7 @@
 					return
 				if(-4)
 					to_chat(user,  SPAN_NOTICE("You start removing the wirings of \the [src]."))
-					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+					if(I.use_tool(user, src,  WORKTIME_NORMAL, QUALITY_WIRE_CUTTING, FAILCHANCE_EASY, required_stat = STAT_INT))
 						assembly_step = -5
 						to_chat(user,  SPAN_NOTICE("You remove the wirings of \the [src]."))
 						var/obj/item/stack/cable_coil/coil = new(null)

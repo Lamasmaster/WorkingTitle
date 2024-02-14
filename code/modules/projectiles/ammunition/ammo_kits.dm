@@ -34,7 +34,7 @@
 	var/material_points = 15 + extra_material_points // 10 steel and 5 cardboard
 
 	if(user.stats)
-		switch(user.stats.getStat(STAT_MEC))
+		switch(user.stats.getStat(STAT_INT))
 			if(STAT_LEVEL_BASIC to STAT_LEVEL_ADEPT)
 				material_points += 3
 			if(STAT_LEVEL_ADEPT to STAT_LEVEL_EXPERT)

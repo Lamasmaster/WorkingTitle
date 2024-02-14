@@ -228,7 +228,7 @@
 				if(components.len)
 					to_chat(user, "Remove all components from \the [src] before disassembling it.")
 					return
-				if(tool.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+				if(tool.use_tool(user, src, WORKTIME_SLOW, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_LCK))
 					new /obj/item/stack/material/steel( get_turf(src.loc), steel_sheet_cost )
 					src.visible_message("\The [src] has been disassembled by [user].")
 					qdel(src)
@@ -238,7 +238,7 @@
 				if(!damage)
 					to_chat(user, "\The [src] does not require repairs.")
 					return
-				if(tool.use_tool(user, src, WORKTIME_SLOW, QUALITY_WELDING, FAILCHANCE_HARD, required_stat = STAT_COG))
+				if(tool.use_tool(user, src, WORKTIME_SLOW, QUALITY_WELDING, FAILCHANCE_HARD, required_stat = STAT_LCK))
 					damage = 0
 					to_chat(user, "You repair \the [src].")
 					return
@@ -263,7 +263,7 @@
 					return
 				if(!Adjacent(usr))
 					return
-				if(tool.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_COG))
+				if(tool.use_tool(user, src, WORKTIME_FAST, QUALITY_SCREW_DRIVING, FAILCHANCE_VERY_EASY, required_stat = STAT_LCK))
 					var/obj/item/computer_hardware/H = find_hardware_by_name(choice)
 					if(!H)
 						return

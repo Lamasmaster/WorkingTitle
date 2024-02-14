@@ -43,7 +43,7 @@
 		else if(!H.can_inject(user, FALSE))
 			// lets check if user is easily fooled
 			var/obj/item/organ/external/affected = H.get_organ(user.targeted_organ)
-			if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_BIO) < STAT_LEVEL_BASIC)
+			if(BP_IS_LIFELIKE(affected) && user && user.stats.getStat(STAT_INT) < STAT_LEVEL_BASIC)
 				if(M.reagents)
 					var/trans = reagents.remove_any(amount_per_transfer_from_this)
 					user.visible_message(SPAN_WARNING("[user] injects [M] with [src]!"), SPAN_WARNING("You inject [M] with [src]."))

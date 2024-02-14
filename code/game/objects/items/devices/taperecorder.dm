@@ -50,7 +50,7 @@
 		return
 
 	if(QUALITY_SCREW_DRIVING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NEAR_INSTANT, QUALITY_SCREW_DRIVING, FAILCHANCE_EASY, required_stat = STAT_INT))
 			open_panel = !open_panel
 			to_chat(usr, SPAN_NOTICE("You [open_panel ? "open" : "close"] the wire panel."))
 		return

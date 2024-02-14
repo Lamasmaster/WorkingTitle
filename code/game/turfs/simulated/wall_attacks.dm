@@ -125,7 +125,7 @@
 		if(QUALITY_BOLT_TURNING)
 			if(construction_stage == 2)
 				to_chat(user, SPAN_NOTICE("You begin removing the bolts anchoring the support rods..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 1
 					update_icon()
 					to_chat(user, SPAN_NOTICE("You remove the bolts anchoring the support rods."))
@@ -134,39 +134,39 @@
 
 		if(QUALITY_WELDING)
 			if(locate(/obj/effect/overlay/wallrot) in src)
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You burn away the fungi with \the [I]."))
 					for(var/obj/effect/overlay/wallrot/WR in src)
 						qdel(WR)
 					return
 			if(thermite)
-				if(I.use_tool(user, src, WORKTIME_INSTANT,tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_INSTANT,tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You ignite the thermite with the [I]!"))
 					thermitemelt(user)
 					return
 			if(health < maxHealth)
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You repair the damage to [src]."))
 					clear_bulletholes()
 					take_damage(-health)
 					return
 			if(isnull(construction_stage) || !reinf_material)
 				to_chat(user, SPAN_NOTICE("You begin removing the outer plating..."))
-				if(I.use_tool(user, src, WORKTIME_SLOW * material.heat_resistance, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_SLOW * material.heat_resistance, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You remove the outer plating."))
 					dismantle_wall()
 					user.visible_message(SPAN_WARNING("The wall was torn open by [user]!"))
 					return
 			if(construction_stage == 4)
 				to_chat(user, SPAN_NOTICE("You begin removing the outer plating..."))
-				if(I.use_tool(user, src, WORKTIME_SLOW * material.heat_resistance, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_SLOW * material.heat_resistance, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 3
 					update_icon()
 					to_chat(user, SPAN_NOTICE("You press firmly on the cover, dislodging it."))
 					return
 			if(construction_stage == 1)
 				to_chat(user, SPAN_NOTICE("You begin removing the support rods..."))
-				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_NORMAL, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 0
 					update_icon()
 					new /obj/item/stack/rods(user.loc)
@@ -177,14 +177,14 @@
 		if(QUALITY_PRYING)
 			if(construction_stage == 3)
 				to_chat(user, SPAN_NOTICE("You begin to prying off the cover..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 2
 					update_icon()
 					to_chat(user, SPAN_NOTICE("You pry off the cover."))
 					return
 			if(construction_stage == 0)
 				to_chat(user, SPAN_NOTICE("You struggle to pry off the outer sheath..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					to_chat(user, SPAN_NOTICE("You pry off the outer sheath."))
 					dismantle_wall(user)
 					return
@@ -193,7 +193,7 @@
 		if(QUALITY_WIRE_CUTTING)
 			if(construction_stage == 6)
 				to_chat(user, SPAN_NOTICE("You begin removing the outer grille..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 5
 					new /obj/item/stack/rods(user.loc)
 					to_chat(user, SPAN_NOTICE("You removing the outer grille."))
@@ -204,7 +204,7 @@
 		if(QUALITY_SCREW_DRIVING)
 			if(construction_stage == 5)
 				to_chat(user, SPAN_NOTICE("You begin removing the support lines..."))
-				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+				if(I.use_tool(user, src, WORKTIME_FAST, tool_type, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 					construction_stage = 4
 					update_icon()
 					to_chat(user, SPAN_NOTICE("You remove the support lines."))
@@ -241,7 +241,7 @@
 			dam_prob *= 0.5 //Rot makes reinforced walls breakable
 		if(ishuman(user))
 			var/mob/living/carbon/human/attacker = user
-			dam_prob -= attacker.stats.getStat(STAT_ROB)
+			dam_prob -= attacker.stats.getStat(STAT_STR)
 		if(dam_prob < 100 && attackforce > (dam_threshhold/10))
 			playsound(src, hitsound, 80, 1)
 			if(!prob(dam_prob))

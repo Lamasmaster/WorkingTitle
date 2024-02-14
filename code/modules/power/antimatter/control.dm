@@ -131,7 +131,7 @@
 	if(QUALITY_BOLT_TURNING in I.tool_qualities)
 		if(anchored || linked_shielding.len)
 			to_chat(user, "\red Once bolted and linked to a shielding unit it the [src.name] is unable to be moved!")
-		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_FAST, QUALITY_BOLT_TURNING, FAILCHANCE_EASY,  required_stat = STAT_INT))
 			if(!anchored)
 				user.visible_message("[user.name] secures the [src.name] to the floor.", \
 					"You secure the anchor bolts to the floor.", \

@@ -191,13 +191,13 @@
 
 /datum/perk/active_inspiration/assign(mob/living/carbon/human/H)
 	if(..())
-		holder.stats.addTempStat(STAT_COG, 5, INFINITY, "Exotic Inspiration")
-		holder.stats.addTempStat(STAT_MEC, 10, INFINITY, "Exotic Inspiration")
+		holder.stats.addTempStat(STAT_LCK, 5, INFINITY, "Exotic Inspiration")
+		holder.stats.addTempStat(STAT_INT, 10, INFINITY, "Exotic Inspiration")
 
 /datum/perk/active_inspiration/remove()
 	if(holder)
-		holder.stats.removeTempStat(STAT_COG, "Exotic Inspiration")
-		holder.stats.removeTempStat(STAT_MEC, "Exotic Inspiration")
+		holder.stats.removeTempStat(STAT_LCK, "Exotic Inspiration")
+		holder.stats.removeTempStat(STAT_INT, "Exotic Inspiration")
 	..()
 
 /datum/perk/sommelier

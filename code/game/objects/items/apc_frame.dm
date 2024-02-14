@@ -9,7 +9,7 @@
 
 /obj/item/frame/apc/attackby(obj/item/tool/tool, mob/user)
 	..()
-	if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_MEC))
+	if (!tool.use_tool(user, src, WORKTIME_NORMAL, QUALITY_BOLT_TURNING, FAILCHANCE_VERY_EASY, required_stat = STAT_INT))
 		return
 	new /obj/item/stack/material/steel( get_turf(src.loc), 2 )
 	qdel(src)

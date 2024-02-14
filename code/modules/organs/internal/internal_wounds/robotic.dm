@@ -1,5 +1,5 @@
 /datum/component/internal_wound/robotic
-	diagnosis_stat = STAT_MEC
+	diagnosis_stat = STAT_INT
 	diagnosis_difficulty = STAT_LEVEL_BASIC
 	wound_nature = MODIFICATION_SILICON
 

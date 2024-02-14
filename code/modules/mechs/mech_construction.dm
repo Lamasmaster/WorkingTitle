@@ -83,7 +83,7 @@
 
 
 	if(user)
-		var/mech_skill = user.stats.getStat(STAT_MEC) < 0 ? 0 : user.stats.getStat(STAT_MEC)
+		var/mech_skill = user.stats.getStat(STAT_INT) < 0 ? 0 : user.stats.getStat(STAT_INT)
 		var/delay = 30 - sqrt(mech_skill * 3)
 		if(delay > 0)
 			user.visible_message(SPAN_NOTICE("\The [user] begins trying to install \the [system] into \the [src]."))
@@ -123,7 +123,7 @@
 
 	var/obj/item/system = hardpoints[system_hardpoint]
 	if(user)
-		var/mech_skill = user.stats.getStat(STAT_MEC) < 0 ? 0 : user.stats.getStat(STAT_MEC)
+		var/mech_skill = user.stats.getStat(STAT_INT) < 0 ? 0 : user.stats.getStat(STAT_INT)
 		var/delay = 30 - sqrt(mech_skill * 3)
 		user.visible_message(SPAN_NOTICE("\The [user] begins trying to remove \the [system] from \the [src]."))
 		if(!do_after(user, delay, src) || hardpoints[system_hardpoint] != system) return 0

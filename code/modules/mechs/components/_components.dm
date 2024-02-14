@@ -203,7 +203,7 @@
 
 
 /obj/item/mech_component/proc/repair_brute_generic(obj/item/I, mob/user)
-	var/weld_amt = round(max(0, 10, 5 + user.stats.getStat(STAT_MEC) / 3))
+	var/weld_amt = round(max(0, 10, 5 + user.stats.getStat(STAT_INT) / 3))
 
 	if(brute_damage <= 0)
 		to_chat(user, SPAN_NOTICE("You inspect \the [src] but find nothing to weld."))
@@ -214,13 +214,13 @@
 		return
 
 	if(QUALITY_WELDING in I.tool_qualities)
-		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_MEC))
+		if(I.use_tool(user, src, WORKTIME_NORMAL, QUALITY_WELDING, FAILCHANCE_NORMAL, required_stat = STAT_INT))
 			user.visible_message(SPAN_NOTICE("The [src] has been repaired by [user]."), SPAN_NOTICE("You weld a damaged section of \the [src]."), SPAN_NOTICE("You hear welding."))
 			repair_brute_damage(weld_amt)
 			return
 
 /obj/item/mech_component/proc/repair_burn_generic(obj/item/stack/cable_coil/CC, mob/user)
-	var/wire_amt = round(max(10, 5 + user.stats.getStat(STAT_MEC) / 3))
+	var/wire_amt = round(max(10, 5 + user.stats.getStat(STAT_INT) / 3))
 
 	if(burn_damage <= 0)
 		to_chat(user, SPAN_NOTICE("You inspect /the [src]'s wiring, but can't find anything to fix."))

@@ -356,8 +356,8 @@
 #define OVERRIDE_LOG_DIRECTORY_PARAMETER "log-directory"
 
 /// Required minimum values to see reagents in a beaker
-#define HUMAN_REQ_COG_FOR_REG 35
-#define HUMAN_REQ_BIO_FOR_REG 50
+#define HUMAN_REQ_PER_FOR_REG 50
+#define HUMAN_REQ_INT_FOR_REG 35
 
 /// Misc atmos equations
 

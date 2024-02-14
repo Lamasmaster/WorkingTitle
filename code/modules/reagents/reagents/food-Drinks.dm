@@ -2633,8 +2633,8 @@
 
 /datum/reagent/alcohol/atomic_vodka/affect_ingest(mob/living/carbon/M, alien, effect_multiplier)
 	..()
-	if(!M.stats.getTempStat(STAT_TGH, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
-		M.stats.addTempStat(STAT_TGH, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
+	if(!M.stats.getTempStat(STAT_END, "atomvodka") && M.stats.getPerk(/datum/perk/sommelier))
+		M.stats.addTempStat(STAT_END, STAT_LEVEL_ADEPT, 10 MINUTES, "atomvodka")
 
 
 /datum/reagent/alcohol/roachbeer
@@ -2707,9 +2707,10 @@
 
 /datum/reagent/alcohol/kaiserbeer/affect_ingest(mob/living/carbon/M, alien, effect_multiplier) ////// checks user for having a vagabond perk,
 	..()
-	M.stats.addTempStat(STAT_VIG, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
-	M.stats.addTempStat(STAT_TGH, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
-	M.stats.addTempStat(STAT_ROB, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
+	M.stats.addTempStat(STAT_AGI, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
+	M.stats.addTempStat(STAT_PER, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
+	M.stats.addTempStat(STAT_END, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
+	M.stats.addTempStat(STAT_STR, STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut")
 	M.faction = "roach"
 
 /datum/reagent/alcohol/roachbeer/apply_sanity_effect(mob/living/carbon/human/H, effect_multiplier)
@@ -2727,9 +2728,10 @@
 /datum/reagent/alcohol/kaiserbeer/withdrawal_act(mob/living/carbon/M, effect_multiplier) ////// lose sanity on withdrawal, notify user about this
 	var/mob/living/carbon/human/addicte = M
 	addicte.sanity.changeLevel(-sanity_gain_ingest * 2)
-	M.stats.addTempStat(STAT_VIG, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
-	M.stats.addTempStat(STAT_TGH, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
-	M.stats.addTempStat(STAT_ROB, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
+	M.stats.addTempStat(STAT_AGI, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
+	M.stats.addTempStat(STAT_PER, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
+	M.stats.addTempStat(STAT_END, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
+	M.stats.addTempStat(STAT_STR, -STAT_LEVEL_EXPERT * effect_multiplier, STIM_TIME, "Monarchenblut_w")
 	if(prob(5))
 		to_chat(addicte , pick(
 			SPAN_DANGER("You feel wilted."),
